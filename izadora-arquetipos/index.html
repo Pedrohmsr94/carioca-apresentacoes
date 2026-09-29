@@ -57,6 +57,13 @@ input[type=text],textarea{width:100%;margin-top:6px;font:inherit;color:var(--tin
 textarea{min-height:110px;resize:vertical}
 .aviso{margin-top:16px;background:#fff;border-left:3px solid var(--destaque);border-radius:0 10px 10px 0;padding:12px 14px;font-size:15px;color:var(--tinta)}
 .miudo{font-size:13px;color:var(--tinta-media);margin-top:18px}
+ul.guia li b{color:var(--tinta);font-weight:600}
+.parte{margin-top:20px;padding-top:16px;border-top:1px solid var(--papel-2)}
+.parte p{margin-top:6px}
+.parte .rot{margin-top:0}
+ol.mini{list-style:none;margin-top:10px;display:grid;gap:6px}
+ol.mini li{display:flex;align-items:center;gap:12px;font-size:15px;color:var(--tinta)}
+ol.mini .n{flex:0 0 26px;height:26px;border-radius:50%;border:1px solid var(--apoio);display:flex;align-items:center;justify-content:center;font-weight:600;font-size:13px;color:var(--apoio-esc)}
 :focus-visible{outline:3px solid var(--destaque);outline-offset:2px}
 footer{padding:18px 16px 26px;text-align:center;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--tinta-media)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
@@ -110,19 +117,69 @@ function inicio(){
   if (MODO === 'fora') return [
     h('p', {class:'rot'}, '4 perguntas · 2 minutos'),
     h('h1', {}, 'Como você enxerga ' + D.nome + '?'),
-    h('p', {}, D.nome + ' está num trabalho com a Carioca\'s Consultoria sobre como a marca ' + D.pron + ' se apresenta. A sua visão ajuda muito.'),
+    h('p', {}, D.nome + ' está num trabalho sobre como a marca ' + D.pron + ' se apresenta. A gente quer saber como quem convive com ' + D.nome + ' enxerga o trabalho ' + D.pron + ' — e a sua visão ajuda muito.'),
     h('ul', {class:'guia'}, h('li', {}, 'Em cada pergunta, toque na opção que MAIS combina com ' + D.nome + '.'), h('li', {}, 'Depois, na que MENOS combina.'), h('li', {}, 'Não tem certo nem errado — vale a primeira impressão.')),
     h('div', {class:'acoes'}, h('button', {class:'btn', on:{click:() => ir({tela:'quem'})}}, 'Começar'))];
+  const temProgresso = Object.keys(E.escala).length > 0;
   return [
     h('p', {class:'rot'}, 'Oi, ' + D.nome),
     h('h1', {}, 'Algumas frases sobre o seu jeito de trabalhar.'),
-    h('p', {}, 'São ' + NI + ' frases e ' + NR + ' escolhas rápidas — uns 15 minutos. Não tem certo nem errado, e não é teste de personalidade: é pra gente dar nome ao que a sua marca já é.'),
+    h('p', {}, 'São ' + NI + ' frases e ' + NR + ' escolhas rápidas — uns 15 minutos. Antes delas, três telas curtas explicando o que a gente está fazendo: o que é a sua marca, por que essas perguntas e como elas funcionam.'),
+    temProgresso
+      ? h('div', {class:'acoes'},
+          h('button', {class:'btn', on:{click:() => ir({tela:'escala', i: Math.min(E.i || 0, NI - 1)})}}, 'Continuar de onde parei'),
+          h('button', {class:'voltar', on:{click:() => ir({tela:'marca'})}}, 'Rever a explicação'))
+      : h('div', {class:'acoes'}, h('button', {class:'btn', on:{click:() => ir({tela:'marca'})}}, 'Começar pela explicação'))];
+}
+
+function marca(){
+  progresso(0);
+  return [
+    h('p', {class:'rot'}, 'Antes de começar · 1 de 3'),
+    h('h1', {}, 'A sua marca é o jeito como as pessoas reconhecem você.'),
+    h('p', {}, 'Não é só o logo ou as cores. É o que a pessoa sente quando conversa com você, lê um post seu ou entra no seu escritório. Quando tudo isso conta a mesma história, a cliente confia antes mesmo da primeira reunião.'),
+    h('p', {}, 'Uma marca pessoal aparece em quatro lugares:'),
+    h('ul', {class:'guia'},
+      h('li', {}, h('b', {}, 'Como você fala'), ' — as palavras, o tom, o jeito de explicar.'),
+      h('li', {}, h('b', {}, 'O que te move'), ' — o motivo de fazer esse trabalho e não outro.'),
+      h('li', {}, h('b', {}, 'Como você age'), ' — o que você faz no atendimento, principalmente quando ninguém está olhando.'),
+      h('li', {}, h('b', {}, 'Como você aparece'), ' — a imagem, o espaço, a roupa, as fotos.')),
+    h('p', {}, 'As frases que vêm a seguir passam por esses quatro lugares, misturadas de propósito.'),
+    h('div', {class:'acoes'}, h('button', {class:'btn', on:{click:() => ir({tela:'escolhe'})}}, 'Continuar'), h('button', {class:'voltar', on:{click:() => ir({tela:'inicio'})}}, 'Voltar'))];
+}
+
+function escolhe(){
+  progresso(0);
+  return [
+    h('p', {class:'rot'}, 'Antes de começar · 2 de 3'),
+    h('h1', {}, 'Todo mundo tem vários jeitos. A marca escolhe qual vem na frente.'),
+    h('p', {}, 'Você é várias coisas ao mesmo tempo — e isso é bom. Mas quando o site diz uma coisa, o Instagram outra e a palestra uma terceira, quem está chegando não sabe com quem está falando.'),
+    h('p', {}, 'Essas perguntas servem pra descobrir o que vem primeiro em você, o que vem em segundo e o que aparece só em alguns lugares. É isso que decide, depois, o que o site fala primeiro, que tipo de foto faz sentido, como você abre uma palestra e como é o primeiro atendimento.'),
+    h('div', {class:'aviso'}, 'Não é teste de personalidade e não tem resposta certa. Não existe marca melhor ou pior — existe marca coerente, que diz a mesma coisa em todo lugar.'),
+    h('div', {class:'acoes'}, h('button', {class:'btn', on:{click:() => ir({tela:'como'})}}, 'Continuar'), h('button', {class:'voltar', on:{click:() => ir({tela:'marca'})}}, 'Voltar'))];
+}
+
+function como(){
+  progresso(0);
+  return [
+    h('p', {class:'rot'}, 'Antes de começar · 3 de 3'),
+    h('h1', {}, 'Como vão ser as perguntas.'),
+    h('div', {class:'parte'},
+      h('p', {class:'rot'}, 'Parte 1 · ' + NI + ' frases'),
+      h('p', {}, 'Uma frase por vez, sobre o seu jeito de trabalhar. Você diz o quanto ela é verdade pra você, de 1 a 5. Tocou, a próxima aparece sozinha.'),
+      h('ol', {class:'mini'}, ESCALA.map(([v, t]) => h('li', {}, h('span', {class:'n'}, v), t)))),
+    h('div', {class:'parte'},
+      h('p', {class:'rot'}, 'Parte 2 · ' + NR + ' escolhas'),
+      h('p', {}, 'Em cada rodada aparecem ' + D.n + ' frases. Você toca primeiro na que MAIS é você e depois na que MENOS é você. É aqui que aparece o que vem primeiro — por isso vale escolher mesmo quando todas parecem um pouco você.')),
+    h('div', {class:'parte'},
+      h('p', {class:'rot'}, 'Depois'),
+      h('p', {}, 'A gente cruza as suas respostas com as nossas conversas e com o olhar de três pessoas que te conhecem, e traz a leitura no próximo encontro pra você validar. Nada é publicado.')),
     h('ul', {class:'guia'},
       h('li', {}, 'Pense no seu trabalho de hoje, não no ideal.'),
       h('li', {}, 'Vale a primeira resposta que vier.'),
       h('li', {}, 'Na dúvida, marque 3.'),
       h('li', {}, 'Pode pausar: o que você responder fica guardado neste aparelho.')),
-    h('div', {class:'acoes'}, h('button', {class:'btn', on:{click:() => ir({tela:'escala', i: Math.min(E.i || 0, NI - 1)})}}, Object.keys(E.escala).length ? 'Continuar de onde parei' : 'Começar'))];
+    h('div', {class:'acoes'}, h('button', {class:'btn', on:{click:() => ir({tela:'escala', i:0})}}, 'Começar as frases'), h('button', {class:'voltar', on:{click:() => ir({tela:'escolhe'})}}, 'Voltar'))];
 }
 
 function escala(){
@@ -133,7 +190,7 @@ function escala(){
     h('p', {class:'rot'}, 'Parte 1 de 2 · frase ' + (i + 1) + ' de ' + NI),
     h('h2', {}, D.itens[i]),
     h('ul', {class:'escala'}, ESCALA.map(([v, t]) => h('li', {}, h('button', {class:'op', 'aria-pressed': String(atual === v), on:{click:() => escolher(v)}}, h('span', {class:'n'}, v), t)))),
-    h('div', {class:'acoes'}, h('button', {class:'voltar', on:{click:() => i > 0 ? ir({i: i - 1}) : ir({tela:'inicio'})}}, 'Voltar'))];
+    h('div', {class:'acoes'}, h('button', {class:'voltar', on:{click:() => i > 0 ? ir({i: i - 1}) : ir({tela:'como'})}}, 'Voltar'))];
 }
 
 function transicao(){
@@ -215,7 +272,7 @@ function fim(){
       h('textarea', {maxlength:'1800', placeholder: MODO === 'fora' ? 'Uma palavra que resume ' + D.nome + ', por exemplo.' : 'Ex.: na 12, depende muito do cliente.', on:{input:(ev) => { E.comentario = ev.target.value; gravar(); }}}, E.comentario)),
     h('div', {class:'acoes'}, btn, h('button', {class:'voltar', on:{click:() => ir(voltar)}}, 'Voltar')),
     status,
-    h('p', {class:'miudo'}, 'As respostas vão direto pra equipe da Carioca\'s Consultoria que está fazendo o trabalho. Não são publicadas.')];
+    h('p', {class:'miudo'}, MODO === 'fora' ? 'As respostas vão direto pra equipe que está fazendo esse trabalho com ' + D.nome + '. Não são publicadas.' : 'As respostas vão direto pra equipe que está fazendo esse trabalho com você. Não são publicadas.')];
 }
 
 async function enviar(btn, status){
@@ -247,7 +304,7 @@ function enviado(){
 }
 
 function render(){
-  const telas = {inicio, escala, transicao, escolha, quem: quemE, fim, enviado};
+  const telas = {inicio, marca, escolhe, como, escala, transicao, escolha, quem: quemE, fim, enviado};
   if (!TOKEN && E.tela !== 'inicio') E.tela = 'inicio';
   app.replaceChildren(...(telas[E.tela] || inicio)().filter(Boolean));
 }
