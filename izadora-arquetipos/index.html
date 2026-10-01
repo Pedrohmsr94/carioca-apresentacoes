@@ -87,7 +87,7 @@ const ESCALA = [[1,'Discordo totalmente'],[2,'Discordo'],[3,'Neutro, ou depende'
 const LETRAS = 'ABCDE';
 const NI = D.itens.length, NR = D.rodadas.length, NF = D.fora.length;
 const TOTAL = MODO === 'cliente' ? NI + NR : NF;
-const novo = () => ({tela:'inicio', i:0, passo:'mais', escala:{}, escolha:[], fora:[], respondente:'', relacao:'', comentario:''});
+const novo = () => ({tela:'inicio', i:0, passo:'mais', escala:{}, escolha:[], fora:[], respondente:'', relacao:'', relacaoOutra:'', comentario:''});
 let E = ler() || novo();
 function ler(){ try { const s = JSON.parse(localStorage.getItem(CHAVE)); return s && s.tela ? s : null; } catch(e){ return null; } }
 function gravar(){ try { localStorage.setItem(CHAVE, JSON.stringify(E)); } catch(e){} }
@@ -241,13 +241,18 @@ function escolha(){
 function quemE(){
   progresso(0);
   const opc = ['Cliente', 'Parceira ou parceiro de trabalho', 'Amiga, amigo ou família', 'Outra relação'];
+  const outra = E.relacao === 'Outra relação';
+  const falta = () => !E.relacao || (E.relacao === 'Outra relação' && !E.relacaoOutra.trim());
+  const btn = h('button', {class:'btn', disabled: falta(), on:{click:() => ir({tela:'escolha', i:0, passo:'mais'})}}, 'Continuar');
   return [
     h('p', {class:'rot'}, 'Antes de começar'),
     h('h2', {}, 'Só pra gente saber de onde vem o seu olhar.'),
     h('label', {class:'campo'}, 'Seu nome (opcional)', h('input', {type:'text', maxlength:'80', value: E.respondente, on:{input:(ev) => { E.respondente = ev.target.value; gravar(); }}})),
     h('p', {class:'rot', style:'margin-top:22px'}, 'Você conhece ' + D.nome + ' como'),
     h('ul', {class:'escala'}, opc.map((t, j) => h('li', {}, h('button', {class:'op', 'aria-pressed': String(E.relacao === t), on:{click:() => ir({relacao: t})}}, h('span', {class:'n'}, LETRAS[j]), t)))),
-    h('div', {class:'acoes'}, h('button', {class:'btn', disabled: !E.relacao, on:{click:() => ir({tela:'escolha', i:0, passo:'mais'})}}, 'Continuar'), h('button', {class:'voltar', on:{click:() => ir({tela:'inicio'})}}, 'Voltar'))];
+    h('p', {class:'miudo'}, 'É mais de uma coisa ao mesmo tempo — cliente que também é amiga, por exemplo? Marque "Outra relação" e conte as duas ali.'),
+    outra ? h('label', {class:'campo'}, 'Qual relação?', h('input', {type:'text', maxlength:'80', placeholder: 'Ex.: cliente e amiga de infância', value: E.relacaoOutra, on:{input:(ev) => { E.relacaoOutra = ev.target.value; gravar(); btn.disabled = falta(); }}})) : null,
+    h('div', {class:'acoes'}, btn, h('button', {class:'voltar', on:{click:() => ir({tela:'inicio'})}}, 'Voltar'))];
 }
 
 function faltando(){
@@ -284,7 +289,7 @@ async function enviar(btn, status){
       headers: {'apikey': D.supabase.key, 'Content-Type': 'application/json'},
       body: JSON.stringify({p_token: TOKEN, p_respostas: respostas,
         p_respondente: MODO === 'cliente' ? D.nome : (E.respondente || null),
-        p_relacao: MODO === 'fora' ? (E.relacao || null) : null,
+        p_relacao: MODO === 'fora' ? ((E.relacao === 'Outra relação' ? E.relacaoOutra.trim() : E.relacao) || null) : null,
         p_comentario: E.comentario || null})
     });
     if (!r.ok) { const j = await r.json().catch(() => ({})); throw new Error(j.message || ('erro ' + r.status)); }
