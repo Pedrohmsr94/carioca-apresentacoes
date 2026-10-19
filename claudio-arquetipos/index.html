@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1B2A22">
+<title>Cláudio Zacarias · algumas perguntas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400..600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --fundo:#1B2A22;--fundo-2:#24372D;--papel:#F4EFE6;--papel-2:#E5DCCD;
+  --tinta:#1D2520;--tinta-media:#4C5550;--apoio:#9A6A42;--apoio-esc:#6B4529;
+  --destaque:#C9A46A;--destaque-esc:#A8844C;
+  --f-tit:'Bodoni Moda',system-ui,sans-serif;--f-corpo:'Manrope',system-ui,sans-serif;--f-marca:'Bodoni Moda',Georgia,serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--papel);color:var(--tinta);font-family:var(--f-corpo);font-size:17px;line-height:1.5;min-height:100vh;display:flex;flex-direction:column}
+button{font:inherit;color:inherit;cursor:pointer}
+.topo{background:var(--fundo);color:var(--papel);padding:18px 16px 16px;position:relative;overflow:hidden}
+.topo__in{max-width:560px;margin:0 auto;display:flex;align-items:center;gap:10px;position:relative;z-index:1}
+.topo img{width:28px;height:auto}
+.topo span{font-family:var(--f-marca);letter-spacing:.3em;text-transform:uppercase;font-size:14px}
+.topo svg{position:absolute;right:-10px;top:-6px;width:210px;height:90px;opacity:.9}
+.barra{height:3px;background:var(--fundo-2);position:relative}
+.barra i{position:absolute;left:0;top:0;height:3px;background:var(--apoio);transition:width .3s}
+.barra b{position:absolute;top:-3px;width:9px;height:9px;border-radius:50%;background:var(--destaque);transform:translateX(-50%);transition:left .3s}
+main{flex:1;width:100%;max-width:560px;margin:0 auto;padding:28px 16px 40px}
+.rot{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--apoio-esc)}
+h1{font-family:var(--f-tit);font-weight:500;font-size:clamp(28px,7.5vw,38px);line-height:1.08;letter-spacing:-.02em;margin-top:10px}
+h2{font-family:var(--f-tit);font-weight:500;font-size:clamp(22px,5.8vw,28px);line-height:1.2;letter-spacing:-.015em;margin-top:12px}
+p{margin-top:12px;color:var(--tinta-media)}
+ul.guia{list-style:none;margin-top:18px}
+ul.guia li{position:relative;padding:8px 0 8px 22px;border-top:1px solid var(--papel-2);color:var(--tinta)}
+ul.guia li::before{content:'';position:absolute;left:3px;top:17px;width:7px;height:7px;border-radius:50%;background:var(--destaque)}
+.acoes{display:flex;gap:12px;align-items:center;margin-top:28px;flex-wrap:wrap}
+.btn{background:var(--destaque);color:var(--fundo);border:0;border-radius:999px;padding:14px 26px;font-weight:600;font-size:16px;min-height:48px}
+.btn:disabled{opacity:.5;cursor:default}
+.voltar{background:none;border:0;color:var(--tinta-media);padding:10px 4px;font-size:15px;text-decoration:underline;text-underline-offset:3px}
+.escala{list-style:none;margin-top:22px;display:grid;gap:8px}
+.op{width:100%;display:flex;align-items:center;gap:14px;text-align:left;background:#fff;border:1px solid var(--papel-2);border-radius:14px;padding:14px 16px;min-height:54px;transition:border-color .15s,background .15s}
+.op:hover{border-color:var(--apoio)}
+.op .n{flex:0 0 30px;height:30px;border-radius:50%;border:1px solid var(--apoio);display:flex;align-items:center;justify-content:center;font-weight:600;font-size:14px;color:var(--apoio-esc)}
+.op[aria-pressed="true"]{background:var(--fundo);border-color:var(--fundo);color:var(--papel)}
+.op[aria-pressed="true"] .n{border-color:var(--destaque);background:var(--destaque);color:var(--fundo)}
+.op.mais-marcada{border-color:var(--fundo);opacity:.55;cursor:default}
+.op.mais-marcada .n{background:var(--fundo);border-color:var(--fundo);color:var(--papel)}
+.tag{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--apoio-esc);margin-left:auto}
+.passo{margin-top:14px;display:inline-flex;align-items:center;gap:8px;background:var(--fundo);color:var(--papel);border-radius:999px;padding:7px 14px;font-size:14px;font-weight:600}
+.passo i{width:8px;height:8px;border-radius:50%;background:var(--destaque)}
+label.campo{display:block;margin-top:18px;font-weight:600;font-size:15px}
+input[type=text],textarea{width:100%;margin-top:6px;font:inherit;color:var(--tinta);background:#fff;border:1px solid var(--papel-2);border-radius:12px;padding:12px 14px}
+textarea{min-height:110px;resize:vertical}
+.aviso{margin-top:16px;background:#fff;border-left:3px solid var(--destaque);border-radius:0 10px 10px 0;padding:12px 14px;font-size:15px;color:var(--tinta)}
+.miudo{font-size:13px;color:var(--tinta-media);margin-top:18px}
+ul.guia li b{color:var(--tinta);font-weight:600}
+.parte{margin-top:20px;padding-top:16px;border-top:1px solid var(--papel-2)}
+.parte p{margin-top:6px}
+.parte .rot{margin-top:0}
+ol.mini{list-style:none;margin-top:10px;display:grid;gap:6px}
+ol.mini li{display:flex;align-items:center;gap:12px;font-size:15px;color:var(--tinta)}
+ol.mini .n{flex:0 0 26px;height:26px;border-radius:50%;border:1px solid var(--apoio);display:flex;align-items:center;justify-content:center;font-weight:600;font-size:13px;color:var(--apoio-esc)}
+:focus-visible{outline:3px solid var(--destaque);outline-offset:2px}
+footer{padding:18px 16px 26px;text-align:center;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--tinta-media)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="topo">
+  <svg viewBox="0 0 210 90" aria-hidden="true"><g stroke="#9A6A42" stroke-width="1" opacity=".7"><line x1="30" y1="60" x2="80" y2="30"/><line x1="80" y1="30" x2="130" y2="52"/><line x1="130" y1="52" x2="175" y2="22"/><line x1="130" y1="52" x2="160" y2="78"/><line x1="80" y1="30" x2="110" y2="12"/></g><g fill="#C9A46A"><circle cx="30" cy="60" r="3"/><circle cx="80" cy="30" r="4"/><circle cx="130" cy="52" r="3.5"/><circle cx="175" cy="22" r="3"/><circle cx="160" cy="78" r="2.5"/><circle cx="110" cy="12" r="2.5"/></g></svg>
+  <div class="topo__in"><span>Cláudio Zacarias</span></div>
+</header>
+<div class="barra" aria-hidden="true"><i id="bi" style="width:0"></i><b id="bb" style="left:0"></b></div>
+<main id="app" aria-live="polite"></main>
+<footer>Carioca's Consultoria</footer>
+<script>
+const D = {"nome": "Cláudio", "pron": "dele", "itens": ["Gosto de citar o que li — um livro, um autor, uma pesquisa — pra sustentar o que eu falo.", "Trato o cliente que paga pouco do mesmo jeito que trato o que paga muito.", "Fico satisfeito quando o empresário sai da conversa entendendo uma coisa que antes ele não entendia.", "Já fiz coisa de graça por alguém só porque a pessoa estava precisando.", "Quero que o empresário daqui me veja como um deles, não como um consultor que veio de fora.", "Antes de propor qualquer coisa, eu pesquiso: converso com gente, leio, comparo.", "Quero que quem me encontra pela primeira vez perceba, pela postura, que está diante de alguém sério.", "Pra explicar negócio, uso exemplo do dia a dia: a pomada, o açougue, a academia.", "Em evento meu, sou eu que pego a bebida, sirvo e vejo se está faltando alguma coisa pra alguém.", "Falo com dono de empresa do mesmo jeito que falo com qualquer um no balcão: sem cerimônia.", "Não me incomoda trabalhar sem saber direito quanto entra e quanto sai.", "Vendo com mais facilidade no bairro, no meio do povo, do que em condomínio de luxo.", "Faz diferença pra mim ser visto como referência entre os empresários de Jataí.", "Quando o cliente chega aflito, a primeira coisa que eu digo é: deixa comigo, eu resolvo.", "Gosto de fazer a pessoa se sentir parte da turma.", "Antes de apresentar duas pessoas, penso no que elas têm em comum pra conversa fluir.", "Quando falo de preço, falo com firmeza e não peço desculpa pelo valor.", "Vender de novo pra quem já comprou me dá mais gosto do que conquistar cliente novo.", "Me identifico com ambiente de estudo: estante de livro, quadro com anotação, mesa de trabalho.", "Se o problema do cliente é menor do que ele pensa, eu falo, mesmo que isso me custe a venda.", "Quando entro numa empresa, marco reunião fixa toda semana e cobro do dono que ela aconteça.", "Quando um cliente some, faço questão de dizer pra ele que ele fez falta.", "Prefiro foto minha no dia a dia, no balcão, do que produzida em estúdio.", "Prefiro resolver no instinto do que parar pra estudar o problema.", "Com cliente, vou direto ao negócio; conversa pessoal é perda de tempo.", "Nas fotos, prefiro aparecer atendendo ou servindo alguém do que posando sozinho.", "Numa mesa que eu organizo, sou eu que decido quem entra.", "O que me move é entender a fundo por que um cliente volta e outro não.", "Gosto de explicar o meu trabalho com número: quanto a empresa faturava antes e quanto passou a faturar.", "O que o cliente está passando fora do negócio não é assunto meu.", "Gosto que me vejam como alguém de outro nível.", "Gosto de ambiente com textura e luz quente: madeira, couro, uma mesa bem posta.", "O que mais me move é poupar o cliente de um prejuízo que eu mesmo já tive.", "Quando explico um problema pro dono, mostro o porquê, com um dado ou um caso que eu estudei.", "Quero que a minha imagem seja de alguém acessível, que qualquer um chama pra um café.", "O que me move é ter o resultado na mão: meta, métrica, número no fim do mês.", "Se me chamarem pra explicar o meu jeito de trabalhar numa aula, eu aceito na hora.", "Com cliente antigo, a conversa vai pra vida pessoal antes de chegar no negócio.", "Me identifico com imagem sóbria e clássica: camisa bem passada, sapato bom, relógio.", "Lembro do que o cliente me contou da última vez — a família, a viagem, o que ele bebe — e puxo o assunto na próxima.", "Quero que quem chega no lugar onde eu atendo se sinta bem cuidado desde a porta.", "O que me move é a pessoa sair da conversa se sentindo importante, lembrada.", "Quero que a minha imagem passe a ideia de alguém que estudou o assunto a fundo.", "Me sinto realizado quando tiro um empresário do sufoco, mesmo que ele nem vire cliente.", "Pra receber alguém, faço questão do detalhe: o café certo, o vinho, a comida, a música."], "rodadas": [{"pergunta": "Qual destas frases é mais você falando? E qual é menos?", "opcoes": ["“O preço é esse. O que dá pra mudar é a forma de pagar.”", "“Fala comigo como você fala com um amigo.”", "“Que bom te ver de novo — tava sentindo sua falta.”", "“Deixa comigo, eu resolvo isso pra você.”", "“Deixa eu te mostrar por que isso acontece.”"]}, {"pergunta": "E destas?", "opcoes": ["“Não compra por medo. O seu problema é menor do que parece.”", "“O relacionamento começa antes da venda, não depois.”", "“Não adianta faturar mais se você não sabe pra onde está indo.”", "“Ninguém compra porque precisa. Compra pra fazer parte.”", "“Antes de mudar qualquer coisa, a gente precisa entender o porquê.”"]}, {"pergunta": "O que mais te move no trabalho? E o que menos?", "opcoes": ["Entender a fundo como as coisas funcionam.", "Fazer a pessoa se sentir lembrada.", "Tirar alguém do sufoco.", "Ter o resultado na mão, em número.", "Estar no meio da turma, como um deles."]}, {"pergunta": "E destes?", "opcoes": ["Pertencer e fazer pertencer.", "Ensinar o que eu aprendi.", "Poupar o cliente de um prejuízo.", "Criar vínculo que dura anos.", "Ser referência entre os empresários da cidade."]}, {"pergunta": "Numa festa ou num evento seu, o que mais é você? E o que menos?", "opcoes": ["Fico no balcão, no meio da turma.", "Sirvo cada um e vejo se está faltando alguma coisa.", "Acabo numa roda explicando alguma coisa que eu estudei.", "Junto as pessoas certas e faço a noite acontecer.", "Decido quem vem, o que se serve e como a noite corre."]}, {"pergunta": "E no trabalho, o que mais é você? E o que menos?", "opcoes": ["Resolvo a burocracia pro cliente não precisar nem ler.", "Converso do mesmo jeito com o dono e com quem atende no balcão.", "Estudo o caso antes de propor qualquer coisa.", "Ponho meta, marco a reunião da semana e cobro.", "Mando mensagem pro cliente todo mês, mesmo sem nada pra vender."]}, {"pergunta": "Qual imagem é mais você? E qual é menos?", "opcoes": ["Mesa posta, vinho, luz baixa, gente conversando.", "Estante de livros, quadro cheio de anotação, luz de mesa.", "Escritório sóbrio, madeira escura, camisa bem passada.", "O balcão cheio num sábado de manhã, gente de todo tipo.", "Mãos servindo um café, alguém sendo bem atendido."]}, {"pergunta": "Qual palavra é mais o lugar onde você recebe um cliente? E qual é menos?", "opcoes": ["sóbrio", "acolhedor", "acessível", "reflexivo", "íntimo"]}], "fora": [{"pergunta": "Qual destas frases é mais a cara do Cláudio falando? E qual é menos?", "opcoes": ["“O preço é esse. O que dá pra mudar é a forma de pagar.”", "“Fala comigo como você fala com um amigo.”", "“Que bom te ver de novo — tava sentindo sua falta.”", "“Deixa comigo, eu resolvo isso pra você.”", "“Deixa eu te mostrar por que isso acontece.”"]}, {"pergunta": "O que mais move o Cláudio no trabalho, pelo que você vê? E o que menos?", "opcoes": ["Entender a fundo como as coisas funcionam.", "Fazer a pessoa se sentir lembrada.", "Tirar alguém do sufoco.", "Ter o resultado na mão, em número.", "Estar no meio da turma, como um deles."]}, {"pergunta": "Numa festa ou num evento, o que o Cláudio mais faz, pelo que você já viu? E o que menos?", "opcoes": ["Fica no balcão, no meio da turma.", "Serve cada um e vê se está faltando alguma coisa.", "Acaba numa roda explicando alguma coisa que estudou.", "Junta as pessoas certas e faz a noite acontecer.", "Decide quem vem, o que se serve e como a noite corre."]}, {"pergunta": "Qual imagem combina mais com o Cláudio? E qual combina menos?", "opcoes": ["Mesa posta, vinho, luz baixa, gente conversando.", "Estante de livros, quadro cheio de anotação, luz de mesa.", "Escritório sóbrio, madeira escura, camisa bem passada.", "O balcão cheio num sábado de manhã, gente de todo tipo.", "Mãos servindo um café, alguém sendo bem atendido."]}], "n": 5, "versao": "9f5e49e5", "supabase": {"url": "https://mitlydgtcoqfqdwznqfx.supabase.co", "key": "sb_publishable_pzdYFfDtC7zLwPKaCcpioA_pIL14vtP"}};
+const Q = new URLSearchParams(location.search);
+const TOKEN = Q.get('c') || '';
+const MODO = Q.get('m') === 'fora' ? 'fora' : 'cliente';
+const CHAVE = 'arq_' + D.versao + '_' + MODO;
+const ESCALA = [[1,'Discordo totalmente'],[2,'Discordo'],[3,'Neutro, ou depende'],[4,'Concordo'],[5,'Concordo totalmente']];
+const LETRAS = 'ABCDE';
+const NI = D.itens.length, NR = D.rodadas.length, NF = D.fora.length;
+const TOTAL = MODO === 'cliente' ? NI + NR : NF;
+const novo = () => ({tela:'inicio', i:0, passo:'mais', escala:{}, escolha:[], fora:[], respondente:'', relacao:'', relacaoOutra:'', comentario:''});
+let E = ler() || novo();
+function ler(){ try { const s = JSON.parse(localStorage.getItem(CHAVE)); return s && s.tela ? s : null; } catch(e){ return null; } }
+function gravar(){ try { localStorage.setItem(CHAVE, JSON.stringify(E)); } catch(e){} }
+const app = document.getElementById('app');
+let travado = false;   // evita pular frase com toque duplo durante a transição
+
+function h(tag, attrs, ...filhos){
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs || {})) {
+    if (k === 'on') for (const [ev, fn] of Object.entries(v)) n.addEventListener(ev, fn);
+    else if (k === 'class') n.className = v;
+    else if (v !== false && v != null) n.setAttribute(k, v === true ? '' : v);
+  }
+  for (const f of filhos.flat()) if (f != null) n.append(f.nodeType ? f : document.createTextNode(String(f)));
+  return n;
+}
+function progresso(feito){
+  const pct = Math.max(0, Math.min(100, feito / TOTAL * 100));
+  document.getElementById('bi').style.width = pct + '%';
+  document.getElementById('bb').style.left = pct + '%';
+}
+function ir(mud){ Object.assign(E, mud); gravar(); render(); window.scrollTo(0, 0); }
+
+// ---------------------------------------------------------------- telas
+function inicio(){
+  if (!TOKEN) return [h('p', {class:'rot'}, 'Link incompleto'), h('h1', {}, 'Esse link veio cortado.'), h('p', {}, 'Peça o link de novo pra quem te enviou — ele precisa ter um código no final.')];
+  if (MODO === 'fora') return [
+    h('p', {class:'rot'}, '4 perguntas · 2 minutos'),
+    h('h1', {}, 'Como você enxerga ' + D.nome + '?'),
+    h('p', {}, D.nome + ' está num trabalho sobre como a marca ' + D.pron + ' se apresenta. A gente quer saber como quem convive com ' + D.nome + ' enxerga o trabalho ' + D.pron + ' — e a sua visão ajuda muito.'),
+    h('ul', {class:'guia'}, h('li', {}, 'Em cada pergunta, toque na opção que MAIS combina com ' + D.nome + '.'), h('li', {}, 'Depois, na que MENOS combina.'), h('li', {}, 'Não tem certo nem errado — vale a primeira impressão.')),
+    h('div', {class:'acoes'}, h('button', {class:'btn', on:{click:() => ir({tela:'quem'})}}, 'Começar'))];
+  const temProgresso = Object.keys(E.escala).length > 0;
+  return [
+    h('p', {class:'rot'}, 'Oi, ' + D.nome),
+    h('h1', {}, 'Algumas frases sobre o seu jeito de trabalhar.'),
+    h('p', {}, 'São ' + NI + ' frases e ' + NR + ' escolhas rápidas — uns 15 minutos. Antes delas, três telas curtas explicando o que a gente está fazendo: o que é a sua marca, por que essas perguntas e como elas funcionam.'),
+    temProgresso
+      ? h('div', {class:'acoes'},
+          h('button', {class:'btn', on:{click:() => ir({tela:'escala', i: Math.min(E.i || 0, NI - 1)})}}, 'Continuar de onde parei'),
+          h('button', {class:'voltar', on:{click:() => ir({tela:'marca'})}}, 'Rever a explicação'))
+      : h('div', {class:'acoes'}, h('button', {class:'btn', on:{click:() => ir({tela:'marca'})}}, 'Começar pela explicação'))];
+}
+
+function marca(){
+  progresso(0);
+  return [
+    h('p', {class:'rot'}, 'Antes de começar · 1 de 3'),
+    h('h1', {}, 'A sua marca é o jeito como as pessoas reconhecem você.'),
+    h('p', {}, 'Não é só o logo ou as cores. É o que a pessoa sente quando conversa com você, lê um post seu ou entra no seu escritório. Quando tudo isso conta a mesma história, a cliente confia antes mesmo da primeira reunião.'),
+    h('p', {}, 'Uma marca pessoal aparece em quatro lugares:'),
+    h('ul', {class:'guia'},
+      h('li', {}, h('b', {}, 'Como você fala'), ' — as palavras, o tom, o jeito de explicar.'),
+      h('li', {}, h('b', {}, 'O que te move'), ' — o motivo de fazer esse trabalho e não outro.'),
+      h('li', {}, h('b', {}, 'Como você age'), ' — o que você faz no atendimento, principalmente quando ninguém está olhando.'),
+      h('li', {}, h('b', {}, 'Como você aparece'), ' — a imagem, o espaço, a roupa, as fotos.')),
+    h('p', {}, 'As frases que vêm a seguir passam por esses quatro lugares, misturadas de propósito.'),
+    h('div', {class:'acoes'}, h('button', {class:'btn', on:{click:() => ir({tela:'escolhe'})}}, 'Continuar'), h('button', {class:'voltar', on:{click:() => ir({tela:'inicio'})}}, 'Voltar'))];
+}
+
+function escolhe(){
+  progresso(0);
+  return [
+    h('p', {class:'rot'}, 'Antes de começar · 2 de 3'),
+    h('h1', {}, 'Todo mundo tem vários jeitos. A marca escolhe qual vem na frente.'),
+    h('p', {}, 'Você é várias coisas ao mesmo tempo — e isso é bom. Mas quando o site diz uma coisa, o Instagram outra e a palestra uma terceira, quem está chegando não sabe com quem está falando.'),
+    h('p', {}, 'Essas perguntas servem pra descobrir o que vem primeiro em você, o que vem em segundo e o que aparece só em alguns lugares. É isso que decide, depois, o que o site fala primeiro, que tipo de foto faz sentido, como você abre uma palestra e como é o primeiro atendimento.'),
+    h('div', {class:'aviso'}, 'Não é teste de personalidade e não tem resposta certa. Não existe marca melhor ou pior — existe marca coerente, que diz a mesma coisa em todo lugar.'),
+    h('div', {class:'acoes'}, h('button', {class:'btn', on:{click:() => ir({tela:'como'})}}, 'Continuar'), h('button', {class:'voltar', on:{click:() => ir({tela:'marca'})}}, 'Voltar'))];
+}
+
+function como(){
+  progresso(0);
+  return [
+    h('p', {class:'rot'}, 'Antes de começar · 3 de 3'),
+    h('h1', {}, 'Como vão ser as perguntas.'),
+    h('div', {class:'parte'},
+      h('p', {class:'rot'}, 'Parte 1 · ' + NI + ' frases'),
+      h('p', {}, 'Uma frase por vez, sobre o seu jeito de trabalhar. Você diz o quanto ela é verdade pra você, de 1 a 5. Tocou, a próxima aparece sozinha.'),
+      h('ol', {class:'mini'}, ESCALA.map(([v, t]) => h('li', {}, h('span', {class:'n'}, v), t)))),
+    h('div', {class:'parte'},
+      h('p', {class:'rot'}, 'Parte 2 · ' + NR + ' escolhas'),
+      h('p', {}, 'Em cada rodada aparecem ' + D.n + ' frases. Você toca primeiro na que MAIS é você e depois na que MENOS é você. É aqui que aparece o que vem primeiro — por isso vale escolher mesmo quando todas parecem um pouco você.')),
+    h('div', {class:'parte'},
+      h('p', {class:'rot'}, 'Depois'),
+      h('p', {}, 'A gente cruza as suas respostas com as nossas conversas e com o olhar de três pessoas que te conhecem, e traz a leitura no próximo encontro pra você validar. Nada é publicado.')),
+    h('ul', {class:'guia'},
+      h('li', {}, 'Pense no seu trabalho de hoje, não no ideal.'),
+      h('li', {}, 'Vale a primeira resposta que vier.'),
+      h('li', {}, 'Na dúvida, marque 3.'),
+      h('li', {}, 'Pode pausar: o que você responder fica guardado neste aparelho.')),
+    h('div', {class:'acoes'}, h('button', {class:'btn', on:{click:() => ir({tela:'escala', i:0})}}, 'Começar as frases'), h('button', {class:'voltar', on:{click:() => ir({tela:'escolhe'})}}, 'Voltar'))];
+}
+
+function escala(){
+  const i = E.i, atual = E.escala[i + 1];
+  progresso(i);
+  const escolher = (v) => { if (travado) return; travado = true; E.escala[i + 1] = v; gravar(); render(); setTimeout(() => { travado = false; ir(i + 1 < NI ? {i: i + 1} : {tela:'transicao', i:0}); }, 220); };
+  return [
+    h('p', {class:'rot'}, 'Parte 1 de 2 · frase ' + (i + 1) + ' de ' + NI),
+    h('h2', {}, D.itens[i]),
+    h('ul', {class:'escala'}, ESCALA.map(([v, t]) => h('li', {}, h('button', {class:'op', 'aria-pressed': String(atual === v), on:{click:() => escolher(v)}}, h('span', {class:'n'}, v), t)))),
+    h('div', {class:'acoes'}, h('button', {class:'voltar', on:{click:() => i > 0 ? ir({i: i - 1}) : ir({tela:'como'})}}, 'Voltar'))];
+}
+
+function transicao(){
+  progresso(NI);
+  return [
+    h('p', {class:'rot'}, 'Parte 2 de 2'),
+    h('h1', {}, 'Agora é escolher.'),
+    h('p', {}, 'Em cada rodada aparecem ' + D.n + ' frases. Toque primeiro na que MAIS é você; depois, na que MENOS é você.'),
+    h('div', {class:'aviso'}, 'Mesmo que todas pareçam um pouco você, escolha uma. É isso que mostra o que vem primeiro.'),
+    h('div', {class:'acoes'}, h('button', {class:'btn', on:{click:() => ir({tela:'escolha', i:0, passo:'mais'})}}, 'Continuar'), h('button', {class:'voltar', on:{click:() => ir({tela:'escala', i: NI - 1})}}, 'Voltar'))];
+}
+
+function escolha(){
+  const fora = MODO === 'fora';
+  const lista = fora ? D.fora : D.rodadas, resp = fora ? E.fora : E.escolha, n = lista.length;
+  const i = E.i, r = lista[i], atual = resp[i] || {};
+  progresso((fora ? 0 : NI) + i);
+  const marcar = (L) => {
+    if (E.passo === 'mais') { resp[i] = {mais: L, menos: atual.menos === L ? null : atual.menos}; ir({passo:'menos'}); }
+    else {
+      if (L === atual.mais || travado) return;
+      travado = true;
+      resp[i] = {mais: atual.mais, menos: L}; gravar(); render();
+      setTimeout(() => { travado = false; ir(i + 1 < n ? {i: i + 1, passo:'mais'} : {tela:'fim'}); }, 220);
+    }
+  };
+  const voltar = () => {
+    if (E.passo === 'menos') return ir({passo:'mais'});
+    if (i > 0) return ir({i: i - 1, passo:'menos'});
+    return ir(fora ? {tela:'quem'} : {tela:'transicao'});
+  };
+  const quem = fora ? D.nome : 'você';
+  return [
+    h('p', {class:'rot'}, (fora ? 'Pergunta ' : 'Rodada ') + (i + 1) + ' de ' + n),
+    h('h2', {}, r.pergunta),
+    h('div', {class:'passo'}, h('i'), E.passo === 'mais' ? 'Qual é MAIS ' + (fora ? 'a cara de ' + quem : quem) + '?' : 'E qual é MENOS ' + (fora ? 'a cara de ' + quem : quem) + '?'),
+    h('ul', {class:'escala'}, r.opcoes.map((t, j) => {
+      const L = LETRAS[j];
+      const eMais = atual.mais === L, eMenos = atual.menos === L;
+      const cls = 'op' + (E.passo === 'menos' && eMais ? ' mais-marcada' : '');
+      const pressed = E.passo === 'mais' ? eMais : eMenos;
+      return h('li', {}, h('button', {class: cls, 'aria-pressed': String(pressed), 'aria-disabled': String(E.passo === 'menos' && eMais), on:{click:() => marcar(L)}},
+        h('span', {class:'n'}, L), t, E.passo === 'menos' && eMais ? h('span', {class:'tag'}, 'mais') : null));
+    })),
+    h('div', {class:'acoes'}, h('button', {class:'voltar', on:{click: voltar}}, 'Voltar'))];
+}
+
+function quemE(){
+  progresso(0);
+  const opc = ['Cliente', 'Parceira ou parceiro de trabalho', 'Amiga, amigo ou família', 'Outra relação'];
+  const outra = E.relacao === 'Outra relação';
+  const falta = () => !E.relacao || (E.relacao === 'Outra relação' && !E.relacaoOutra.trim());
+  const btn = h('button', {class:'btn', disabled: falta(), on:{click:() => ir({tela:'escolha', i:0, passo:'mais'})}}, 'Continuar');
+  return [
+    h('p', {class:'rot'}, 'Antes de começar'),
+    h('h2', {}, 'Só pra gente saber de onde vem o seu olhar.'),
+    h('label', {class:'campo'}, 'Seu nome (opcional)', h('input', {type:'text', maxlength:'80', value: E.respondente, on:{input:(ev) => { E.respondente = ev.target.value; gravar(); }}})),
+    h('p', {class:'rot', style:'margin-top:22px'}, 'Você conhece ' + D.nome + ' como'),
+    h('ul', {class:'escala'}, opc.map((t, j) => h('li', {}, h('button', {class:'op', 'aria-pressed': String(E.relacao === t), on:{click:() => ir({relacao: t})}}, h('span', {class:'n'}, LETRAS[j]), t)))),
+    h('p', {class:'miudo'}, 'É mais de uma coisa ao mesmo tempo — cliente que também é amiga, por exemplo? Marque "Outra relação" e conte as duas ali.'),
+    outra ? h('label', {class:'campo'}, 'Qual relação?', h('input', {type:'text', maxlength:'80', placeholder: 'Ex.: cliente e amiga de infância', value: E.relacaoOutra, on:{input:(ev) => { E.relacaoOutra = ev.target.value; gravar(); btn.disabled = falta(); }}})) : null,
+    h('div', {class:'acoes'}, btn, h('button', {class:'voltar', on:{click:() => ir({tela:'inicio'})}}, 'Voltar'))];
+}
+
+function faltando(){
+  if (MODO === 'fora') return [...Array(NF).keys()].filter(i => !(E.fora[i] && E.fora[i].mais && E.fora[i].menos)).map(i => 'pergunta ' + (i + 1));
+  const f = [];
+  for (let i = 1; i <= NI; i++) if (!E.escala[i]) f.push('frase ' + i);
+  for (let i = 0; i < NR; i++) if (!(E.escolha[i] && E.escolha[i].mais && E.escolha[i].menos)) f.push('rodada ' + (i + 1));
+  return f;
+}
+
+function fim(){
+  progresso(TOTAL);
+  const falta = faltando();
+  const status = h('div', {class:'miudo', role:'status'});
+  const btn = h('button', {class:'btn', disabled: falta.length > 0, on:{click:() => enviar(btn, status)}}, 'Enviar respostas');
+  const voltar = MODO === 'fora' ? {tela:'escolha', i: NF - 1, passo:'menos'} : {tela:'escolha', i: NR - 1, passo:'menos'};
+  return [
+    h('p', {class:'rot'}, 'Pronto'),
+    h('h1', {}, MODO === 'fora' ? 'Obrigado por olhar com calma.' : 'Falta só enviar.'),
+    falta.length ? h('div', {class:'aviso'}, 'Ficou sem resposta: ' + falta.slice(0, 6).join(', ') + (falta.length > 6 ? '…' : '') + '. Volte e complete antes de enviar.') : null,
+    h('label', {class:'campo'}, MODO === 'fora' ? 'Quer acrescentar alguma coisa? (opcional)' : 'Quer comentar alguma frase? (opcional)',
+      h('textarea', {maxlength:'1800', placeholder: MODO === 'fora' ? 'Uma palavra que resume ' + D.nome + ', por exemplo.' : 'Ex.: na 12, depende muito do cliente.', on:{input:(ev) => { E.comentario = ev.target.value; gravar(); }}}, E.comentario)),
+    h('div', {class:'acoes'}, btn, h('button', {class:'voltar', on:{click:() => ir(voltar)}}, 'Voltar')),
+    status,
+    h('p', {class:'miudo'}, MODO === 'fora' ? 'As respostas vão direto pra equipe que está fazendo esse trabalho com ' + D.nome + '. Não são publicadas.' : 'As respostas vão direto pra equipe que está fazendo esse trabalho com você. Não são publicadas.')];
+}
+
+async function enviar(btn, status){
+  btn.disabled = true; status.textContent = 'Enviando…';
+  const respostas = MODO === 'cliente' ? {v: D.versao, escala: E.escala, escolha: E.escolha} : {v: D.versao, fora: E.fora};
+  try {
+    const r = await fetch(D.supabase.url + '/rest/v1/rpc/enviar_formulario', {
+      method: 'POST',
+      headers: {'apikey': D.supabase.key, 'Content-Type': 'application/json'},
+      body: JSON.stringify({p_token: TOKEN, p_respostas: respostas,
+        p_respondente: MODO === 'cliente' ? D.nome : (E.respondente || null),
+        p_relacao: MODO === 'fora' ? ((E.relacao === 'Outra relação' ? E.relacaoOutra.trim() : E.relacao) || null) : null,
+        p_comentario: E.comentario || null})
+    });
+    if (!r.ok) { const j = await r.json().catch(() => ({})); throw new Error(j.message || ('erro ' + r.status)); }
+    E = novo(); E.tela = 'enviado'; gravar(); render();   // recarregar mostra "recebido", não recomeça
+  } catch (err) {
+    status.textContent = 'Não consegui enviar (' + err.message + '). Suas respostas continuam guardadas neste aparelho — tente de novo em instantes.';
+    btn.disabled = false;
+  }
+}
+
+function enviado(){
+  progresso(TOTAL);
+  return [
+    h('p', {class:'rot'}, 'Recebido'),
+    h('h1', {}, MODO === 'fora' ? 'Obrigado!' : 'Obrigado, ' + D.nome + '.'),
+    h('p', {}, MODO === 'fora' ? 'Sua resposta chegou. Pode fechar esta página.' : 'Suas respostas chegaram. A gente cruza com as nossas conversas e traz a leitura no próximo encontro.')];
+}
+
+function render(){
+  const telas = {inicio, marca, escolhe, como, escala, transicao, escolha, quem: quemE, fim, enviado};
+  if (!TOKEN && E.tela !== 'inicio') E.tela = 'inicio';
+  app.replaceChildren(...(telas[E.tela] || inicio)().filter(Boolean));
+}
+
+document.addEventListener('keydown', (ev) => {
+  if (ev.target.closest('input,textarea')) return;
+  const k = ev.key.toUpperCase();
+  const botoes = [...app.querySelectorAll('.escala .op')];
+  const idx = E.tela === 'escala' ? '12345'.indexOf(k) : LETRAS.indexOf(k);
+  if ((E.tela === 'escala' || E.tela === 'escolha') && idx >= 0 && botoes[idx]) botoes[idx].click();
+});
+render();
+</script>
+</body>
+</html>
