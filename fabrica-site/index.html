@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Fábrica de Barbeiros</title>
+<meta name="description" content="Curso de barbeiro na Penha, Rio de Janeiro. Aula prática com modelo de verdade, do zero ao certificado.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+<meta name="theme-color" content="#0B0B0C">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://pedrohmsr94.github.io/carioca-apresentacoes/fabrica-site/">
+<meta property="og:title" content="Fábrica de Barbeiros · Do zero ao degradê">
+<meta property="og:description" content="Curso de barbeiro na Penha, Rio de Janeiro. Aula prática com modelo de verdade, do zero ao certificado.">
+<meta property="og:image" content="https://pedrohmsr94.github.io/carioca-apresentacoes/fabrica-site/assets/capa.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/icone-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/icone-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,400..700&family=Big+Shoulders+Display:wght@600;700;800;900&family=Pinyon+Script&display=swap">
+<link rel="stylesheet" href="estilo.css?v=ec8fc085">
+</head>
+<body>
+<header class="topo" id="topo">
+  <a class="marca" href="#inicio" aria-label="Fábrica de Barbeiros, início">
+    <img src="assets/fotos/logo.webp" alt="" width="40" height="40">
+    <span>Fábrica de Barbeiros</span>
+  </a>
+  <nav class="menu" aria-label="Seções">
+    <a href="#cursos">Cursos</a>
+    <a href="#certificado">Certificado</a>
+    <a href="#jullio">Quem ensina</a>
+    <a href="#loja">Loja</a>
+    <a href="#chegar">Como chegar</a>
+  </nav>
+  <button class="botao botao--vermelho botao--curto" type="button" data-conversa>Falar com a Fábrica</button>
+</header>
+
+<main id="inicio">
+
+<!-- 0,5 mm · o filme: da rua da Penha até o degradê pronto -->
+<section class="filme" id="filme" aria-label="Do lado de fora até o degradê" data-base="assets/filme/" data-quadros="144">
+  <div class="filme__palco">
+    <img class="filme__poster" src="assets/filme/d/0001.webp" alt="" fetchpriority="high">
+    <canvas class="filme__tela" aria-hidden="true"></canvas>
+    <div class="filme__veu" aria-hidden="true"></div>
+
+    <div class="filme__capitulos">
+      <div class="capitulo is-ativo" data-de="0" data-ate="0.24">
+        <h1 class="titulo-filme">Do zero<br>ao degradê.</h1>
+        <p class="filme__texto">Curso de barbeiro na Penha. Aula prática com modelo de verdade, do primeiro dia ao certificado.</p>
+        <div class="filme__acoes">
+          <button class="botao botao--vermelho" type="button" data-conversa>Falar com a Fábrica</button>
+          <a class="botao botao--vazado" href="#cursos">Ver os cursos</a>
+        </div>
+        <p class="filme__prova"><span class="estrelas" aria-hidden="true"></span><strong>5,0</strong> no Google · 254 avaliações · 453 barbeiros formados</p>
+      </div>
+      <div class="capitulo" data-de="0.24" data-ate="0.5">
+        <h2 class="titulo-capitulo">Lá em cima, é mão na máquina.</h2>
+        <p class="filme__texto">Sobe a escada da Brás de Pina, 714. Turma de manhã, de tarde e de noite, numa sala nova, com modelo de verdade na cadeira.</p>
+      </div>
+      <div class="capitulo" data-de="0.5" data-ate="0.76">
+        <h2 class="titulo-capitulo">A primeira passada é tua.</h2>
+        <p class="filme__texto">Com o instrutor do lado, corrigindo o movimento. "Três aulas e eu já estava cortando sozinho", escreveu um aluno em setembro de 2025.</p>
+      </div>
+      <div class="capitulo" data-de="0.76" data-ate="1.01">
+        <h2 class="titulo-capitulo">Quatro meses depois, o degradê é teu.</h2>
+        <p class="filme__texto">E o certificado da Fábrica também.</p>
+        <div class="filme__acoes"><button class="botao botao--vermelho" type="button" data-conversa>Falar com a Fábrica</button></div>
+      </div>
+    </div>
+
+    <ol class="regua" aria-hidden="true">
+      <li data-p="0"><b>0</b><span>0,5 mm</span></li>
+      <li data-p="0.25"><b>1</b><span>3 mm</span></li>
+      <li data-p="0.5"><b>2</b><span>6 mm</span></li>
+      <li data-p="0.75"><b>3</b><span>9 mm</span></li>
+      <li data-p="1"><b>4</b><span>12 mm</span></li>
+    </ol>
+    <span class="filme__rolar" aria-hidden="true">Role</span>
+  </div>
+  <!-- sem movimento ou sem canvas: as quatro cenas paradas -->
+  <div class="filme__estatico">
+    <img src="assets/filme/d/0001.webp" alt="Rua da Penha, a escada da sobreloja" loading="lazy">
+    <img src="assets/filme/d/0060.webp" alt="A sala de aula da Fábrica" loading="lazy">
+    <img src="assets/filme/d/0100.webp" alt="A máquina na nuca do modelo" loading="lazy">
+    <img src="assets/filme/d/0144.webp" alt="O degradê pronto" loading="lazy">
+  </div>
+</section>
+
+<div class="faixa faixa--1" aria-hidden="true"><span>pente 1 · 3 mm</span></div>
+
+<!-- 3 mm · gente de verdade -->
+<section class="real" id="real" aria-labelledby="real-titulo">
+  <div class="real__topo">
+    <h2 id="real-titulo" class="titulo-secao">Sem manequim.<br>Gente de verdade na cadeira.</h2>
+    <p class="texto-claro">Tudo aqui foi gravado na Fábrica, pelos alunos e instrutores, e está no Instagram da escola.</p>
+  </div>
+  <ul class="tira">
+    <li class="tira__item">
+      <video muted loop playsinline preload="none" poster="assets/real/turma-em-acao.jpg" data-video="assets/real/turma-em-acao.mp4"></video>
+      <p><b>A turma em ação</b><span>20/08/2026</span></p>
+    </li>
+    <li class="tira__item tira__item--alto">
+      <video muted loop playsinline preload="none" poster="assets/real/primeira-aula.jpg" data-video="assets/real/primeira-aula.mp4"></video>
+      <p><b>Primeira aula do Ivan</b><span>14/08/2026</span></p>
+    </li>
+    <li class="tira__item">
+      <video muted loop playsinline preload="none" poster="assets/real/degrade-aluno.jpg" data-video="assets/real/degrade-aluno.mp4"></video>
+      <p><b>Degradê feito por aluno</b><span>24/03/2025</span></p>
+    </li>
+    <li class="tira__item tira__item--alto">
+      <video muted loop playsinline preload="none" poster="assets/real/tesoura-turma.jpg" data-video="assets/real/tesoura-turma.mp4"></video>
+      <p><b>Técnica na tesoura</b><span>07/10/2025</span></p>
+    </li>
+    <li class="tira__item">
+      <video muted loop playsinline preload="none" poster="assets/real/fade-close.jpg" data-video="assets/real/fade-close.mp4"></video>
+      <p><b>Do fade à cor</b><span>29/06/2024</span></p>
+    </li>
+    <li class="tira__item tira__item--alto">
+      <video muted loop playsinline preload="none" poster="assets/real/formatura.jpg" data-video="assets/real/formatura.mp4"></video>
+      <p><b>Formatura</b><span>21/07/2025</span></p>
+    </li>
+  </ul>
+</section>
+
+<div class="faixa faixa--2" aria-hidden="true"><span>pente 2 · 6 mm</span></div>
+
+<!-- 6 mm · cursos, sem preço -->
+<section class="cursos" id="cursos" aria-labelledby="cursos-titulo">
+  <h2 id="cursos-titulo" class="titulo-secao">Escolhe por onde começar.</h2>
+  <p class="texto-claro cursos__intro">Preço e turma a gente passa na conversa, com as condições do mês e parcelamento.</p>
+
+  <div class="tabela">
+    <article class="linha" aria-labelledby="c1">
+      <div class="linha__pente" aria-hidden="true"><b>0</b><span>do zero</span></div>
+      <div class="linha__corpo">
+        <h3 id="c1">Barbeiro do zero</h3>
+        <p>Pra quem nunca pegou numa máquina. Formação completa, do primeiro corte ao acabamento na régua.</p>
+        <ul class="linha__fatos">
+          <li>4 meses</li><li>Turmas de manhã, de tarde e de noite</li><li>Modelo de verdade desde a primeira semana</li><li>Certificado da Fábrica</li>
+        </ul>
+        <p class="linha__aprende">Máquina, tesoura e navalha · degradê · barba · acabamento · atendimento e primeiros clientes</p>
+      </div>
+      <button class="botao botao--vermelho linha__acao" type="button" data-conversa="Quero saber do curso Barbeiro do zero">Perguntar sobre esse curso</button>
+    </article>
+
+    <article class="linha" aria-labelledby="c2">
+      <div class="linha__pente" aria-hidden="true"><b>2</b><span>já corta</span></div>
+      <div class="linha__corpo">
+        <h3 id="c2">Aperfeiçoamento</h3>
+        <p>Pra quem já corta e quer subir de nível. O Perfect Work, com o Jullio e os instrutores da casa.</p>
+        <ul class="linha__fatos">
+          <li>Tesoura</li><li>Degradê em 3 tons</li><li>Pigmentação</li><li>Platinado</li><li>Colorimetria</li>
+        </ul>
+        <p class="linha__aprende">Quem já tem prática e quer certificado sai daqui com os dois</p>
+      </div>
+      <button class="botao botao--vermelho linha__acao" type="button" data-conversa="Já corto e quero fazer o Aperfeiçoamento">Perguntar sobre esse curso</button>
+    </article>
+
+    <article class="linha" aria-labelledby="c3">
+      <div class="linha__pente" aria-hidden="true"><b>4</b><span>um dia</span></div>
+      <div class="linha__corpo">
+        <h3 id="c3">Workshops e imersões</h3>
+        <p>Um dia inteiro numa técnica só. Já teve Tesoura do Zero, Imersão do Fade, colorimetria e print hair.</p>
+        <ul class="linha__fatos">
+          <li>Prática do começo ao fim</li><li>Coffee break</li><li>Certificado</li><li>Networking</li>
+        </ul>
+        <p class="linha__aprende">As datas saem no Instagram e chegam primeiro pra quem conversa com a gente</p>
+      </div>
+      <button class="botao botao--vermelho linha__acao" type="button" data-conversa="Quando é o próximo workshop?">Perguntar sobre esse curso</button>
+    </article>
+  </div>
+</section>
+
+<div class="faixa faixa--3" aria-hidden="true"><span>pente 3 · 9 mm</span></div>
+
+<!-- 9 mm · o certificado com o nome de quem visita -->
+<section class="certificado" id="certificado" aria-labelledby="cert-titulo">
+  <div class="certificado__texto">
+    <h2 id="cert-titulo" class="titulo-secao titulo-secao--tinta">Escreve teu nome.<br>É esse papel que você leva pra casa.</h2>
+    <p>A Fábrica já formou 453 barbeiros. O próximo certificado sai com o número 454.</p>
+    <label class="campo" for="nome-aluno">
+      <span>Seu nome</span>
+      <input id="nome-aluno" type="text" maxlength="34" autocomplete="given-name" placeholder="Seu nome aqui">
+    </label>
+    <button class="botao botao--vermelho" type="button" data-conversa="Quero fazer o curso Barbeiro do zero">Quero esse certificado</button>
+    <figure class="certificado__foto">
+      <img src="assets/fotos/formando-certificado.webp" alt="Formando de beca segurando o certificado ao lado do Jullio" loading="lazy" width="880" height="1100">
+      <figcaption>Formatura de maio de 2023. Esse é de verdade.</figcaption>
+    </figure>
+  </div>
+
+  <div class="papel" aria-label="Exemplo de certificado com o seu nome">
+    <canvas class="papel__guilhoche" aria-hidden="true"></canvas>
+    <div class="papel__miolo">
+      <p class="papel__numero">Nº 0454</p>
+      <p class="papel__titulo">Certificado</p>
+      <p class="papel__sub">de formação de barbeiro</p>
+      <p class="papel__certificamos">Certificamos que</p>
+      <p class="papel__nome" data-nome>Seu nome aqui</p>
+      <p class="papel__corpo">concluiu a Formação de Barbeiro da Fábrica de Barbeiros, com aulas práticas em modelo real, na Penha, Rio de Janeiro.</p>
+      <ul class="papel__carimbos">
+        <li>Mão na máquina</li><li>Primeiro degradê</li><li>Navalha e acabamento</li><li>Atendimento</li>
+      </ul>
+      <div class="papel__rodape">
+        <img class="papel__selo" src="assets/fotos/logo.webp" alt="" width="84" height="84">
+        <div class="papel__assina"><span class="assinatura">Jullio Cezar</span><span class="papel__cargo">fundador e diretor</span></div>
+      </div>
+    </div>
+    <p class="papel__nota">Certificado ilustrativo de curso livre, emitido pela Fábrica de Barbeiros.</p>
+  </div>
+</section>
+
+<!-- 12 mm · quem ensina -->
+<section class="jullio" id="jullio" aria-labelledby="jullio-titulo">
+  <div class="jullio__midia">
+    <img class="jullio__retrato" src="assets/fotos/jullio-retrato.webp" alt="Jullio Cezar, fundador da Fábrica de Barbeiros, sorrindo com a tesoura na mão" loading="lazy" width="825" height="1100">
+    <video class="jullio__video" muted loop playsinline preload="none" poster="assets/real/jullio-sala.jpg" data-video="assets/real/jullio-sala.mp4" aria-label="O Jullio na sala nova da Fábrica"></video>
+  </div>
+  <div class="jullio__texto">
+    <h2 id="jullio-titulo" class="titulo-secao titulo-secao--tinta">Quem te ensina começou do lado de fora também.</h2>
+    <p class="jullio__lide">Jullio Cezar é cria do Dourado, em Brás de Pina. Começou a cortar em 2003, com a máquina que a mãe, Dona Denize, comprou pra ele ter uma profissão.</p>
+    <ol class="linha-tempo">
+      <li><b>2003</b><span>A primeira máquina, em casa, cortando amigo e parente.</span></li>
+      <li><b>Jotapê</b><span>A barbearia em Brás de Pina que fez dele "o queridinho dos famosos", nas palavras do Meia Hora.</span></li>
+      <li><b>Fim de 2016</b><span>A Fábrica nasce dentro da Jotapê, com dois alunos. Os dois viraram instrutores.</span></li>
+      <li><b>2021</b><span>Meia Hora: "A favela venceu". Turma nº 40 formada.</span></li>
+      <li><b>Hoje</b><span>453 formados, sala nova, e ação social no Sereno, no Quitungo, no Antares e no Leme.</span></li>
+    </ol>
+    <div class="jullio__jornal">
+      <blockquote class="citacao">
+        <p>O grande desafio é se manter em alto nível.</p>
+        <footer>Jullio, ao Meia Hora, setembro de 2021</footer>
+      </blockquote>
+      <figure class="recorte">
+        <img src="assets/fotos/meia-hora.webp" alt="Recorte do jornal Meia Hora: A favela venceu, com o Jullio e alunos formados" loading="lazy" width="1080" height="1080">
+        <figcaption>Meia Hora, 05/09/2021</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- a loja: outra sala, de couro -->
+<section class="loja" id="loja" aria-labelledby="loja-titulo">
+  <div class="loja__abre">
+    <img class="loja__logo" src="assets/fotos/loja-logo.webp" alt="Fábrica Barber Store" loading="lazy" width="1100" height="1100">
+    <div>
+      <h2 id="loja-titulo" class="titulo-secao">Fábrica Barber Store</h2>
+      <p class="texto-claro">A loja oficial da Fábrica, dentro da escola. Aluno sai com o kit no primeiro dia, e quem já é barbeiro encontra a máquina certa. Envio pra todo o Brasil.</p>
+    </div>
+  </div>
+
+  <div class="vitrine" id="vitrine" data-base="assets/maquina/" data-quadros="48">
+    <div class="vitrine__palco">
+      <canvas class="vitrine__tela" aria-hidden="true"></canvas>
+      <img class="vitrine__poster" src="assets/maquina/0001.webp" alt="Wahl Magic Clip Gold na base de carga" loading="lazy">
+      <div class="vitrine__ficha">
+        <h3>Wahl Magic Clip Gold</h3>
+        <p class="vitrine__apelido">O ouro do fade.</p>
+        <ul class="vitrine__specs">
+          <li data-de="0.1">Lâmina Stagger-Tooth com tecnologia Crunch Blade</li>
+          <li data-de="0.3">Motor rotativo de alta performance</li>
+          <li data-de="0.5">Até 100 minutos de bateria</li>
+          <li data-de="0.65">8 pentes premium</li>
+          <li data-de="0.8">Com ou sem fio</li>
+        </ul>
+        <button class="botao botao--ouro" type="button" data-conversa="Tem a Wahl Magic Clip Gold disponível?">Pedir pela conversa</button>
+      </div>
+    </div>
+  </div>
+
+  <ul class="prateleira" aria-label="Outras máquinas e kits">
+    <li class="produto">
+      <img src="assets/fotos/prod-senior.webp" alt="Wahl Senior 2.0 na base" loading="lazy">
+      <h3>Wahl Senior 2.0</h3>
+      <p>Motor brushless de 8.000 RPM, Adaptive Speed Control e até 150 minutos de bateria.</p>
+      <button class="link-acao" type="button" data-conversa="Tem a Wahl Senior 2.0?">Pedir pela conversa</button>
+    </li>
+    <li class="produto">
+      <img src="assets/fotos/prod-x1.webp" alt="Wmark NG X1 vermelha na base" loading="lazy">
+      <h3>Wmark NG X1</h3>
+      <p>Motor magnético de até 10.000 RPM, lâmina fade em DLC e cerca de 150 minutos de uso.</p>
+      <button class="link-acao" type="button" data-conversa="Tem a Wmark NG X1?">Pedir pela conversa</button>
+    </li>
+    <li class="produto">
+      <img src="assets/fotos/prod-jrl.webp" alt="Máquina JRL laranja do kit Diamante" loading="lazy">
+      <h3>Kit JRL Diamante laranja</h3>
+      <p>Acabamento premium e aquele visual que chama atenção na bancada.</p>
+      <button class="link-acao" type="button" data-conversa="Quero saber do kit JRL Diamante laranja">Pedir pela conversa</button>
+    </li>
+    <li class="produto">
+      <img src="assets/fotos/prod-madeshow.webp" alt="Madeshow M10+ na mão" loading="lazy">
+      <h3>Madeshow M10+</h3>
+      <p>Até 7.000 RPM, lâmina em aço inox e lâmina móvel de cerâmica com titânio.</p>
+      <button class="link-acao" type="button" data-conversa="Tem a Madeshow M10+?">Pedir pela conversa</button>
+    </li>
+    <li class="produto produto--kit">
+      <img src="assets/fotos/loja-aluno-kit.webp" alt="Aluno na loja da Fábrica com o kit completo" loading="lazy">
+      <h3>Kit Master Iniciante</h3>
+      <p>Madeshow M10 e Kemei 2299, tesouras, navalhete, capa, gola, toalha, espanador e o resto pra sair do zero.</p>
+      <button class="link-acao" type="button" data-conversa="Quero o Kit Master Iniciante">Pedir pela conversa</button>
+    </li>
+  </ul>
+</section>
+
+<div class="faixa faixa--4" aria-hidden="true"><span>pente 4 · 12 mm</span></div>
+
+<!-- quem já passou por aqui -->
+<section class="prova" id="prova" aria-labelledby="prova-titulo">
+  <div class="prova__nota">
+    <p class="prova__numero">5,0</p>
+    <span class="estrelas estrelas--grande" aria-hidden="true"></span>
+    <h2 id="prova-titulo" class="titulo-secao titulo-secao--tinta">254 avaliações no Google.</h2>
+    <p>Quase todas de aluno, no dia da formatura.</p>
+  </div>
+  <ul class="vozes">
+    <li><q>Três aulas e eu já estava cortando sozinho, curso top</q><span>aluno · set/2025</span></li>
+    <li><q>Sou aluna, e vim de Belford Roxo e não me arrependi de ter vindo mesmo com a distância.</q><span>aluna · out/2026</span></li>
+    <li><q>Melhor da região, a atenção dos professores e a quantidade de modelos se torna o diferencial</q><span>aluno · jul/2025</span></li>
+    <li><q>Muito bom o curso, do básico ao avançado. Métodos de corte com máquina e tesoura, uso de navalha.</q><span>aluno · ago/2025</span></li>
+    <li><q>Parabéns pelo cuidado com meu filho que vocês tiveram.</q><span>mãe de aluno · fev/2026</span></li>
+  </ul>
+  <div class="prova__fotos">
+    <img src="assets/fotos/aluna.webp" alt="Aluna da Fábrica ao lado do corte que fez" loading="lazy">
+    <img src="assets/fotos/corte-2.webp" alt="Degradê baixo com a capa da Fábrica" loading="lazy">
+    <img src="assets/fotos/corte-3.webp" alt="Print hair feito em aula" loading="lazy">
+    <img src="assets/fotos/formatura-turma.webp" alt="Turma formada de beca com o Jullio" loading="lazy">
+  </div>
+</section>
+
+<!-- como chegar -->
+<section class="chegar" id="chegar" aria-labelledby="chegar-titulo">
+  <div class="chegar__texto">
+    <h2 id="chegar-titulo" class="titulo-secao titulo-secao--tinta">Fica em frente ao BRT Guaporé.</h2>
+    <address>
+      Av. Brás de Pina, 714, sobreloja<br>
+      Penha Circular, Rio de Janeiro
+    </address>
+    <p>Segunda a sábado, das 8h às 20h. Perto do Hospital Getúlio Vargas.</p>
+    <div class="chegar__acoes">
+      <button class="botao botao--vermelho" type="button" data-conversa="Quero marcar uma visita">Marcar uma visita</button>
+      <a class="botao botao--tinta" href="https://www.google.com/maps/search/?api=1&amp;query=Av.+Br%C3%A1s+de+Pina%2C+714%2C+Penha+Circular%2C+Rio+de+Janeiro" target="_blank" rel="noopener">Abrir no mapa</a>
+    </div>
+  </div>
+  <svg class="mapa" viewBox="0 0 640 400" role="img" aria-label="Esquema: a Fábrica fica no número 714 da Avenida Brás de Pina, em frente à estação Guaporé do BRT">
+    <rect x="0" y="0" width="640" height="400" fill="#E6E4DD"/>
+    <path d="M-10 230 L650 196" stroke="#FFFFFF" stroke-width="42" fill="none"/>
+    <path d="M-10 230 L650 196" stroke="#C9C6BD" stroke-width="1" stroke-dasharray="10 12" fill="none"/>
+    <path d="M150 -10 L196 410" stroke="#FFFFFF" stroke-width="18" fill="none"/>
+    <path d="M470 -10 L430 410" stroke="#FFFFFF" stroke-width="14" fill="none"/>
+    <rect x="300" y="146" width="96" height="20" rx="3" fill="#121214" transform="rotate(-3 348 156)"/>
+    <text x="348" y="140" text-anchor="middle" font-family="Archivo, sans-serif" font-size="13" font-weight="600" fill="#121214">BRT Guaporé</text>
+    <circle cx="352" cy="268" r="11" fill="#C8102E"/>
+    <circle cx="352" cy="268" r="22" fill="none" stroke="#C8102E" stroke-width="1.5"/>
+    <text x="352" y="310" text-anchor="middle" font-family="Big Shoulders Display, sans-serif" font-size="22" font-weight="800" fill="#121214">714 · sobreloja</text>
+    <text x="40" y="270" font-family="Archivo, sans-serif" font-size="13" fill="#4A4C51" transform="rotate(-3 40 270)">Av. Brás de Pina</text>
+    <rect x="500" y="40" width="110" height="64" rx="4" fill="#D4D1C8"/>
+    <text x="555" y="78" text-anchor="middle" font-family="Archivo, sans-serif" font-size="12" fill="#4A4C51">Hosp. Getúlio Vargas</text>
+  </svg>
+</section>
+
+<section class="fim" aria-labelledby="fim-titulo">
+  <h2 id="fim-titulo" class="titulo-fim">Vem pra Fábrica.</h2>
+  <p class="texto-claro">Pergunta o que quiser. A resposta chega na hora, de dia ou de noite.</p>
+  <button class="botao botao--vermelho botao--grande" type="button" data-conversa>Falar com a Fábrica</button>
+</section>
+
+</main>
+
+<footer class="rodape">
+  <div class="rodape__marca">
+    <img src="assets/fotos/logo.webp" alt="" width="56" height="56">
+    <div>
+      <b>Fábrica de Barbeiros</b>
+      <span>Av. Brás de Pina, 714, sobreloja · Penha Circular · Rio de Janeiro</span>
+      <span>Segunda a sábado, 8h às 20h</span>
+    </div>
+  </div>
+  <div class="rodape__links">
+    <a href="https://www.instagram.com/fabricadebarbeiros/" target="_blank" rel="noopener">@fabricadebarbeiros</a>
+    <a href="https://www.instagram.com/fabricabarberstore/" target="_blank" rel="noopener">@fabricabarberstore</a>
+  </div>
+  <p class="rodape__nota">Site de demonstração feito pela Carioca's Consultoria em outubro de 2026. As cenas da abertura e a máquina girando foram geradas por IA a partir de fotos reais da escola e da loja. Fotos, vídeos e avaliações são reais, do Instagram e do Google da Fábrica.</p>
+</footer>
+
+<!-- o agente da Fábrica (demonstração) -->
+<button class="chamar is-oculto" id="chamar" type="button" data-conversa aria-controls="conversa" aria-expanded="false" aria-label="Falar com a Fábrica, responde na hora">
+  <img src="assets/fotos/logo.webp" alt="" width="36" height="36">
+  <span><b>Falar com a Fábrica</b><small>responde na hora</small></span>
+</button>
+
+<div class="conversa" id="conversa" role="dialog" aria-label="Conversa com a Fábrica de Barbeiros" hidden>
+  <div class="conversa__topo">
+    <img src="assets/fotos/logo.webp" alt="" width="40" height="40">
+    <div><b>Fábrica de Barbeiros</b><small>responde na hora · demonstração</small></div>
+    <button class="conversa__fechar" type="button" aria-label="Fechar conversa" data-fechar>
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <div class="conversa__fio" data-fio aria-live="polite"></div>
+  <div class="conversa__atalhos" data-atalhos>
+    <button type="button" data-p="Qual o valor?">Qual o valor?</button>
+    <button type="button" data-p="Quando começa a próxima turma?">Quando começa a turma?</button>
+    <button type="button" data-p="Mulher pode fazer?">Mulher pode fazer?</button>
+    <button type="button" data-p="Já sou barbeira, quero o certificado">Já corto, quero certificado</button>
+    <button type="button" data-p="Onde fica?">Onde fica?</button>
+    <button type="button" data-p="Quero visitar">Quero visitar</button>
+  </div>
+  <form class="conversa__campo" data-form>
+    <label class="visualmente-oculto" for="msg">Escreva sua mensagem</label>
+    <input id="msg" type="text" autocomplete="off" placeholder="Escreve tua dúvida…" maxlength="240">
+    <button type="submit" aria-label="Enviar">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 12l15-7-6 15-2.5-6.5L4 12z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+    </button>
+  </form>
+</div>
+
+<script src="app.js?v=d08ba1e1"></script>
+</body>
+</html>
