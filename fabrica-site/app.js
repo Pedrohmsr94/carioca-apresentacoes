@@ -37,7 +37,7 @@
 
     function nome(i) { return pasta + String(i + 1).padStart(4, '0') + '.webp'; }
 
-    var fila = [], vistos = new Uint8Array(total);
+    var fila = [], vistos = new Uint8Array(total), tentativas = new Uint8Array(total);
     (economia ? [8] : [16, 8, 4, 2, 1]).forEach(function (passo) {
       for (var i = 0; i < total; i += passo) if (!vistos[i]) { vistos[i] = 1; fila.push(i); }
     });
@@ -55,8 +55,14 @@
             else if (Math.abs(i - alvo) < 4) agendar();
             carregar();
           };
-          img.onerror = function () { emVoo--; carregar(); };
-          img.src = nome(i);
+          // falha passageira do servidor (o GitHub devolve 503 logo depois de publicar):
+          // tenta de novo até duas vezes; enquanto isso desenha o quadro vizinho
+          img.onerror = function () {
+            emVoo--;
+            if (tentativas[i] < 2) { tentativas[i]++; setTimeout(function () { fila.push(i); carregar(); }, 800 * tentativas[i]); }
+            carregar();
+          };
+          img.src = nome(i) + (tentativas[i] ? '?r=' + tentativas[i] : '');
         })(fila.shift());
       }
     }

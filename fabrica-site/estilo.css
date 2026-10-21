@@ -4,7 +4,6 @@
   --preto: #0B0B0C;
   --carvao: #141416;
   --grafite: #222327;
-  --aco: #6B6F76;
   --aco-claro: #B1B4BA;
   --aco-texto: #8E9198;
   --nevoa: #D9DADD;
@@ -17,7 +16,6 @@
   --vermelho-escuro: #A20D25;
   --vermelho-claro: #FF4E66;
   --ouro: #CDA650;
-  --ouro-escuro: #A9852F;
   --couro: #0F0E0D;
   --linha-escura: rgba(255, 255, 255, .12);
   --linha-clara: rgba(18, 18, 20, .14);
@@ -151,7 +149,12 @@ main section[id] { scroll-margin-top: 72px; }
 .filme__acoes { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
 .filme__prova { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 20px 0 0; font-size: .95rem; color: var(--aco-claro); }
 .filme__prova strong { color: #fff; }
-.estrelas { display: inline-block; width: 88px; height: 16px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 110 20'%3E%3Cg fill='%23CDA650'%3E%3Cpath id='e' d='M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7z'/%3E%3Cuse href='%23e' x='22'/%3E%3Cuse href='%23e' x='44'/%3E%3Cuse href='%23e' x='66'/%3E%3Cuse href='%23e' x='88'/%3E%3C/g%3E%3C/svg%3E") no-repeat center / contain; }
+.estrelas {
+  --estrela: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 110 20'%3E%3Cg fill='%23000'%3E%3Cpath id='e' d='M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7z'/%3E%3Cuse href='%23e' x='22'/%3E%3Cuse href='%23e' x='44'/%3E%3Cuse href='%23e' x='66'/%3E%3Cuse href='%23e' x='88'/%3E%3C/g%3E%3C/svg%3E");
+  display: inline-block; width: 88px; height: 16px; background: currentColor;
+  -webkit-mask: var(--estrela) no-repeat center / contain; mask: var(--estrela) no-repeat center / contain;
+}
+.filme__prova .estrelas { color: #fff; }
 .estrelas--grande { width: 150px; height: 28px; }
 
 .regua {
@@ -353,8 +356,8 @@ main section[id] { scroll-margin-top: 72px; }
 .linha-tempo span { color: var(--tinta-2); }
 .citacao { margin: 36px 0 0; padding: 0; }
 .citacao p { margin: 0; font-family: var(--display); font-weight: 800; text-transform: uppercase; font-size: clamp(1.8rem, 3.2vw, 2.6rem); line-height: 1.08; color: var(--tinta); }
-.citacao p::before { content: "“"; color: var(--vermelho); margin-right: .05em; }
-.citacao p::after { content: "”"; color: var(--vermelho); margin-left: .05em; }
+.citacao p::before { content: "“"; color: var(--tinta-2); margin-right: .05em; }
+.citacao p::after { content: "”"; color: var(--tinta-2); margin-left: .05em; }
 .citacao footer { margin-top: 10px; font-size: .9rem; color: var(--tinta-2); }
 .jullio__jornal { display: grid; grid-template-columns: minmax(0, 1fr) 200px; gap: 32px; align-items: end; margin-top: 36px; }
 .jullio__jornal .citacao { margin: 0; }
@@ -370,7 +373,7 @@ main section[id] { scroll-margin-top: 72px; }
 }
 
 /* ------------------------------------------------------------ a loja */
-.loja { background: var(--couro); color: #EEE; padding-block: 110px 40px; border-top: 3px solid var(--vermelho); }
+.loja { background: var(--couro); color: #EEE; padding-block: 110px 40px; }
 .loja__abre { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 36px; align-items: center; margin: 0 0 40px; padding-inline: var(--miolo) var(--miolo-d); }
 .loja__logo { width: 180px; height: 180px; object-fit: cover; border-radius: 4px; }
 .loja__abre .texto-claro { margin-top: 14px; }
@@ -386,7 +389,7 @@ main section[id] { scroll-margin-top: 72px; }
   position: absolute; left: var(--miolo); bottom: max(48px, calc(24px + env(safe-area-inset-bottom, 0px))); max-width: 420px;
   padding: 26px 26px 24px; background: rgba(12, 11, 10, .78); border: 1px solid rgba(255, 255, 255, .16);
 }
-.vitrine__ficha h3 { margin: 0; font-family: var(--display); font-weight: 800; text-transform: uppercase; font-size: 2.2rem; line-height: .95; color: #fff; }
+.vitrine__ficha h3 { margin: 0; font-family: var(--display); font-weight: 800; text-transform: uppercase; font-size: 2.2rem; line-height: 1; color: #fff; }
 .vitrine__apelido { margin: 6px 0 16px; color: var(--ouro); font-weight: 600; }
 .vitrine__specs { list-style: none; margin: 0 0 20px; padding: 0; display: grid; gap: 8px; }
 .vitrine__specs li { position: relative; padding-left: 22px; font-size: .97rem; color: rgba(238, 238, 238, .62); transition: color .5s var(--sai); }
