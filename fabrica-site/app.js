@@ -191,14 +191,26 @@
   var campo = document.getElementById('nome-aluno');
   var nomeNoPapel = document.querySelector('[data-nome]');
   var nomeVisitante = '';
+  // o nome fica numa linha só: se não couber, a letra diminui (até a metade do tamanho)
+  function ajustarNome() {
+    if (!nomeNoPapel) return;
+    nomeNoPapel.style.fontSize = '';
+    var base = parseFloat(getComputedStyle(nomeNoPapel).fontSize), t = base;
+    while (nomeNoPapel.scrollWidth > nomeNoPapel.clientWidth + 1 && t > base * 0.5) {
+      t *= 0.94; nomeNoPapel.style.fontSize = t.toFixed(1) + 'px';
+    }
+  }
   function escreverNome() {
     nomeVisitante = (campo.value || '').trim().replace(/\s+/g, ' ');
     nomeNoPapel.textContent = nomeVisitante || 'Seu nome aqui';
     nomeNoPapel.classList.toggle('is-vazio', !nomeVisitante);
+    ajustarNome();
   }
   if (campo && nomeNoPapel) { campo.addEventListener('input', escreverNome); escreverNome(); }
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(ajustarNome);
 
   var papel = document.querySelector('.papel');
+  var folha = papel && papel.querySelector('.papel__folha');
   var guilhoche = papel && papel.querySelector('.papel__guilhoche');
   function desenharGuilhoche() {
     if (!guilhoche || !guilhoche.getContext) return;
@@ -209,7 +221,9 @@
     var g = guilhoche.getContext('2d');
     g.setTransform(dpr, 0, 0, dpr, 0, 0);
     g.clearRect(0, 0, w, h);
-    var m = Math.max(10, Math.min(w, h) * 0.035), banda = Math.max(10, Math.min(w, h) * 0.05);
+    // mesma régua do estilo.css (.papel__miolo começa em 10,4% da largura): margem 2,6%,
+    // faixa 4,2%, filetes a 0,4% dela. Assim o texto nunca encosta na moldura
+    var m = w * 0.026, banda = w * 0.042, fio = Math.max(2, w * 0.004);
     // moldura: ondas cruzadas como em cédula, contornando o papel
     function contorno(t) {
       var per = 2 * (w + h - 4 * m), d = t * per;
@@ -218,11 +232,13 @@
       d -= h - 2 * m; if (d < w - 2 * m) return [w - m - d, h - m, 0, -1];
       d -= w - 2 * m; return [m, h - m - d, 1, 0];
     }
+    // ondas com a mesma densidade em qualquer tamanho (número par fecha a volta sem emenda)
+    var volta = 2 * (w + h - 4 * m), ondas = 2 * Math.round(volta / 36), ondasLargas = 2 * Math.round(volta / 72);
     var fios = [
-      { cor: 'rgba(200,16,46,.55)', fase: 0, amp: 0.5, freq: 140 },
-      { cor: 'rgba(200,16,46,.35)', fase: Math.PI, amp: 0.5, freq: 140 },
-      { cor: 'rgba(18,18,20,.28)', fase: Math.PI / 2, amp: 0.42, freq: 70 },
-      { cor: 'rgba(18,18,20,.18)', fase: -Math.PI / 2, amp: 0.42, freq: 70 }
+      { cor: 'rgba(200,16,46,.55)', fase: 0, amp: 0.5, freq: ondas },
+      { cor: 'rgba(200,16,46,.35)', fase: Math.PI, amp: 0.5, freq: ondas },
+      { cor: 'rgba(18,18,20,.28)', fase: Math.PI / 2, amp: 0.42, freq: ondasLargas },
+      { cor: 'rgba(18,18,20,.18)', fase: -Math.PI / 2, amp: 0.42, freq: ondasLargas }
     ];
     fios.forEach(function (f) {
       g.beginPath(); g.strokeStyle = f.cor; g.lineWidth = 0.7;
@@ -235,10 +251,12 @@
       g.stroke();
     });
     g.strokeStyle = 'rgba(18,18,20,.55)'; g.lineWidth = 1;
-    g.strokeRect(m - 3, m - 3, w - 2 * m + 6, h - 2 * m + 6);
-    g.strokeRect(m + banda + 3, m + banda + 3, w - 2 * (m + banda + 3), h - 2 * (m + banda + 3));
-    // rosácea de fundo (hipotrocoide), bem clara
-    var cx = w / 2, cy = h / 2, R = Math.min(w, h) * 0.34, r = R * 0.23, dd = R - r;
+    g.strokeRect(m - fio, m - fio, w - 2 * (m - fio), h - 2 * (m - fio));
+    var dentro = m + banda + fio;
+    g.strokeRect(dentro, dentro, w - 2 * dentro, h - 2 * dentro);
+    // rosácea de fundo (hipotrocoide), bem clara e com o miolo vazado: com dd = R - r todas
+    // as voltas passavam pelo centro e acendiam um ponto vermelho em cima da linha do nome
+    var cx = w / 2, cy = h / 2, R = Math.min(w, h) * 0.34, r = R * 0.23, dd = (R - r) * 0.6;
     g.beginPath(); g.strokeStyle = 'rgba(200,16,46,.07)'; g.lineWidth = 0.8;
     for (var a = 0; a <= Math.PI * 2 * 23; a += 0.02) {
       var x = (R - r) * Math.cos(a) + dd * Math.cos(((R - r) / r) * a);
@@ -249,7 +267,8 @@
   }
   if (papel) {
     desenharGuilhoche();
-    if ('ResizeObserver' in window) new ResizeObserver(desenharGuilhoche).observe(papel);
+    // redesenha no quadro seguinte: mexer no tamanho dentro do aviso dá erro de laço no navegador
+    if ('ResizeObserver' in window) new ResizeObserver(function () { requestAnimationFrame(function () { desenharGuilhoche(); ajustarNome(); }); }).observe(folha || papel);
     if ('IntersectionObserver' in window && !reduz) {
       var ioPapel = new IntersectionObserver(function (es) {
         if (es[0].isIntersecting) { papel.classList.add('is-carimbado'); ioPapel.disconnect(); }

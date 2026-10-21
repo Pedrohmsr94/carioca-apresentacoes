@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,400..700&family=Big+Shoulders+Display:wght@600;700;800;900&family=Pinyon+Script&display=swap">
-<link rel="stylesheet" href="estilo.css?v=f4500d93">
+<link rel="stylesheet" href="estilo.css?v=41312060">
 </head>
 <body>
 <header class="topo" id="topo">
@@ -200,20 +200,28 @@
   </figure>
 
   <div class="papel" aria-label="Exemplo de certificado com o seu nome">
-    <canvas class="papel__guilhoche" aria-hidden="true"></canvas>
-    <div class="papel__miolo">
-      <p class="papel__numero">Nº 0454</p>
-      <p class="papel__titulo">Certificado</p>
-      <p class="papel__sub">de formação de barbeiro</p>
-      <p class="papel__certificamos">Certificamos que</p>
-      <p class="papel__nome" data-nome>Seu nome aqui</p>
-      <p class="papel__corpo">concluiu a Formação de Barbeiro da Fábrica de Barbeiros, com aulas práticas em modelo real, na Penha, Rio de Janeiro.</p>
-      <ul class="papel__carimbos">
-        <li>Mão na máquina</li><li>Primeiro degradê</li><li>Navalha e acabamento</li><li>Atendimento</li>
-      </ul>
-      <div class="papel__rodape">
-        <img class="papel__selo" src="assets/fotos/logo.webp" alt="" width="84" height="84">
-        <div class="papel__assina"><span class="assinatura">Jullio Cezar</span><span class="papel__cargo">fundador e diretor</span></div>
+    <div class="papel__folha">
+      <canvas class="papel__guilhoche" aria-hidden="true"></canvas>
+      <div class="papel__miolo">
+        <div class="papel__topo">
+          <p class="papel__numero">Nº 0454</p>
+          <p class="papel__titulo">Certificado</p>
+          <p class="papel__sub">de formação de barbeiro</p>
+        </div>
+        <div class="papel__meio">
+          <p class="papel__certificamos">Certificamos que</p>
+          <p class="papel__nome" data-nome>Seu nome aqui</p>
+          <p class="papel__corpo">concluiu a Formação de Barbeiro da Fábrica de Barbeiros, com aulas práticas em modelo real, na Penha, Rio de Janeiro.</p>
+        </div>
+        <div class="papel__fim">
+          <ul class="papel__carimbos">
+            <li>Mão na máquina</li><li>Primeiro degradê</li><li>Navalha e acabamento</li><li>Atendimento</li>
+          </ul>
+          <div class="papel__rodape">
+            <img class="papel__selo" src="assets/fotos/logo.webp" alt="" width="84" height="84">
+            <div class="papel__assina"><span class="assinatura">Jullio Cezar</span><span class="papel__cargo">fundador e diretor</span></div>
+          </div>
+        </div>
       </div>
     </div>
     <p class="papel__nota">Certificado ilustrativo de curso livre, emitido pela Fábrica de Barbeiros.</p>
@@ -414,6 +422,6 @@
   </form>
 </div>
 
-<script src="app.js?v=f5413a87"></script>
+<script src="app.js?v=c02cc4b2"></script>
 </body>
 </html>

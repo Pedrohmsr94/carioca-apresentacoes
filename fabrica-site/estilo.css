@@ -279,59 +279,88 @@ main section[id] { scroll-margin-top: 72px; }
 .certificado__foto { grid-area: foto; margin: 44px 0 0; max-width: 360px; }
 .certificado__foto img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 2px; box-shadow: 0 18px 40px -18px rgba(0, 0, 0, .45); }
 .certificado__foto figcaption { font-size: .9rem; color: var(--tinta-2); margin-top: 10px; }
-.papel {
-  grid-area: papel; position: relative; margin-top: 16px;
+/* O papel: moldura (desenhada no canvas, app.js) e texto usam a mesma régua, a largura do
+   papel. A moldura ocupa 2,6% de margem + 4,2% de faixa + 0,4% de filete = 7,2% de cada lado;
+   o texto começa em 10,4%, sempre do lado de dentro. Tudo em cqi: o certificado escala como
+   uma imagem. Com o papel abaixo de 600px de largura, a folha fica em pé. */
+.papel { grid-area: papel; container: papel / inline-size; margin-top: 16px; }
+.papel__folha {
+  /* altura mínima no formato A4 deitado; se o conteúdo pedir mais, a folha cresce e a moldura acompanha */
+  position: relative; display: flex; min-height: calc(100cqi / 1.414);
   background: var(--papel-folha); color: var(--tinta);
-  aspect-ratio: 1.414 / 1; padding: 6%;
   box-shadow: 0 1px 0 rgba(0, 0, 0, .04), 0 28px 60px -24px rgba(18, 18, 20, .42), 0 6px 16px -8px rgba(18, 18, 20, .2);
-  transform: rotate(-1.2deg);
 }
 .papel__guilhoche { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
-.papel__miolo { position: relative; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: .2em; }
-.papel__numero { position: absolute; top: 0; right: 0; margin: 0; font-family: var(--display); font-weight: 700; font-size: clamp(.8rem, 1.2vw, 1rem); letter-spacing: .12em; color: var(--vermelho); font-variant-numeric: tabular-nums; }
-.papel__titulo { margin: 0; font-family: var(--display); font-weight: 900; text-transform: uppercase; font-size: clamp(1.8rem, 4.2vw, 3.6rem); letter-spacing: .2em; line-height: 1; padding-left: .2em; }
-.papel__sub { margin: 0; font-size: clamp(.72rem, 1.1vw, .95rem); letter-spacing: .28em; text-transform: uppercase; color: var(--tinta-2); }
-.papel__certificamos { margin: 1.1em 0 0; font-size: clamp(.8rem, 1.2vw, 1rem); color: var(--tinta-2); }
+.papel__miolo {
+  position: relative; flex: 1; min-width: 0; padding: 10.4cqi;
+  display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 2cqi;
+  text-align: center;
+}
+.papel__miolo p { margin: 0; }
+.papel__topo, .papel__meio, .papel__fim { width: 100%; display: flex; flex-direction: column; align-items: center; }
+.papel__topo { gap: 1cqi; }
+.papel__meio { gap: 1.1cqi; }
+.papel__fim { gap: 2.2cqi; }
+/* o número mora no canto, entre o filete de dentro da moldura e o começo do texto */
+.papel__numero { position: absolute; top: 8cqi; right: 8.4cqi; font-family: var(--display); font-weight: 700; font-size: max(11px, 1.6cqi); letter-spacing: .12em; line-height: 1; color: var(--vermelho); font-variant-numeric: tabular-nums; }
+.papel__titulo { font-family: var(--display); font-weight: 900; text-transform: uppercase; font-size: 7cqi; letter-spacing: .2em; padding-left: .2em; line-height: 1; }
+.papel__sub { font-size: max(11px, 1.55cqi); letter-spacing: .28em; padding-left: .28em; text-transform: uppercase; color: var(--tinta-2); }
+.papel__certificamos { font-size: max(12px, 1.75cqi); color: var(--tinta-2); }
+/* o nome fica sempre numa linha: o app.js diminui a letra até caber */
 .papel__nome {
-  margin: 0; font-family: var(--roteiro); font-size: clamp(2rem, 4.6vw, 3.9rem); line-height: 1.5;
-  min-width: 70%; padding: .05em .4em .12em; border-bottom: 1px solid rgba(18, 18, 20, .45);
-  overflow-wrap: anywhere; max-width: 100%;
+  width: 86%; padding: 0 .3em .06em; white-space: nowrap;
+  font-family: var(--roteiro); font-size: 6cqi; line-height: 1.32;
+  border-bottom: 1px solid rgba(18, 18, 20, .45);
 }
 .papel__nome.is-vazio { color: #A4A6AB; }
-.papel__corpo { margin: .7em 0 0; font-size: clamp(.72rem, 1.15vw, .98rem); max-width: 46ch; color: var(--tinta-2); }
-.papel__carimbos { list-style: none; padding: 0; margin: 1.1em 0 0; display: flex; flex-wrap: wrap; justify-content: center; gap: .5em .7em; }
+.papel__corpo { font-size: max(12px, 1.7cqi); line-height: 1.5; max-width: 46ch; color: var(--tinta-2); }
+.papel__carimbos { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 1cqi 1.6cqi; }
 .papel__carimbos li {
-  font-family: var(--display); font-weight: 800; text-transform: uppercase; letter-spacing: .08em;
-  font-size: clamp(.62rem, .95vw, .82rem); color: var(--vermelho);
-  border: 2px solid var(--vermelho); border-radius: 3px; padding: .2em .55em; opacity: .92;
+  font-family: var(--display); font-weight: 800; text-transform: uppercase; letter-spacing: .08em; line-height: 1.2;
+  font-size: max(11px, 1.45cqi); color: var(--vermelho);
+  border: 2px solid var(--vermelho); border-radius: 3px; padding: .22em .6em; opacity: .92;
 }
-.papel__carimbos li:nth-child(1) { transform: rotate(-4deg); }
-.papel__carimbos li:nth-child(2) { transform: rotate(2.5deg); }
+.papel__carimbos li:nth-child(1) { transform: rotate(-3deg); }
+.papel__carimbos li:nth-child(2) { transform: rotate(2deg); }
 .papel__carimbos li:nth-child(3) { transform: rotate(-1.5deg); }
-.papel__carimbos li:nth-child(4) { transform: rotate(3.5deg); }
+.papel__carimbos li:nth-child(4) { transform: rotate(2.5deg); }
 .papel.is-carimbado .papel__carimbos li { animation: carimbo .55s var(--sai) both; }
 .papel.is-carimbado .papel__carimbos li:nth-child(2) { animation-delay: .25s; }
 .papel.is-carimbado .papel__carimbos li:nth-child(3) { animation-delay: .5s; }
 .papel.is-carimbado .papel__carimbos li:nth-child(4) { animation-delay: .75s; }
 @keyframes carimbo { from { opacity: .35; scale: 1.35; } 60% { opacity: 1; scale: .96; } to { opacity: .92; scale: 1; } }
-.papel__rodape { display: flex; align-items: center; justify-content: center; gap: 1.6em; margin-top: 1.2em; }
-.papel__selo { width: clamp(52px, 7vw, 84px); height: auto; border-radius: 50%; box-shadow: 0 0 0 3px var(--papel-folha), 0 0 0 5px var(--vermelho); }
+.papel__rodape { display: flex; align-items: center; justify-content: center; gap: 3.2cqi; }
+.papel__selo { width: max(48px, 9.5cqi); height: auto; border-radius: 50%; box-shadow: 0 0 0 3px var(--papel-folha), 0 0 0 5px var(--vermelho); }
 .papel__assina { display: flex; flex-direction: column; align-items: center; }
-.assinatura { font-family: var(--roteiro); font-size: clamp(1.4rem, 2.6vw, 2.2rem); line-height: 1.1; padding: 0 .5em; border-bottom: 1px solid rgba(18, 18, 20, .5); }
+.assinatura { font-family: var(--roteiro); font-size: max(20px, 3.4cqi); line-height: 1.15; padding: 0 .5em; border-bottom: 1px solid rgba(18, 18, 20, .5); }
 .papel.is-carimbado .assinatura { animation: assina 1.6s var(--sai) both .9s; }
 @keyframes assina { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
-.papel__cargo { font-size: clamp(.62rem, .9vw, .78rem); letter-spacing: .14em; text-transform: uppercase; color: var(--tinta-2); margin-top: .35em; }
-.papel__nota { position: absolute; left: 0; right: 0; bottom: -34px; margin: 0; text-align: center; font-size: .8rem; color: var(--tinta-2); transform: rotate(1.2deg); }
+.papel__cargo { font-size: max(11px, 1.4cqi); letter-spacing: .14em; text-transform: uppercase; color: var(--tinta-2); margin-top: .4em; }
+.papel__nota { margin: 14px 0 0; text-align: center; font-size: .8rem; color: var(--tinta-2); }
+/* em pé: celular e notebook pequeno */
+@container papel (max-width: 600px) {
+  .papel__folha { min-height: 125cqi; }
+  .papel__miolo { padding: 10.4cqi 9.8cqi; gap: 3.6cqi; }
+  .papel__topo { gap: 1.6cqi; }
+  .papel__meio { gap: 2cqi; }
+  .papel__fim { gap: 4cqi; }
+  .papel__numero { position: static; align-self: flex-end; font-size: clamp(11px, 3cqi, 14px); }
+  .papel__titulo { font-size: 10.4cqi; letter-spacing: .15em; padding-left: .15em; }
+  .papel__sub { font-size: clamp(11px, 2.9cqi, 14px); letter-spacing: .2em; padding-left: .2em; }
+  .papel__certificamos { font-size: clamp(12px, 3.5cqi, 16px); }
+  .papel__nome { width: 94%; font-size: 9cqi; }
+  .papel__corpo { font-size: clamp(12px, 3.5cqi, 16px); }
+  .papel__carimbos { gap: 2cqi 2.4cqi; max-width: max(84%, 230px); }
+  .papel__carimbos li { font-size: clamp(11px, 2.9cqi, 14px); }
+  .papel__selo { width: 15cqi; }
+  .assinatura { font-size: max(20px, 6cqi); }
+  .papel__cargo { font-size: clamp(11px, 2.7cqi, 13px); }
+}
 @media (max-width: 960px) {
   .certificado { grid-template-columns: minmax(0, 1fr); grid-template-areas: "texto" "papel" "acao" "foto"; grid-template-rows: none; row-gap: 28px; }
   .certificado__texto p { margin-bottom: 0; }
-  .papel { transform: none; margin: 0 0 40px; }
-  .papel__nota { transform: none; }
+  .papel { margin: 0 0 12px; }
   .certificado__foto { margin-top: 16px; }
-}
-@media (max-width: 560px) {
-  .papel { aspect-ratio: auto; padding: 32px 18px 28px; }
-  .papel__numero { top: -18px; }
 }
 
 /* ------------------------------------------------------------ quem ensina */
