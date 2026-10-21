@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,400..700&family=Big+Shoulders+Display:wght@600;700;800;900&family=Pinyon+Script&display=swap">
-<link rel="stylesheet" href="estilo.css?v=3015cdc8">
+<link rel="stylesheet" href="estilo.css?v=f4500d93">
 </head>
 <body>
 <header class="topo" id="topo">
@@ -320,6 +320,7 @@
     <span class="estrelas estrelas--grande" aria-hidden="true"></span>
     <h2 id="prova-titulo" class="titulo-secao titulo-secao--tinta">5,0 em 254 avaliações no Google.</h2>
     <p>A maioria fala de aula, instrutor e turma.</p>
+    <a class="prova__google" href="https://www.google.com/maps?cid=13961718206493958411" target="_blank" rel="noopener">Ler as avaliações no Google</a>
   </div>
   <ul class="vozes">
     <li><q>Três aulas e eu já estava cortando sozinho, curso top</q><span>aluno · set/2025</span></li>
@@ -347,24 +348,13 @@
     <p>Segunda a sábado, das 8h às 20h. Perto do Hospital Getúlio Vargas.</p>
     <div class="chegar__acoes">
       <button class="botao botao--vermelho" type="button" data-conversa="Quero marcar uma visita">Marcar uma visita</button>
-      <a class="botao botao--tinta" href="https://www.google.com/maps/search/?api=1&amp;query=Av.+Br%C3%A1s+de+Pina%2C+714%2C+Penha+Circular%2C+Rio+de+Janeiro" target="_blank" rel="noopener">Abrir no mapa</a>
+      <a class="botao botao--tinta" href="https://www.google.com/maps/dir/?api=1&amp;destination=F%C3%A1brica+de+Barbeiros%2C+Av.+Br%C3%A1s+de+Pina%2C+714%2C+Penha+Circular%2C+Rio+de+Janeiro" target="_blank" rel="noopener">Traçar a rota</a>
     </div>
   </div>
-  <svg class="mapa" viewBox="0 0 640 400" role="img" aria-label="Esquema: a Fábrica fica no número 714 da Avenida Brás de Pina, em frente à estação Guaporé do BRT">
-    <rect x="0" y="0" width="640" height="400" fill="#E6E4DD"/>
-    <path d="M-10 230 L650 196" stroke="#FFFFFF" stroke-width="42" fill="none"/>
-    <path d="M-10 230 L650 196" stroke="#C9C6BD" stroke-width="1" stroke-dasharray="10 12" fill="none"/>
-    <path d="M150 -10 L196 410" stroke="#FFFFFF" stroke-width="18" fill="none"/>
-    <path d="M470 -10 L430 410" stroke="#FFFFFF" stroke-width="14" fill="none"/>
-    <rect x="300" y="146" width="96" height="20" rx="3" fill="#121214" transform="rotate(-3 348 156)"/>
-    <text x="348" y="140" text-anchor="middle" font-family="Archivo, sans-serif" font-size="13" font-weight="600" fill="#121214">BRT Guaporé</text>
-    <circle cx="352" cy="268" r="11" fill="#C8102E"/>
-    <circle cx="352" cy="268" r="22" fill="none" stroke="#C8102E" stroke-width="1.5"/>
-    <text x="352" y="310" text-anchor="middle" font-family="Big Shoulders Display, sans-serif" font-size="22" font-weight="800" fill="#121214">714 · sobreloja</text>
-    <text x="40" y="270" font-family="Archivo, sans-serif" font-size="13" fill="#4A4C51" transform="rotate(-3 40 270)">Av. Brás de Pina</text>
-    <rect x="500" y="40" width="110" height="64" rx="4" fill="#D4D1C8"/>
-    <text x="555" y="78" text-anchor="middle" font-family="Archivo, sans-serif" font-size="12" fill="#4A4C51">Hosp. Getúlio Vargas</text>
-  </svg>
+  <!-- a ficha do Google, viva: nota, avaliações e rotas se atualizam sozinhas -->
+  <div class="mapa">
+    <iframe src="https://www.google.com/maps?cid=13961718206493958411&amp;output=embed&amp;hl=pt-BR" title="A Fábrica de Barbeiros no Google Maps: nota, avaliações e rotas" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+  </div>
 </section>
 
 <section class="fim" aria-labelledby="fim-titulo">
@@ -387,6 +377,7 @@
   <div class="rodape__links">
     <a href="https://www.instagram.com/fabricadebarbeiros/" target="_blank" rel="noopener">@fabricadebarbeiros</a>
     <a href="https://www.instagram.com/fabricabarberstore/" target="_blank" rel="noopener">@fabricabarberstore</a>
+    <a href="https://www.google.com/maps?cid=13961718206493958411" target="_blank" rel="noopener">Fábrica no Google</a>
   </div>
   <p class="rodape__nota">Site de demonstração feito pela Carioca's Consultoria em outubro de 2026. As cenas da abertura e a máquina girando foram geradas por IA a partir de fotos reais da escola e da loja. Fotos, vídeos e avaliações são reais, do Instagram e do Google da Fábrica.</p>
 </footer>
