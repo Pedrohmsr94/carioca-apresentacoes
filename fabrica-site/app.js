@@ -259,12 +259,24 @@
   var form = painel.querySelector('[data-form]');
   var entrada = document.getElementById('msg');
   var atalhos = painel.querySelector('[data-atalhos]');
-  var aberto = false, saudou = false, ocupado = false, noFilme = true;
-  // o botão flutuante some enquanto o filme passa: a abertura já tem os botões dela
-  function mostrarChamar() { chamar.classList.toggle('is-oculto', aberto || noFilme); }
+  var aberto = false, saudou = false, ocupado = false, noFilme = true, digitando = false;
+  // o botão flutuante some enquanto o filme passa (a abertura já tem os botões dela) e
+  // enquanto a pessoa digita o nome do certificado (no Android ele subiria com o teclado
+  // e cobriria o campo). Um botão de ação por vez: com o flutuante na tela, o do topo sai
+  function mostrarChamar() {
+    var flutuante = !(aberto || noFilme || digitando);
+    chamar.classList.toggle('is-oculto', !flutuante);
+    document.getElementById('topo').classList.toggle('sem-acao', flutuante);
+  }
   if (filme && 'IntersectionObserver' in window) {
     new IntersectionObserver(function (es) { noFilme = es[0].isIntersecting; mostrarChamar(); }, { rootMargin: '0px 0px -40% 0px' }).observe(filme);
   } else { noFilme = false; }
+  document.addEventListener('focusin', function (e) {
+    if (e.target.matches('input') && !painel.contains(e.target)) { digitando = true; mostrarChamar(); }
+  });
+  document.addEventListener('focusout', function (e) {
+    if (e.target.matches('input') && !painel.contains(e.target)) { digitando = false; mostrarChamar(); }
+  });
   mostrarChamar();
 
   var respostas = [

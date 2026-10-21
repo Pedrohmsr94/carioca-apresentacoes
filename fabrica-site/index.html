@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,400..700&family=Big+Shoulders+Display:wght@600;700;800;900&family=Pinyon+Script&display=swap">
-<link rel="stylesheet" href="estilo.css?v=ec8fc085">
+<link rel="stylesheet" href="estilo.css?v=a0e715d3">
 </head>
 <body>
 <header class="topo" id="topo">
@@ -113,15 +113,15 @@
       <video muted loop playsinline preload="none" poster="assets/real/degrade-aluno.jpg" data-video="assets/real/degrade-aluno.mp4"></video>
       <p><b>Degradê feito por aluno</b><span>24/03/2025</span></p>
     </li>
-    <li class="tira__item tira__item--alto">
+    <li class="tira__item">
       <video muted loop playsinline preload="none" poster="assets/real/tesoura-turma.jpg" data-video="assets/real/tesoura-turma.mp4"></video>
       <p><b>Técnica na tesoura</b><span>07/10/2025</span></p>
     </li>
-    <li class="tira__item">
+    <li class="tira__item tira__item--alto">
       <video muted loop playsinline preload="none" poster="assets/real/fade-close.jpg" data-video="assets/real/fade-close.mp4"></video>
       <p><b>Do fade à cor</b><span>29/06/2024</span></p>
     </li>
-    <li class="tira__item tira__item--alto">
+    <li class="tira__item">
       <video muted loop playsinline preload="none" poster="assets/real/formatura.jpg" data-video="assets/real/formatura.mp4"></video>
       <p><b>Formatura</b><span>21/07/2025</span></p>
     </li>
@@ -137,7 +137,7 @@
 
   <div class="tabela">
     <article class="linha" aria-labelledby="c1">
-      <div class="linha__pente" aria-hidden="true"><b>0</b><span>do zero</span></div>
+      <div class="linha__pente" aria-hidden="true"><b>0</b></div>
       <div class="linha__corpo">
         <h3 id="c1">Barbeiro do zero</h3>
         <p>Pra quem nunca pegou numa máquina. Formação completa, do primeiro corte ao acabamento na régua.</p>
@@ -150,7 +150,7 @@
     </article>
 
     <article class="linha" aria-labelledby="c2">
-      <div class="linha__pente" aria-hidden="true"><b>2</b><span>já corta</span></div>
+      <div class="linha__pente" aria-hidden="true"><b>2</b></div>
       <div class="linha__corpo">
         <h3 id="c2">Aperfeiçoamento</h3>
         <p>Pra quem já corta e quer subir de nível. O Perfect Work, com o Jullio e os instrutores da casa.</p>
@@ -163,7 +163,7 @@
     </article>
 
     <article class="linha" aria-labelledby="c3">
-      <div class="linha__pente" aria-hidden="true"><b>4</b><span>um dia</span></div>
+      <div class="linha__pente" aria-hidden="true"><b>4</b></div>
       <div class="linha__corpo">
         <h3 id="c3">Workshops e imersões</h3>
         <p>Um dia inteiro numa técnica só. Já teve Tesoura do Zero, Imersão do Fade, colorimetria e print hair.</p>
@@ -184,16 +184,20 @@
   <div class="certificado__texto">
     <h2 id="cert-titulo" class="titulo-secao titulo-secao--tinta">Escreve teu nome.<br>É esse papel que você leva pra casa.</h2>
     <p>A Fábrica já formou 453 barbeiros. O próximo certificado sai com o número 454.</p>
+  </div>
+
+  <div class="certificado__acao">
     <label class="campo" for="nome-aluno">
       <span>Seu nome</span>
       <input id="nome-aluno" type="text" maxlength="34" autocomplete="given-name" placeholder="Seu nome aqui">
     </label>
     <button class="botao botao--vermelho" type="button" data-conversa="Quero fazer o curso Barbeiro do zero">Quero esse certificado</button>
-    <figure class="certificado__foto">
-      <img src="assets/fotos/formando-certificado.webp" alt="Formando de beca segurando o certificado ao lado do Jullio" loading="lazy" width="880" height="1100">
-      <figcaption>Formatura de maio de 2023. Esse é de verdade.</figcaption>
-    </figure>
   </div>
+
+  <figure class="certificado__foto">
+    <img src="assets/fotos/formando-certificado.webp" alt="Formando de beca segurando o certificado ao lado do Jullio" loading="lazy" width="880" height="1100">
+    <figcaption>Formatura de maio de 2023. Esse é de verdade.</figcaption>
+  </figure>
 
   <div class="papel" aria-label="Exemplo de certificado com o seu nome">
     <canvas class="papel__guilhoche" aria-hidden="true"></canvas>
@@ -227,9 +231,9 @@
     <p class="jullio__lide">Jullio Cezar é cria do Dourado, em Brás de Pina. Começou a cortar em 2003, com a máquina que a mãe, Dona Denize, comprou pra ele ter uma profissão.</p>
     <ol class="linha-tempo">
       <li><b>2003</b><span>A primeira máquina, em casa, cortando amigo e parente.</span></li>
-      <li><b>Jotapê</b><span>A barbearia em Brás de Pina que fez dele "o queridinho dos famosos", nas palavras do Meia Hora.</span></li>
+      <li><b>Jotapê</b><span>A barbearia dele em Brás de Pina, que segue aberta. Jotapê também é como a equipe chama ele.</span></li>
       <li><b>Fim de 2016</b><span>A Fábrica nasce dentro da Jotapê, com dois alunos. Os dois viraram instrutores.</span></li>
-      <li><b>2021</b><span>Meia Hora: "A favela venceu". Turma nº 40 formada.</span></li>
+      <li><b>2021</b><span>Turma nº 40 formada. No Meia Hora, a manchete "A favela venceu" chama ele de barbeiro queridinho dos famosos.</span></li>
       <li><b>Hoje</b><span>453 formados, sala nova, e ação social no Sereno, no Quitungo, no Antares e no Leme.</span></li>
     </ol>
     <div class="jullio__jornal">
@@ -251,7 +255,7 @@
     <img class="loja__logo" src="assets/fotos/loja-logo.webp" alt="Fábrica Barber Store" loading="lazy" width="1100" height="1100">
     <div>
       <h2 id="loja-titulo" class="titulo-secao">Fábrica Barber Store</h2>
-      <p class="texto-claro">A loja oficial da Fábrica, dentro da escola. Aluno sai com o kit no primeiro dia, e quem já é barbeiro encontra a máquina certa. Envio pra todo o Brasil.</p>
+      <p class="texto-claro">A loja oficial da Fábrica. Tem aluno que sai do primeiro dia de curso com o kit completo, e quem já é barbeiro encontra a máquina certa. Envia pra todo o Brasil.</p>
     </div>
   </div>
 
@@ -269,7 +273,7 @@
           <li data-de="0.65">8 pentes premium</li>
           <li data-de="0.8">Com ou sem fio</li>
         </ul>
-        <button class="botao botao--ouro" type="button" data-conversa="Tem a Wahl Magic Clip Gold disponível?">Pedir pela conversa</button>
+        <button class="botao botao--vermelho" type="button" data-conversa="Tem a Wahl Magic Clip Gold disponível?">Pedir pela conversa</button>
       </div>
     </div>
   </div>
@@ -313,10 +317,9 @@
 <!-- quem já passou por aqui -->
 <section class="prova" id="prova" aria-labelledby="prova-titulo">
   <div class="prova__nota">
-    <p class="prova__numero">5,0</p>
     <span class="estrelas estrelas--grande" aria-hidden="true"></span>
-    <h2 id="prova-titulo" class="titulo-secao titulo-secao--tinta">254 avaliações no Google.</h2>
-    <p>Quase todas de aluno, no dia da formatura.</p>
+    <h2 id="prova-titulo" class="titulo-secao titulo-secao--tinta">5,0 em 254 avaliações no Google.</h2>
+    <p>A maioria fala de aula, instrutor e turma.</p>
   </div>
   <ul class="vozes">
     <li><q>Três aulas e eu já estava cortando sozinho, curso top</q><span>aluno · set/2025</span></li>
@@ -420,6 +423,6 @@
   </form>
 </div>
 
-<script src="app.js?v=d08ba1e1"></script>
+<script src="app.js?v=283f519e"></script>
 </body>
 </html>
