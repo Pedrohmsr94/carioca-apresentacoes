@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1B2915">
+<title>Seu Instagram novo · Alho e Afeto</title>
+<meta property="og:title" content="Seu Instagram novo: Alho e Afeto">
+<meta property="og:description" content="Passo a passo, com calma, para transformar o perfil do Stúdio no perfil da Alho e Afeto.">
+<meta property="og:image" content="https://pedrohmsr94.github.io/carioca-apresentacoes/alho-e-afeto/foto-perfil.png">
+<link rel="icon" href="foto-perfil.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --fundo: #FBF6EC;
+  --cartao: #FFFFFF;
+  --texto: #2A2118;
+  --suave: #6B5E50;
+  --verde: #23401C;
+  --verde-claro: #E6EEDC;
+  --trigo: #B8873E;
+  --alvo: #E0261B;
+  --linha: #E7DDCB;
+  --ig-azul: #0095F6;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --fundo: #17140F; --cartao: #221D16; --texto: #F3EBDD; --suave: #B9AC99;
+    --verde: #B9D4A5; --verde-claro: #26331F; --trigo: #E0B571; --linha: #3A3226;
+  }
+}
+:root[data-theme="dark"] {
+  --fundo: #17140F; --cartao: #221D16; --texto: #F3EBDD; --suave: #B9AC99;
+  --verde: #B9D4A5; --verde-claro: #26331F; --trigo: #E0B571; --linha: #3A3226;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--fundo); color: var(--texto); font: 400 19px/1.55 'DM Sans', system-ui, sans-serif; }
+main { max-width: 640px; margin: 0 auto; padding: 0 16px 80px; }
+h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; font-weight: 600; color: var(--verde); line-height: 1.15; margin: 0; }
+h1 { font-size: 36px; }
+h2 { font-size: 28px; margin: 48px 0 6px; }
+h3 { font-size: 22px; }
+p { margin: 10px 0; }
+strong { font-weight: 700; }
+.topo { text-align: center; padding: 36px 0 8px; }
+.topo img { width: 132px; height: 132px; border-radius: 50%; border: 1px solid var(--linha); }
+.topo p { color: var(--suave); font-size: 18px; }
+.aviso { background: var(--verde-claro); border-radius: 16px; padding: 16px 18px; margin: 18px 0; }
+.aviso.cuidado { background: #FDE8E6; color: #5C1610; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .aviso.cuidado { background: #3D1D19; color: #F6CFCA; } }
+.parte-rot { font: 700 14px/1 'DM Sans'; letter-spacing: .16em; text-transform: uppercase; color: var(--trigo); margin-top: 56px; }
+
+/* passo */
+.passo { background: var(--cartao); border: 1px solid var(--linha); border-radius: 20px; padding: 20px 18px 18px; margin: 18px 0; }
+.passo-cab { display: flex; gap: 14px; align-items: flex-start; }
+.num { flex: none; width: 44px; height: 44px; border-radius: 50%; background: var(--verde); color: #fff; font: 700 21px/44px 'DM Sans'; text-align: center; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .num { color: #17140F; } }
+.passo-cab h3 { padding-top: 8px; }
+.passo.feito { opacity: .55; }
+.feito-btn { margin-top: 14px; width: 100%; min-height: 52px; border-radius: 14px; border: 2px solid var(--verde); background: transparent; color: var(--verde); font: 700 18px 'DM Sans'; cursor: pointer; }
+.passo.feito .feito-btn { background: var(--verde); color: var(--fundo); }
+
+/* textos para copiar */
+.copiar { margin: 12px 0; border: 2px dashed var(--trigo); border-radius: 14px; padding: 14px 16px; background: var(--fundo); }
+.copiar pre { margin: 0 0 12px; white-space: pre-wrap; overflow-wrap: anywhere; font: 500 19px/1.5 'DM Sans'; color: var(--texto); }
+.copiar button, .baixar { display: block; width: 100%; min-height: 52px; border: 0; border-radius: 12px; background: var(--trigo); color: #fff; font: 700 18px 'DM Sans'; cursor: pointer; text-align: center; text-decoration: none; line-height: 52px; }
+.baixar { margin: 10px 0; background: var(--verde); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .baixar, :root:not([data-theme="light"]) .copiar button { color: #17140F; } }
+.capas { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 12px 0; }
+.capas a { display: block; text-align: center; text-decoration: none; color: var(--texto); font-size: 16px; }
+.capas img { width: 100%; aspect-ratio: 1; object-fit: cover; object-position: center; border-radius: 50%; border: 1px solid var(--linha); }
+
+/* ── desenho do celular ───────────────────────────────── */
+.tela-wrap { display: flex; justify-content: center; margin: 16px 0 6px; }
+.tela { width: 100%; max-width: 300px; background: #fff; color: #111; border: 10px solid #1d1d1f; border-radius: 34px; overflow: hidden; font: 400 13px/1.35 system-ui, -apple-system, 'Segoe UI', sans-serif; box-shadow: 0 10px 30px rgba(0,0,0,.15); }
+.tela * { font-family: inherit; }
+.st { display: flex; justify-content: space-between; padding: 6px 14px 4px; font-size: 11px; font-weight: 600; }
+.barra { display: flex; align-items: center; justify-content: space-between; padding: 6px 12px 10px; font-weight: 700; font-size: 15px; }
+.barra .icos { display: flex; gap: 14px; font-size: 18px; }
+.miolo { padding: 0 12px 12px; min-height: 360px; }
+.legenda-tela { text-align: center; color: var(--suave); font-size: 14px; margin: 4px 0 0; }
+.perfil-top { display: flex; align-items: center; gap: 14px; }
+.av { width: 64px; height: 64px; border-radius: 50%; background: #eee center/cover; flex: none; border: 1px solid #ddd; }
+.nums { display: flex; gap: 12px; text-align: center; font-size: 11px; }
+.nums b { display: block; font-size: 14px; }
+.bio-m { margin: 8px 0; font-size: 12px; }
+.btns { display: flex; gap: 6px; margin: 8px 0; }
+.btn-m { flex: 1; background: #efefef; border-radius: 8px; text-align: center; padding: 7px 0; font-weight: 600; font-size: 12px; }
+.dest { display: flex; gap: 10px; margin: 10px 0; }
+.dest div { text-align: center; font-size: 10px; }
+.dest i { display: block; width: 46px; height: 46px; border-radius: 50%; border: 2px solid #ddd; background: #f3f3f3 center/cover; margin-bottom: 3px; }
+.grade { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin: 8px -12px 0; }
+.grade i { aspect-ratio: 1; background: #e9e4dc; position: relative; }
+.grade i:nth-child(3n) { background: #ded6ca; } .grade i:nth-child(2n) { background: #d3c8b8; }
+.nav-m { display: flex; justify-content: space-around; align-items: center; border-top: 1px solid #eee; padding: 8px 0 10px; font-size: 18px; }
+.nav-m .eu { width: 24px; height: 24px; border-radius: 50%; background: #ddd; border: 2px solid #111; }
+.lista-m div { padding: 11px 2px; border-bottom: 1px solid #f0f0f0; display: flex; justify-content: space-between; align-items: center; font-size: 14px; }
+.lista-m div span:last-child { color: #999; }
+.cab-m { text-align: center; font-weight: 700; font-size: 15px; padding: 6px 0 12px; position: relative; }
+.cab-m .esq { position: absolute; left: 0; } .cab-m .dir { position: absolute; right: 0; color: var(--ig-azul); }
+.abas-m { display: flex; border-bottom: 1px solid #eee; margin: 0 -12px 2px; font-size: 13px; font-weight: 600; }
+.abas-m span { flex: 1; text-align: center; padding: 8px 0; color: #999; } .abas-m span.on { color: #111; border-bottom: 2px solid #111; }
+.marca { position: absolute; top: 5px; right: 5px; width: 18px; height: 18px; border-radius: 50%; border: 2px solid #fff; background: rgba(0,0,0,.25); }
+.marca.on { background: var(--ig-azul); }
+.marca.on::after { content: '✓'; color: #fff; font-size: 11px; position: absolute; left: 3px; top: -1px; }
+.rodape-m { display: flex; justify-content: space-around; border-top: 1px solid #eee; padding: 12px 0; font-weight: 700; font-size: 14px; }
+.campo-m { border-bottom: 1px solid #eee; padding: 8px 0; }
+.campo-m small { display: block; color: #8e8e8e; font-size: 11px; }
+.campo-m.vazio small { color: #c7c7c7; }
+.foto-ed { text-align: center; margin-bottom: 8px; }
+.foto-ed .av { margin: 0 auto 6px; width: 72px; height: 72px; }
+.azul { color: var(--ig-azul); font-weight: 600; }
+.sec-m { color: #8e8e8e; font-size: 11px; font-weight: 600; margin: 12px 0 2px; }
+.folha { margin: 14px -12px 0; background: #f7f7f7; border-radius: 16px 16px 0 0; padding: 14px 14px 18px; }
+.folha div { padding: 10px 4px; font-size: 14px; }
+.input-m { border: 1px solid #dbdbdb; border-radius: 10px; padding: 10px; font-size: 14px; margin: 6px 0; display: flex; justify-content: space-between; }
+.ok-verde { color: #2BB24C; font-weight: 700; }
+.menu-flut { margin: 40px auto 0; width: 86%; background: #fff; border-radius: 14px; box-shadow: 0 6px 24px rgba(0,0,0,.25); overflow: hidden; }
+.menu-flut div { padding: 12px; border-bottom: 1px solid #eee; font-size: 14px; }
+.menu-flut .verm { color: #ED4956; font-weight: 600; }
+.escuro { background: #3b3b3b; }
+.story-m { height: 380px; margin: 0 -12px; background: linear-gradient(180deg,#2a3a22,#1b2915); color: #f3e9d7; display: flex; flex-direction: column; justify-content: flex-end; padding: 12px; }
+.story-m .story-bar { display: flex; justify-content: space-around; font-size: 11px; text-align: center; }
+.story-m .story-bar span { display: block; font-size: 18px; }
+
+/* o círculo vermelho que mostra onde tocar */
+.alvo { position: relative; outline: 3px solid var(--alvo); outline-offset: 3px; border-radius: 10px; animation: pulso 1.6s ease-in-out infinite; z-index: 2; }
+.alvo-r { border-radius: 50%; }
+.alvo::after { content: attr(data-dica); position: absolute; z-index: 3; white-space: nowrap; background: var(--alvo); color: #fff; font: 700 12px/1 system-ui, sans-serif; padding: 6px 8px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+.d-baixo::after { top: calc(100% + 10px); left: 50%; transform: translateX(-50%); }
+.d-cima::after { bottom: calc(100% + 10px); left: 50%; transform: translateX(-50%); }
+.d-esq::after { right: calc(100% + 10px); top: 50%; transform: translateY(-50%); }
+.d-dir::after { left: calc(100% + 10px); top: 50%; transform: translateY(-50%); }
+.d-baixo-dir::after { top: calc(100% + 10px); right: -6px; }
+@keyframes pulso { 0%, 100% { outline-color: var(--alvo); } 50% { outline-color: rgba(224, 38, 27, .35); } }
+@media (prefers-reduced-motion: reduce) { .alvo { animation: none; } }
+
+.fim { text-align: center; }
+.ajuda { margin-top: 32px; background: var(--verde); color: var(--fundo); border-radius: 16px; padding: 14px 16px; text-align: center; font-weight: 500; }
+.progresso { position: sticky; top: 0; z-index: 9; background: var(--fundo); padding: 10px 0; font-size: 15px; color: var(--suave); }
+.progresso .trilho { height: 8px; border-radius: 4px; background: var(--linha); overflow: hidden; margin-top: 6px; }
+.progresso .trilho i { display: block; height: 100%; width: 0; background: var(--verde); transition: width .3s; }
+</style>
+</head>
+<body>
+<main>
+
+<header class="topo">
+  <img src="foto-perfil.png" alt="Logo da Alho e Afeto">
+  <h1>Seu Instagram novo</h1>
+  <p>Do Stúdio para a <strong>Alho e Afeto</strong>, com calma, um passo de cada vez. Leva uns 20 minutos.</p>
+</header>
+
+<div class="progresso" aria-live="polite"><span id="prog-txt">0 de 18 passos feitos</span><div class="trilho"><i id="prog-barra"></i></div></div>
+
+<div class="aviso">
+  <p><strong>Como usar esta página:</strong> faça um passo, toque em <strong>"Feito ✓"</strong> e desça para o próximo. Os desenhos mostram a tela do Instagram. O <span style="color:var(--alvo);font-weight:700">círculo vermelho</span> é onde você toca.</p>
+  <p>Sua tela pode ter cores um pouco diferentes do desenho. Procure pelo nome escrito.</p>
+  <p>Travou? <strong>Tira um print da tela e manda para o Pedro.</strong></p>
+</div>
+
+<!-- ═══════════ ANTES ═══════════ -->
+<p class="parte-rot">Antes de começar</p>
+<h2>Baixe a foto nova</h2>
+<p>A foto do perfil e as capas dos destaques já estão prontas. Baixe tudo agora, assim fica no seu celular.</p>
+
+<a class="baixar" href="foto-perfil.png" download="alho-e-afeto-foto-perfil.png">⬇ Baixar a foto do perfil</a>
+<div class="capas">
+  <a href="destaque-precos.png" download="capa-precos.png"><img src="destaque-precos.png" alt="">Capa "Preços"</a>
+  <a href="destaque-como-pedir.png" download="capa-como-pedir.png"><img src="destaque-como-pedir.png" alt="">Capa "Como pedir"</a>
+  <a href="destaque-receitas.png" download="capa-receitas.png"><img src="destaque-receitas.png" alt="">Capa "Receitas"</a>
+  <a href="destaque-bastidores.png" download="capa-bastidores.png"><img src="destaque-bastidores.png" alt="">Capa "Bastidores"</a>
+</div>
+<div class="aviso">
+  <p><strong>No iPhone</strong>, a imagem pode abrir em vez de baixar. Aí é só <strong>segurar o dedo em cima dela</strong> e tocar em <strong>"Salvar na Fotos"</strong> (ou "Adicionar a Fotos").</p>
+  <p><strong>No Android</strong>, ela vai para a pasta <strong>Downloads</strong> e aparece na galeria.</p>
+</div>
+<div class="aviso">
+  <p>O Instagram pode pedir um <strong>código de segurança</strong> no meio do caminho. Ele chega no seu <strong>e-mail</strong> ou por <strong>SMS</strong>. É normal.</p>
+</div>
+
+<!-- ═══════════ PARTE 1 ═══════════ -->
+<p class="parte-rot">Parte 1 · Guardar as fotos do salão</p>
+<h2>As fotos antigas vão para o arquivo</h2>
+<p><strong>Nada é apagado.</strong> Arquivar só tira do perfil. Elas ficam guardadas só para você e podem voltar quando quiser.</p>
+
+<section class="passo" data-passo="1">
+  <div class="passo-cab"><span class="num">1</span><h3>Abra o Instagram e toque na sua foto, lá embaixo à direita</h3></div>
+  <div class="tela-wrap"><div class="tela">
+    <div class="st"><span>9:41</span><span>●●● ▮</span></div>
+    <div class="barra"><span>Instagram</span><span class="icos">♡ ✉</span></div>
+    <div class="miolo">
+      <div class="dest"><div><i></i>Seu story</div><div><i></i>Maria</div><div><i></i>Ana</div><div><i></i>João</div></div>
+      <div style="height:250px;background:#eee;border-radius:6px"></div>
+    </div>
+    <div class="nav-m"><span>⌂</span><span>⌕</span><span>⊕</span><span>▶</span><span class="eu alvo alvo-r d-cima" data-dica="Toque aqui"></span></div>
+  </div></div>
+  <p>Vai abrir o seu perfil, com o nome <strong>studio.adriane_schlinke</strong> em cima.</p>
+  <button class="feito-btn">Feito ✓</button>
+</section>
+
+<section class="passo" data-passo="2">
+  <div class="passo-cab"><span class="num">2</span><h3>Toque nos três risquinhos, no canto de cima à direita</h3></div>
+  <div class="tela-wrap"><div class="tela">
+    <div class="st"><span>9:41</span><span>●●● ▮</span></div>
+    <div class="barra"><span>studio.adriane_schlinke ⌄</span><span class="icos"><span>⊕</span><span class="alvo d-baixo-dir" data-dica="Toque aqui">☰</span></span></div>
+    <div class="miolo">
+      <div class="perfil-top"><div class="av"></div><div class="nums"><div><b>158</b>posts</div><div><b>486</b>seguidores</div><div><b>401</b>seguindo</div></div></div>
+      <div class="bio-m"><b>Stúdio Adriane Schlinke</b><br>Salão de beleza</div>
+      <div class="btns"><div class="btn-m">Editar perfil</div><div class="btn-m">Compartilhar perfil</div></div>
+      <div class="grade"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    </div>
+  </div></div>
+  <button class="feito-btn">Feito ✓</button>
+</section>
+
+<section class="passo" data-passo="3">
+  <div class="passo-cab"><span class="num">3</span><h3>Toque em "Sua atividade"</h3></div>
+  <div class="tela-wrap"><div class="tela">
+    <div class="st"><span>9:41</span><span>●●● ▮</span></div>
+    <div class="miolo">
+      <div class="cab-m"><span class="esq">‹</span>Configurações e atividade</div>
+      <div class="lista-m">
+        <div><span>Central de Contas</span><span>›</span></div>
+        <div class="alvo d-baixo" data-dica="Toque aqui"><span>Sua atividade</span><span>›</span></div>
+        <div><span>Arquivo</span><span>›</span></div>
+        <div><span>Notificações</span><span>›</span></div>
+        <div><span>Privacidade da conta</span><span>›</span></div>
+      </div>
+    </div>
+  </div></div>
+  <button class="feito-btn">Feito ✓</button>
+</section>
+
+<section class="passo" data-passo="4">
+  <div class="passo-cab"><span class="num">4</span><h3>Toque em "Fotos e vídeos" e depois em "Publicações"</h3></div>
+  <div class="tela-wrap"><div class="tela">
+    <div class="st"><span>9:41</span><span>●●● ▮</span></div>
+    <div class="miolo">
+      <div class="cab-m"><span class="esq">‹</span>Sua atividade</div>
+      <div class="lista-m">
+        <div><span>Interações</span><span>›</span></div>
+        <div class="alvo d-baixo" data-dica="1º toque aqui"><span>Fotos e vídeos</span><span>›</span></div>
+        <div><span>Conteúdo removido e arquivado</span><span>›</span></div>
+        <div><span>Tempo de uso</span><span>›</span></div>
+      </div>
+      <p style="margin:26px 0 6px;color:#8e8e8e;font-size:12px">Na tela seguinte:</p>
+      <div class="lista-m">
+        <div class="alvo d-baixo" data-dica="2º toque aqui"><span>Publicações</span><span>›</span></div>
+        <div><span>Reels</span><span>›</span></div>
+        <div><span>Destaques</span><span>›</span></div>
+      </div>
+    </div>
+  </div></div>
+  <button class="feito-btn">Feito ✓</button>
+</section>
+
+<section class="passo" data-passo="5">
+  <div class="passo-cab"><span class="num">5</span><h3>Toque em "Selecionar", marque as fotos e toque em "Arquivar"</h3></div>
+  <div class="tela-wrap"><div class="tela">
+    <div class="st"><span>9:41</span><span>●●● ▮</span></div>
+    <div class="miolo">
+      <div class="cab-m"><span class="esq">‹</span>Publicações<span class="dir alvo d-baixo-dir" data-dica="1º: Selecionar">Selecionar</span></div>
+      <div class="grade" style="margin-top:22px"><i><span class="marca on"></span></i><i><span class="marca on"></span></i><i><span class="marca on"></span></i><i><span class="marca on"></span></i><i><span class="marca on"></span></i><i><span class="marca"></span></i><i><span class="marca"></span></i><i><span class="marca"></span></i><i><span class="marca"></span></i></div>
+      <p style="text-align:center;color:#8e8e8e;font-size:12px;margin:10px 0">Toque em cada foto para marcar ✓</p>
+    </div>
+    <div class="rodape-m"><span class="azul alvo d-cima" data-dica="2º: Arquivar">Arquivar</span><span style="color:#ED4956">Excluir</span></div>
+  </div></div>
+  <div class="aviso cuidado"><p><strong>Cuidado:</strong> toque em <strong>"Arquivar"</strong>, nunca em "Excluir". Excluir apaga para sempre.</p></div>
+  <p>Dá para marcar várias de uma vez. Se forem muitas, faça em partes: marca umas 20, arquiva, e repete até não sobrar nenhuma do salão.</p>
+  <button class="feito-btn">Feito ✓</button>
+</section>
+
+<!-- ═══════════ PARTE 2 ═══════════ -->
+<p class="parte-rot">Parte 2 · Tirar os destaques do salão</p>
+<h2>As bolinhas de cima do perfil</h2>
+<p>São os destaques: Cutilagem, Gel nas unhas, Maquiagem, Banho de gel, Sobrancelhas, Manicure e Cílios. Vamos tirar um por um. Os stories continuam guardados no seu arquivo.</p>
+
+<section class="passo" data-passo="6">
+  <div class="passo-cab"><span class="num">6</span><h3>No perfil, segure o dedo em cima de um destaque e toque em "Excluir destaque"</h3></div>
+  <div class="tela-wrap"><div class="tela escuro">
+    <div class="st" style="color:#fff"><span>9:41</span><span>●●● ▮</span></div>
+    <div class="miolo">
+      <div class="dest" style="color:#fff"><div><i class="alvo alvo-r d-dir" data-dica="Segure o dedo aqui"></i>Cutilagem</div></div>
+      <div class="menu-flut">
+        <div class="verm alvo d-baixo" data-dica="Depois toque aqui">Excluir destaque</div>
+        <div>Editar destaque</div>
+        <div>Enviar para…</div>
+        <div>Copiar link</div>
+      </div>
+    </div>
+  </div></div>
+  <p>Confirme tocando em <strong>"Excluir"</strong>. Repita nos 7 destaques.</p>
+  <button class="feito-btn">Feito ✓</button>
+</section>
+
+<!-- ═══════════ PARTE 3 ═══════════ -->
+<p class="parte-rot">Parte 3 · O perfil novo</p>
+<h2>Nome, foto, @ e bio</h2>
+
+<section class="passo" data-passo="7">
+  <div class="passo-cab"><span class="num">7</span><h3>No seu perfil, toque em "Editar perfil"</h3></div>
+  <div class="tela-wrap"><div class="tela">
+    <div class="st"><span>9:41</span><span>●●● ▮</span></div>
+    <div class="barra"><span>studio.adriane_schlinke ⌄</span><span class="icos">⊕ ☰</span></div>
+    <div class="miolo">
+      <div class="perfil-top"><div class="av"></div><div class="nums"><div><b>0</b>posts</div><div><b>486</b>seguidores</div><div><b>401</b>seguindo</div></div></div>
+      <div class="bio-m"><b>Stúdio Adriane Schlinke</b></div>
+      <div class="btns"><div class="btn-m alvo d-baixo" data-dica="Toque aqui">Editar perfil</div><div class="btn-m">Compartilhar perfil</div></div>
+    </div>
+  </div></div>
+  <button class="feito-btn">Feito ✓</button>
+</section>
+
+<section class="passo" data-passo="8">
+  <div class="passo-cab"><span class="num">8</span><h3>Trocar a foto: toque em "Editar foto ou avatar"</h3></div>
+  <div class="tela-wrap"><div class="tela">
+    <div class="st"><span>9:41</span><span>●●● ▮</span></div>
+    <div class="miolo">
+      <div class="cab-m"><span class="esq">‹</span>Editar perfil</div>
+      <div class="foto-ed"><div class="av"></div><span class="azul alvo d-baixo" data-dica="Toque aqui">Editar foto ou avatar</span></div>
+      <div style="height:30px"></div>
+      <div class="campo-m"><small>Nome</small>Stúdio Adriane Schlinke</div>
+      <div class="campo-m"><small>Nome de usuário</small>studio.adriane_schlinke</div>
+      <div class="campo-m"><small>Bio</small>Um conceito diferente de Studio…</div>
+    </div>
+    <div class="folha">
+      <div class="alvo d-cima" data-dica="Depois toque aqui">Nova foto de perfil</div>
+      <div>Criar avatar</div>
+      <div style="color:#ED4956">Remover foto atual</div>
+    </div>
+  </div></div>
+  <p>Toque em <strong>"Nova foto de perfil"</strong>, escolha a foto que você baixou (a logo da Alho e Afeto), deixe a logo no meio do círculo e toque em <strong>"Concluir"</strong> (ou na setinha → no canto de cima).</p>
+  <button class="feito-btn">Feito ✓</button>
+</section>
+
+<section class="passo" data-passo="9">
+  <div class="passo-cab"><span class="num">9</span><h3>Trocar o nome: toque em "Nome", apague e cole o novo</h3></div>
+  <div class="copiar"><pre id="t-nome">Alho e Afeto · Alho triturado</pre><button data-copiar="t-nome">Copiar o nome</button></div>
+  <div class="tela-wrap"><div class="tela">
+    <div class="st"><span>9:41</span><span>●●● ▮</span></div>
+    <div class="miolo">
+      <div class="cab-m"><span class="esq">✕</span>Nome<span class="dir alvo d-baixo-dir" data-dica="3º: toque no ✓" style="font-size:18px">✓</span></div>
+      <div class="input-m alvo d-baixo" data-dica="1º: apague · 2º: segure e Colar" style="margin-top:26px"><span>Alho e Afeto · Alho triturado</span><span>✕</span></div>
+      <p style="color:#8e8e8e;font-size:11px;margin-top:40px">Ajude as pessoas a encontrar sua conta usando o nome pelo qual você é conhecida.</p>
+    </div>
+  </div></div>
+  <p>Para colar: <strong>segure o dedo dentro do campo</strong> e toque em <strong>"Colar"</strong>.</p>
+  <div class="aviso"><p>O Instagram deixa trocar o nome só <strong>2 vezes em 14 dias</strong>. Confira se ficou certinho antes de tocar no ✓.</p></div>
+  <button class="feito-btn">Feito ✓</button>
+</section>
+
+<section class="passo" data-passo="10">
+  <div class="passo-cab"><span class="num">10</span><h3>Trocar o @: toque em "Nome de usuário", apague e cole o novo</h3></div>
+  <div class="copiar"><pre id="t-user">alhoeafeto.rj</pre><button data-copiar="t-user">Copiar o @</button></div>
+  <div class="tela-wrap"><div class="tela">
+    <div class="st"><span>9:41</span><span>●●● ▮</span></div>
+    <div class="miolo">
+      <div class="cab-m"><span class="esq">✕</span>Nome de usuário<span class="dir alvo d-baixo-dir" data-dica="Toque no ✓" style="font-size:18px">✓</span></div>
+      <div class="input-m" style="margin-top:26px"><span>alhoeafeto.rj</span><span class="ok-verde alvo alvo-r d-baixo-dir" data-dica="Espere este ✓ verde">✓</span></div>
+      <p style="color:#8e8e8e;font-size:11px;margin-top:46px">Você poderá voltar para studio.adriane_schlinke por 14 dias.</p>
+    </div>
+  </div></div>
+  <p>Espere aparecer o <strong style="color:#2BB24C">✓ verde</strong> no campo. Ele quer dizer que o nome está livre. Aí toque no ✓ lá em cima.</p>
+  <div class="aviso"><p><strong>Fique tranquila:</strong> suas seguidoras continuam todas aí. Só muda o endereço do perfil.</p>
+  <p>Se aparecer <strong>"não está disponível"</strong>, use este: <strong>alho.e.afeto</strong> (com os pontinhos).</p></div>
+  <button class="feito-btn">Feito ✓</button>
+</section>
+
+<section class="passo" data-passo="11">
+  <div class="passo-cab"><span class="num">11</span><h3>Trocar a bio: toque em "Bio", apague tudo e cole o texto novo</h3></div>
+  <div class="copiar"><pre id="t-bio">Alho roxo triturado, pronto pra usar 🧄
+Pote 250 g R$ 13 · 500 g R$ 20
+Feito com carinho no Rio
+Encomende pelo WhatsApp 👇</pre><button data-copiar="t-bio">Copiar a bio</button></div>
+  <div class="tela-wrap"><div class="tela">
+    <div class="st"><span>9:41</span><span>●●● ▮</span></div>
+    <div class="miolo">
+      <div class="cab-m"><span class="esq">‹</span>Editar perfil</div>
+      <div class="foto-ed"><div class="av" style="background-image:url(foto-perfil.png)"></div><span class="azul">Editar foto ou avatar</span></div>
+      <div class="campo-m"><small>Nome</small>Alho e Afeto · Alho triturado</div>
+      <div class="campo-m"><small>Nome de usuário</small>alhoeafeto.rj</div>
+      <div class="campo-m alvo d-baixo" data-dica="Toque aqui"><small>Bio</small>Um conceito diferente de Studio…</div>
+      <div class="campo-m" style="margin-top:30px"><small>Links</small>linktr.ee/studioschilinke</div>
+    </div>
+  </div></div>
+  <p>Dentro da bio, segure o dedo no texto, toque em <strong>"Selecionar tudo"</strong>, apague, depois segure de novo e toque em <strong>"Colar"</strong>. Toque no ✓.</p>
+  <button class="feito-btn">Feito ✓</button>
+</section>
+
+<section class="passo" data-passo="12">
+  <div class="passo-cab"><span class="num">12</span><h3>Trocar o link: tire o Linktree e coloque o do WhatsApp</h3></div>
+  <div class="tela-wrap"><div class="tela">
+    <div class="st"><span>9:41</span><span>●●● ▮</span></div>
+    <div class="miolo">
+      <div class="cab-m"><span class="esq">‹</span>Links</div>
+      <div class="lista-m">
+        <div class="alvo d-baixo" data-dica="1º: toque no link antigo"><span>linktr.ee/studioschilinke</span><span>›</span></div>
+      </div>
+      <p style="color:#8e8e8e;font-size:12px;margin:34px 0 6px">Na tela do link, toque em <b style="color:#ED4956">Remover link</b>. Depois, de volta aqui:</p>
+      <div class="lista-m">
+        <div class="alvo d-baixo" data-dica="2º: Adicionar link externo"><span class="azul">Adicionar link externo</span><span>›</span></div>
+      </div>
+    </div>
+  </div></div>
+  <p>No campo <strong>"URL"</strong>, cole este link:</p>
+  <div class="copiar"><pre id="t-link">https://wa.me/5521976765504?text=Oi!%20Quero%20encomendar%20alho%20triturado</pre><button data-copiar="t-link">Copiar o link</button></div>
+  <p>No campo <strong>"Título"</strong>, cole:</p>
+  <div class="copiar"><pre id="t-titulo">Encomendar pelo WhatsApp</pre><button data-copiar="t-titulo">Copiar o título</button></div>
+  <p>Toque em <strong>"Concluir"</strong>. Agora quem tocar no link do seu perfil já cai na sua conversa do WhatsApp, com a mensagem escrita.</p>
+  <button class="feito-btn">Feito ✓</button>
+</section>
+
+<section class="passo" data-passo="13">
+  <div class="passo-cab"><span class="num">13</span><h3>Trocar a categoria: de "Salão de beleza" para alimentos</h3></div>
+  <div class="tela-wrap"><div class="tela">
+    <div class="st"><span>9:41</span><span>●●● ▮</span></div>
+    <div class="miolo">
+      <div class="cab-m"><span class="esq">‹</span>Editar perfil</div>
+      <p style="color:#8e8e8e;font-size:12px;margin:4px 0 8px">Desça a tela até o fim ⬇</p>
+      <div class="sec-m">Informações do perfil profissional</div>
+      <div class="lista-m">
+        <div><span>Página</span><span>Studio Adriane…</span></div>
+        <div class="alvo d-baixo" data-dica="Toque aqui"><span>Categoria</span><span>Salão de beleza</span></div>
+        <div style="margin-top:22px"><span>Opções de contato</span><span>›</span></div>
+        <div><span>Exibição do perfil</span><span>›</span></div>
+      </div>
+    </div>
+  </div></div>
+  <p>Na busca, escreva <strong>alimento</strong> e escolha a opção mais parecida, como <strong>"Empresa de alimentos e bebidas"</strong>. Deixe ligado <strong>"Exibir categoria no perfil"</strong> e toque em <strong>"Concluir"</strong>.</p>
+  <button class="feito-btn">Feito ✓</button>
+</section>
+
+<section class="passo" data-passo="14">
+  <div class="passo-cab"><span class="num">14</span><h3>Tirar o endereço da sua casa e colocar o WhatsApp</h3></div>
+  <div class="tela-wrap"><div class="tela">
+    <div class="st"><span>9:41</span><span>●●● ▮</span></div>
+    <div class="miolo">
+      <div class="cab-m"><span class="esq">‹</span>Opções de contato</div>
+      <div class="campo-m"><small>E-mail comercial</small>(deixe como está)</div>
+      <div class="campo-m alvo d-baixo" data-dica="Coloque o WhatsApp aqui"><small>WhatsApp</small>(21) 97676-5504</div>
+      <div class="campo-m" style="margin-top:34px"><small>Telefone comercial</small>(deixe como está)</div>
+      <div class="campo-m alvo d-baixo" data-dica="Apague o endereço"><small>Endereço comercial</small>Rua … Penha, Rio de Janeiro ✕</div>
+    </div>
+  </div></div>
+  <p>Em <strong>"Editar perfil"</strong>, toque em <strong>"Opções de contato"</strong> (pode estar escrito <strong>"Botões de contato"</strong>).</p>
+  <p><strong>Apague o endereço comercial.</strong> Ele mostra o endereço da sua casa para qualquer pessoa, e agora a venda é por encomenda. Toque no ✓.</p>
+  <div class="aviso"><p>Se não aparecer o campo do WhatsApp, tudo bem: o link da bio (passo 12) já leva para o seu WhatsApp.</p></div>
+  <button class="feito-btn">Feito ✓</button>
+</section>
+
+<!-- ═══════════ PARTE 4 ═══════════ -->
+<p class="parte-rot">Parte 4 · Destaques novos</p>
+<h2>As bolinhas novas do perfil</h2>
+<p>Vamos criar 4 destaques: <strong>Preços</strong>, <strong>Como pedir</strong>, <strong>Receitas</strong> e <strong>Bastidores</strong>. O Pedro vai te mandar as artes para postar.</p>
+
+<section class="passo" data-passo="15">
+  <div class="passo-cab"><span class="num">15</span><h3>Poste a arte de preços nos stories e toque em "Destacar"</h3></div>
+  <div class="tela-wrap"><div class="tela">
+    <div class="st"><span>9:41</span><span>●●● ▮</span></div>
+    <div class="miolo" style="padding-bottom:0">
+      <div class="story-m">
+        <p style="text-align:center;font-family:Georgia,serif;font-size:18px;margin:0 0 150px">Seu story com a arte de preços</p>
+        <div class="story-bar"><div><span>👁</span>Atividade</div><div class="alvo d-cima" data-dica="Toque aqui"><span>♡</span>Destacar</div><div><span>➤</span>Enviar</div><div><span>⋯</span>Mais</div></div>
+      </div>
+    </div>
+  </div></div>
+  <p>Depois de postar, abra o seu story (toque na sua foto). Embaixo aparece <strong>"Destacar"</strong>. Toque, depois em <strong>"Novo"</strong>, escreva <strong>Preços</strong> e toque em <strong>"Adicionar"</strong>.</p>
+  <button class="feito-btn">Feito ✓</button>
+</section>
+
+<section class="passo" data-passo="16">
+  <div class="passo-cab"><span class="num">16</span><h3>Coloque a capa: segure o destaque e toque em "Editar destaque"</h3></div>
+  <div class="tela-wrap"><div class="tela escuro">
+    <div class="st" style="color:#fff"><span>9:41</span><span>●●● ▮</span></div>
+    <div class="miolo">
+      <div class="dest" style="color:#fff"><div><i class="alvo alvo-r d-dir" data-dica="Segure o dedo aqui"></i>Preços</div></div>
+      <div class="menu-flut">
+        <div class="verm">Excluir destaque</div>
+        <div class="alvo d-baixo" data-dica="Toque aqui">Editar destaque</div>
+        <div>Enviar para…</div>
+      </div>
+    </div>
+  </div></div>
+  <p>Toque em <strong>"Editar capa"</strong>, depois no <strong>quadradinho de galeria</strong> 🖼, e escolha a capa <strong>"Preços"</strong> que você baixou. Ajuste para ficar no meio e toque em <strong>"Concluir"</strong>.</p>
+  <p>Repita os passos 15 e 16 para <strong>Como pedir</strong>, <strong>Receitas</strong> e <strong>Bastidores</strong>.</p>
+  <button class="feito-btn">Feito ✓</button>
+</section>
+
+<!-- ═══════════ PARTE 5 ═══════════ -->
+<p class="parte-rot">Parte 5 · Contar a novidade</p>
+<h2>Avise suas clientes</h2>
+
+<section class="passo" data-passo="17">
+  <div class="passo-cab"><span class="num">17</span><h3>Poste um story contando a mudança</h3></div>
+  <p>Suas seguidoras conhecem o Stúdio. Um recado seu evita estranhamento. Pode usar este texto:</p>
+  <div class="copiar"><pre id="t-aviso">O Stúdio virou Alho e Afeto! 🧄
+Agora eu cuido do tempero da sua casa: alho roxo triturado, pronto pra usar.
+Encomendas pelo WhatsApp do perfil.</pre><button data-copiar="t-aviso">Copiar o recado</button></div>
+  <button class="feito-btn">Feito ✓</button>
+</section>
+
+<section class="passo" data-passo="18">
+  <div class="passo-cab"><span class="num">18</span><h3>Coloque o @ novo no status do WhatsApp</h3></div>
+  <div class="copiar"><pre id="t-status">Meu Instagram mudou! Agora é @alhoeafeto.rj 🧄
+instagram.com/alhoeafeto.rj</pre><button data-copiar="t-status">Copiar o recado</button></div>
+  <p>Se no passo 10 você usou <strong>alho.e.afeto</strong>, troque o @ no recado antes de postar.</p>
+  <button class="feito-btn">Feito ✓</button>
+</section>
+
+<!-- ═══════════ FIM ═══════════ -->
+<p class="parte-rot">Pronto</p>
+<h2>Seu perfil vai ficar assim</h2>
+<div class="tela-wrap"><div class="tela">
+  <div class="st"><span>9:41</span><span>●●● ▮</span></div>
+  <div class="barra"><span>alhoeafeto.rj ⌄</span><span class="icos">⊕ ☰</span></div>
+  <div class="miolo">
+    <div class="perfil-top"><div class="av" style="background-image:url(foto-perfil.png)"></div><div class="nums"><div><b>0</b>posts</div><div><b>486</b>seguidores</div><div><b>401</b>seguindo</div></div></div>
+    <div class="bio-m"><b>Alho e Afeto · Alho triturado</b><br><span style="color:#8e8e8e">Empresa de alimentos e bebidas</span><br>Alho roxo triturado, pronto pra usar 🧄<br>Pote 250 g R$ 13 · 500 g R$ 20<br>Feito com carinho no Rio<br>Encomende pelo WhatsApp 👇<br><span style="color:#00376B">🔗 Encomendar pelo WhatsApp</span></div>
+    <div class="btns"><div class="btn-m">Editar perfil</div><div class="btn-m">WhatsApp</div></div>
+    <div class="dest"><div><i style="background-image:url(destaque-precos.png)"></i>Preços</div><div><i style="background-image:url(destaque-como-pedir.png)"></i>Como pedir</div><div><i style="background-image:url(destaque-receitas.png)"></i>Receitas</div><div><i style="background-image:url(destaque-bastidores.png)"></i>Bastidores</div></div>
+  </div>
+</div></div>
+<p class="fim">Agora é só postar os vídeos e as artes que o Pedro mandou. Uma por dia, com calma. 💚</p>
+
+<div class="ajuda">Travou em algum passo? <strong>Tira um print da tela</strong> e manda para o Pedro.</div>
+
+</main>
+<script>
+(function () {
+  var total = document.querySelectorAll('.passo').length;
+  var chave = 'alho-e-afeto-guia-feitos';
+  var feitos = {};
+  try { feitos = JSON.parse(localStorage.getItem(chave) || '{}'); } catch (e) { feitos = {}; }
+  function salvar() { try { localStorage.setItem(chave, JSON.stringify(feitos)); } catch (e) {} }
+  function atualizar() {
+    var n = 0;
+    document.querySelectorAll('.passo').forEach(function (p) {
+      var on = !!feitos[p.dataset.passo];
+      p.classList.toggle('feito', on);
+      p.querySelector('.feito-btn').textContent = on ? 'Feito ✓ (toque para desfazer)' : 'Feito ✓';
+      if (on) n++;
+    });
+    document.getElementById('prog-txt').textContent = n + ' de ' + total + ' passos feitos';
+    document.getElementById('prog-barra').style.width = (100 * n / total) + '%';
+  }
+  document.querySelectorAll('.feito-btn').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var p = b.closest('.passo'); var id = p.dataset.passo;
+      feitos[id] = !feitos[id]; salvar(); atualizar();
+      if (feitos[id]) { var prox = p.nextElementSibling; while (prox && !prox.classList.contains('passo')) prox = prox.nextElementSibling;
+        if (prox) prox.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+  document.querySelectorAll('[data-copiar]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var texto = document.getElementById(b.dataset.copiar).textContent;
+      var original = b.textContent;
+      function ok() { b.textContent = 'Copiado ✓ agora é só colar'; setTimeout(function () { b.textContent = original; }, 2500); }
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(texto).then(ok, function () { reserva(texto); ok(); });
+      } else { reserva(texto); ok(); }
+    });
+  });
+  function reserva(texto) {
+    var t = document.createElement('textarea'); t.value = texto; t.setAttribute('readonly', '');
+    t.style.position = 'fixed'; t.style.opacity = '0'; document.body.appendChild(t);
+    t.select(); t.setSelectionRange(0, 99999);
+    try { document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(t);
+  }
+  atualizar();
+})();
+</script>
+</body>
+</html>
