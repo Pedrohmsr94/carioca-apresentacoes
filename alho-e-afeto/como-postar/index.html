@@ -1,0 +1,753 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1B2915">
+<title>Como postar · Alho e Afeto</title>
+<meta property="og:title" content="Como postar: Alho e Afeto">
+<meta property="og:description" content="Passo a passo e calendário de novembro e dezembro, com a legenda de cada dia.">
+<meta property="og:image" content="https://pedrohmsr94.github.io/carioca-apresentacoes/alho-e-afeto/foto-perfil.png">
+<link rel="icon" href="../foto-perfil.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --fundo: #FBF6EC;
+  --cartao: #FFFFFF;
+  --texto: #2A2118;
+  --suave: #6B5E50;
+  --verde: #23401C;
+  --verde-claro: #E6EEDC;
+  --trigo: #B8873E;
+  --alvo: #E0261B;
+  --linha: #E7DDCB;
+  --ig-azul: #0095F6;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --fundo: #17140F; --cartao: #221D16; --texto: #F3EBDD; --suave: #B9AC99;
+    --verde: #B9D4A5; --verde-claro: #26331F; --trigo: #E0B571; --linha: #3A3226;
+  }
+}
+:root[data-theme="dark"] {
+  --fundo: #17140F; --cartao: #221D16; --texto: #F3EBDD; --suave: #B9AC99;
+  --verde: #B9D4A5; --verde-claro: #26331F; --trigo: #E0B571; --linha: #3A3226;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--fundo); color: var(--texto); font: 400 19px/1.55 'DM Sans', system-ui, sans-serif; }
+main { max-width: 640px; margin: 0 auto; padding: 0 16px 80px; }
+h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; font-weight: 600; color: var(--verde); line-height: 1.15; margin: 0; }
+h1 { font-size: 36px; }
+h2 { font-size: 28px; margin: 48px 0 6px; }
+h3 { font-size: 22px; }
+p { margin: 10px 0; }
+strong { font-weight: 700; }
+.topo { text-align: center; padding: 36px 0 8px; }
+.topo img { width: 132px; height: 132px; border-radius: 50%; border: 1px solid var(--linha); }
+.topo p { color: var(--suave); font-size: 18px; }
+.aviso { background: var(--verde-claro); border-radius: 16px; padding: 16px 18px; margin: 18px 0; }
+.aviso.cuidado { background: #FDE8E6; color: #5C1610; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .aviso.cuidado { background: #3D1D19; color: #F6CFCA; } }
+.parte-rot { font: 700 14px/1 'DM Sans'; letter-spacing: .16em; text-transform: uppercase; color: var(--trigo); margin-top: 56px; }
+
+/* passo */
+.passo { background: var(--cartao); border: 1px solid var(--linha); border-radius: 20px; padding: 20px 18px 18px; margin: 18px 0; }
+.passo-cab { display: flex; gap: 14px; align-items: flex-start; }
+.num { flex: none; width: 44px; height: 44px; border-radius: 50%; background: var(--verde); color: #fff; font: 700 21px/44px 'DM Sans'; text-align: center; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .num { color: #17140F; } }
+.passo-cab h3 { padding-top: 8px; }
+.passo.feito { opacity: .55; }
+.feito-btn { margin-top: 14px; width: 100%; min-height: 52px; border-radius: 14px; border: 2px solid var(--verde); background: transparent; color: var(--verde); font: 700 18px 'DM Sans'; cursor: pointer; }
+.passo.feito .feito-btn { background: var(--verde); color: var(--fundo); }
+
+/* textos para copiar */
+.copiar { margin: 12px 0; border: 2px dashed var(--trigo); border-radius: 14px; padding: 14px 16px; background: var(--fundo); }
+.copiar pre { margin: 0 0 12px; white-space: pre-wrap; overflow-wrap: anywhere; font: 500 19px/1.5 'DM Sans'; color: var(--texto); }
+.copiar button, .baixar { display: block; width: 100%; min-height: 52px; border: 0; border-radius: 12px; background: var(--trigo); color: #fff; font: 700 18px 'DM Sans'; cursor: pointer; text-align: center; text-decoration: none; line-height: 52px; }
+.baixar { margin: 10px 0; background: var(--verde); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .baixar, :root:not([data-theme="light"]) .copiar button { color: #17140F; } }
+.capas { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 12px 0; }
+.capas a { display: block; text-align: center; text-decoration: none; color: var(--texto); font-size: 16px; }
+.capas img { width: 100%; aspect-ratio: 1; object-fit: cover; object-position: center; border-radius: 50%; border: 1px solid var(--linha); }
+
+/* ── desenho do celular ───────────────────────────────── */
+.tela-wrap { display: flex; justify-content: center; margin: 16px 0 6px; }
+.tela { width: 100%; max-width: 300px; background: #fff; color: #111; border: 10px solid #1d1d1f; border-radius: 34px; overflow: hidden; font: 400 13px/1.35 system-ui, -apple-system, 'Segoe UI', sans-serif; box-shadow: 0 10px 30px rgba(0,0,0,.15); }
+.tela * { font-family: inherit; }
+.st { display: flex; justify-content: space-between; padding: 6px 14px 4px; font-size: 11px; font-weight: 600; }
+.barra { display: flex; align-items: center; justify-content: space-between; padding: 6px 12px 10px; font-weight: 700; font-size: 15px; }
+.barra .icos { display: flex; gap: 14px; font-size: 18px; }
+.miolo { padding: 0 12px 12px; min-height: 360px; }
+.legenda-tela { text-align: center; color: var(--suave); font-size: 14px; margin: 4px 0 0; }
+.perfil-top { display: flex; align-items: center; gap: 14px; }
+.av { width: 64px; height: 64px; border-radius: 50%; background: #eee center/cover; flex: none; border: 1px solid #ddd; }
+.nums { display: flex; gap: 12px; text-align: center; font-size: 11px; }
+.nums b { display: block; font-size: 14px; }
+.bio-m { margin: 8px 0; font-size: 12px; }
+.btns { display: flex; gap: 6px; margin: 8px 0; }
+.btn-m { flex: 1; background: #efefef; border-radius: 8px; text-align: center; padding: 7px 0; font-weight: 600; font-size: 12px; }
+.dest { display: flex; gap: 10px; margin: 10px 0; }
+.dest div { text-align: center; font-size: 10px; }
+.dest i { display: block; width: 46px; height: 46px; border-radius: 50%; border: 2px solid #ddd; background: #f3f3f3 center/cover; margin-bottom: 3px; }
+.grade { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin: 8px -12px 0; }
+.grade i { aspect-ratio: 1; background: #e9e4dc; position: relative; }
+.grade i:nth-child(3n) { background: #ded6ca; } .grade i:nth-child(2n) { background: #d3c8b8; }
+.nav-m { display: flex; justify-content: space-around; align-items: center; border-top: 1px solid #eee; padding: 8px 0 10px; font-size: 18px; }
+.nav-m .eu { width: 24px; height: 24px; border-radius: 50%; background: #ddd; border: 2px solid #111; }
+.lista-m div { padding: 11px 2px; border-bottom: 1px solid #f0f0f0; display: flex; justify-content: space-between; align-items: center; font-size: 14px; }
+.lista-m div span:last-child { color: #999; }
+.cab-m { text-align: center; font-weight: 700; font-size: 15px; padding: 6px 0 12px; position: relative; }
+.cab-m .esq { position: absolute; left: 0; } .cab-m .dir { position: absolute; right: 0; color: var(--ig-azul); }
+.abas-m { display: flex; border-bottom: 1px solid #eee; margin: 0 -12px 2px; font-size: 13px; font-weight: 600; }
+.abas-m span { flex: 1; text-align: center; padding: 8px 0; color: #999; } .abas-m span.on { color: #111; border-bottom: 2px solid #111; }
+.marca { position: absolute; top: 5px; right: 5px; width: 18px; height: 18px; border-radius: 50%; border: 2px solid #fff; background: rgba(0,0,0,.25); }
+.marca.on { background: var(--ig-azul); }
+.marca.on::after { content: '✓'; color: #fff; font-size: 11px; position: absolute; left: 3px; top: -1px; }
+.rodape-m { display: flex; justify-content: space-around; border-top: 1px solid #eee; padding: 12px 0; font-weight: 700; font-size: 14px; }
+.campo-m { border-bottom: 1px solid #eee; padding: 8px 0; }
+.campo-m small { display: block; color: #8e8e8e; font-size: 11px; }
+.campo-m.vazio small { color: #c7c7c7; }
+.foto-ed { text-align: center; margin-bottom: 8px; }
+.foto-ed .av { margin: 0 auto 6px; width: 72px; height: 72px; }
+.azul { color: var(--ig-azul); font-weight: 600; }
+.sec-m { color: #8e8e8e; font-size: 11px; font-weight: 600; margin: 12px 0 2px; }
+.folha { margin: 14px -12px 0; background: #f7f7f7; border-radius: 16px 16px 0 0; padding: 14px 14px 18px; }
+.folha div { padding: 10px 4px; font-size: 14px; }
+.input-m { border: 1px solid #dbdbdb; border-radius: 10px; padding: 10px; font-size: 14px; margin: 6px 0; display: flex; justify-content: space-between; }
+.ok-verde { color: #2BB24C; font-weight: 700; }
+.menu-flut { margin: 40px auto 0; width: 86%; background: #fff; border-radius: 14px; box-shadow: 0 6px 24px rgba(0,0,0,.25); overflow: hidden; }
+.menu-flut div { padding: 12px; border-bottom: 1px solid #eee; font-size: 14px; }
+.menu-flut .verm { color: #ED4956; font-weight: 600; }
+.escuro { background: #3b3b3b; }
+.story-m { height: 380px; margin: 0 -12px; background: linear-gradient(180deg,#2a3a22,#1b2915); color: #f3e9d7; display: flex; flex-direction: column; justify-content: flex-end; padding: 12px; }
+.story-m .story-bar { display: flex; justify-content: space-around; font-size: 11px; text-align: center; }
+.story-m .story-bar span { display: block; font-size: 18px; }
+
+/* o círculo vermelho que mostra onde tocar */
+.alvo { position: relative; outline: 3px solid var(--alvo); outline-offset: 3px; border-radius: 10px; animation: pulso 1.6s ease-in-out infinite; z-index: 2; }
+.alvo-r { border-radius: 50%; }
+.alvo::after { content: attr(data-dica); position: absolute; z-index: 3; white-space: nowrap; background: var(--alvo); color: #fff; font: 700 12px/1 system-ui, sans-serif; padding: 6px 8px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+.d-baixo::after { top: calc(100% + 10px); left: 50%; transform: translateX(-50%); }
+.d-cima::after { bottom: calc(100% + 10px); left: 50%; transform: translateX(-50%); }
+.d-esq::after { right: calc(100% + 10px); top: 50%; transform: translateY(-50%); }
+.d-dir::after { left: calc(100% + 10px); top: 50%; transform: translateY(-50%); }
+.d-baixo-dir::after { top: calc(100% + 10px); right: -6px; }
+@keyframes pulso { 0%, 100% { outline-color: var(--alvo); } 50% { outline-color: rgba(224, 38, 27, .35); } }
+@media (prefers-reduced-motion: reduce) { .alvo { animation: none; } }
+
+.fim { text-align: center; }
+.ajuda { margin-top: 32px; background: var(--verde); color: var(--fundo); border-radius: 16px; padding: 14px 16px; text-align: center; font-weight: 500; }
+.progresso { position: sticky; top: 0; z-index: 9; background: var(--fundo); padding: 10px 0; font-size: 15px; color: var(--suave); }
+.progresso .trilho { height: 8px; border-radius: 4px; background: var(--linha); overflow: hidden; margin-top: 6px; }
+.progresso .trilho i { display: block; height: 100%; width: 0; background: var(--verde); transition: width .3s; }
+
+/* calendário */
+.dia { background: var(--cartao); border: 1px solid var(--linha); border-radius: 20px; padding: 16px; margin: 14px 0; }
+.dia.feito { opacity: .5; }
+.dia.feito .feito-btn { background: var(--verde); color: var(--fundo); }
+.dia-cab { display: flex; gap: 14px; align-items: flex-start; }
+.dia-cab img { width: 84px; height: 105px; object-fit: cover; border-radius: 8px; flex: none; border: 1px solid var(--linha); }
+.dia-data { font-weight: 700; font-size: 20px; color: var(--verde); }
+.dia-nome { font-family: 'Fraunces', Georgia, serif; font-size: 20px; line-height: 1.2; margin: 2px 0 4px; }
+.dia-tipo, .dia-onde { font-size: 15px; color: var(--suave); }
+.botao-drive { display: block; text-align: center; text-decoration: none; min-height: 56px; line-height: 56px; border-radius: 14px; background: var(--verde); color: #fff; font: 700 19px 'DM Sans'; margin: 14px 0; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .botao-drive { color: #17140F; } }
+.pastas { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 12px 0; }
+.pastas div { background: var(--cartao); border: 1px solid var(--linha); border-radius: 14px; padding: 12px; font-size: 16px; line-height: 1.35; }
+.pastas b { display: block; font-size: 18px; color: var(--verde); }
+.indice a { display: block; padding: 12px 14px; margin: 6px 0; background: var(--cartao); border: 1px solid var(--linha); border-radius: 12px; color: var(--texto); text-decoration: none; font-weight: 500; }
+.indice a b { color: var(--trigo); margin-right: 8px; }
+/* desenhos novos */
+.galeria { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin: 0 -12px; }
+.galeria i { aspect-ratio: 1; background: #d9cfbf center/cover; position: relative; font-style: normal; }
+.galeria .n { position: absolute; top: 5px; right: 5px; width: 20px; height: 20px; border-radius: 50%; background: var(--ig-azul); color: #fff; font: 700 11px/20px system-ui; text-align: center; border: 2px solid #fff; }
+.galeria .vazio { position: absolute; top: 5px; right: 5px; width: 20px; height: 20px; border-radius: 50%; border: 2px solid #fff; background: rgba(0,0,0,.2); }
+.previa { height: 170px; margin: 0 -12px 2px; background: #cfc3b0 center/cover; }
+.barra-sel { display: flex; justify-content: space-between; align-items: center; padding: 8px 2px; font-weight: 700; font-size: 14px; }
+.icone-sel { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; background: #efefef; border-radius: 14px; padding: 4px 10px; }
+.abas-novo { display: flex; justify-content: center; gap: 18px; padding: 10px 0 6px; font-size: 12px; font-weight: 700; color: #999; }
+.abas-novo .on { color: #111; }
+.campo-leg { border: 1px solid #ddd; border-radius: 10px; padding: 10px; min-height: 70px; color: #999; font-size: 13px; margin: 10px 0; }
+.botao-azul { background: var(--ig-azul); color: #fff; border-radius: 10px; text-align: center; padding: 10px; font-weight: 700; font-size: 14px; margin-top: 14px; }
+.drive-item { display: flex; align-items: center; gap: 10px; padding: 9px 2px; border-bottom: 1px solid #f0f0f0; font-size: 13px; }
+.drive-item .ic { width: 34px; height: 34px; border-radius: 6px; background: #e8e0d2 center/cover; flex: none; }
+.drive-item .nm { flex: 1; }
+.wa-topo { background: #fff; padding: 4px 12px 8px; font-weight: 700; font-size: 18px; }
+.wa-abas { display: flex; justify-content: space-around; border-top: 1px solid #eee; padding: 8px 0 10px; font-size: 11px; color: #555; text-align: center; }
+.wa-abas span b { display: block; font-size: 17px; }
+.wa-status { display: flex; align-items: center; gap: 10px; padding: 10px 0; }
+.wa-status .bola { width: 50px; height: 50px; border-radius: 50%; background: #e8e0d2 center/cover; position: relative; flex: none; }
+.wa-status .mais { position: absolute; right: -2px; bottom: -2px; width: 20px; height: 20px; border-radius: 50%; background: #25D366; color: #fff; font: 700 15px/20px system-ui; text-align: center; border: 2px solid #fff; }
+</style>
+</head>
+<body>
+<main>
+
+<header class="topo">
+  <img src="../foto-perfil.png" alt="Logo da Alho e Afeto">
+  <h1>Como postar</h1>
+  <p>Dri, aqui está tudo explicado, com calma. Primeiro o passo a passo, depois o calendário com a legenda de cada dia.</p>
+</header>
+
+<a class="botao-drive" href="https://drive.google.com/drive/folders/1Q5-3OvxoqAboNQFqNCV7IoxNGcM-rMxo">📂 Abrir a pasta do Drive</a>
+
+<div class="pastas">
+  <div><b>Carrosséis</b>Posts de várias fotos</div>
+  <div><b>Feed</b>Posts de uma foto só</div>
+  <div><b>Reels</b>Os vídeos</div>
+  <div><b>Stories</b>Artes pros stories e o status</div>
+</div>
+
+<div class="aviso"><p><strong>Já postou</strong> a sua história e o camarão. Eles não estão mais na pasta. É só seguir daqui pra frente.</p></div>
+
+<div class="indice">
+  <a href="#p1"><b>1</b>Baixar a imagem ou o vídeo do Drive</a>
+  <a href="#p2"><b>2</b>Copiar a legenda</a>
+  <a href="#p3"><b>3</b>Postar um carrossel (várias fotos)</a>
+  <a href="#p4"><b>4</b>Postar uma foto só</a>
+  <a href="#p5"><b>5</b>Postar um vídeo (Reels)</a>
+  <a href="#p6"><b>6</b>Stories do Instagram</a>
+  <a href="#p7"><b>7</b>Status do WhatsApp</a>
+  <a href="#calendario"><b>📅</b>Calendário com as legendas</a>
+</div>
+
+<!-- ═══ 1 ═══ -->
+<p class="parte-rot" id="p1">Parte 1</p>
+<h2>Baixar do Drive pro celular</h2>
+<section class="passo">
+  <div class="passo-cab"><span class="num">1</span><h3>Abra a pasta, depois a pasta do dia, e toque nos três pontinhos do arquivo</h3></div>
+  <div class="tela-wrap"><div class="tela">
+    <div class="st"><span>9:41</span><span>●●● ▮</span></div>
+    <div class="miolo">
+      <div class="cab-m"><span class="esq">‹</span>01-feijao</div>
+      <div class="drive-item"><span class="ic" style="background-image:url(mini/car-01-feijao.jpg)"></span><span class="nm">01.png</span><span class="alvo d-esq" data-dica="Toque aqui">⋮</span></div>
+      <div class="drive-item"><span class="ic"></span><span class="nm">02.png</span><span>⋮</span></div>
+      <div class="drive-item"><span class="ic"></span><span class="nm">03.png</span><span>⋮</span></div>
+      <div class="drive-item"><span class="ic"></span><span class="nm">legenda.txt</span><span>⋮</span></div>
+      <div class="folha" style="margin-top:40px">
+        <div>Compartilhar</div>
+        <div class="alvo d-cima" data-dica="Depois toque aqui">⬇ Fazer download</div>
+        <div>Abrir com</div>
+      </div>
+    </div>
+  </div></div>
+  <p>No <strong>Android</strong>, toque em <strong>"Fazer download"</strong>. A imagem vai pra galeria.</p>
+  <p>No <strong>iPhone</strong>, toque em <strong>"Enviar uma cópia"</strong> e depois em <strong>"Salvar imagem"</strong> (ou "Salvar vídeo").</p>
+  <div class="aviso"><p><strong>Carrossel:</strong> baixe todas as imagens da pasta, uma por uma (01, 02, 03…).</p></div>
+</section>
+
+<!-- ═══ 2 ═══ -->
+<p class="parte-rot" id="p2">Parte 2</p>
+<h2>Copiar a legenda</h2>
+<section class="passo">
+  <div class="passo-cab"><span class="num">2</span><h3>Desça até o calendário, ache o dia de hoje e toque em "Copiar legenda"</h3></div>
+  <div class="copiar"><pre>Exemplo: Feijão com gosto de casa começa no tempero… 💚</pre><button type="button" disabled>Copiar legenda</button></div>
+  <p>Pronto, o texto está guardado. Lá no Instagram, quando chegar na hora da legenda, <strong>segure o dedo no campo</strong> e toque em <strong>"Colar"</strong>.</p>
+  <p>A legenda também está na pasta do Drive, no arquivo <strong>.txt</strong>, se precisar.</p>
+</section>
+
+<!-- ═══ 3 ═══ -->
+<p class="parte-rot" id="p3">Parte 3</p>
+<h2>Postar um carrossel</h2>
+<section class="passo">
+  <div class="passo-cab"><span class="num">3</span><h3>No Instagram, toque no + lá embaixo</h3></div>
+  <div class="tela-wrap"><div class="tela">
+    <div class="st"><span>9:41</span><span>●●● ▮</span></div>
+    <div class="barra"><span>Instagram</span><span class="icos">♡ ✉</span></div>
+    <div class="miolo"><div style="height:300px;background:#eee;border-radius:6px"></div></div>
+    <div class="nav-m"><span>⌂</span><span>⌕</span><span class="alvo d-cima" data-dica="Toque aqui">⊕</span><span>▶</span><span class="eu"></span></div>
+  </div></div>
+</section>
+<section class="passo">
+  <div class="passo-cab"><span class="num">4</span><h3>Toque em "Selecionar" e escolha as fotos na ordem: 01, 02, 03…</h3></div>
+  <div class="tela-wrap"><div class="tela">
+    <div class="st"><span>9:41</span><span>●●● ▮</span></div>
+    <div class="miolo">
+      <div class="cab-m"><span class="esq">✕</span>Novo post<span class="dir alvo d-baixo-dir" data-dica="3º: Avançar">Avançar</span></div>
+      <div class="previa" style="background-image:url(mini/car-01-feijao.jpg)"></div>
+      <div class="barra-sel"><span>Recentes ⌄</span><span class="icone-sel alvo d-cima" data-dica="1º: Selecionar">⧉ Selecionar</span></div>
+      <div class="galeria">
+        <i style="background-image:url(mini/car-01-feijao.jpg)"><span class="n">1</span></i><i><span class="n">2</span></i><i><span class="n">3</span></i>
+        <i><span class="n">4</span></i><i><span class="n">5</span></i><i><span class="n">6</span></i>
+        <i><span class="n">7</span></i><i><span class="vazio"></span></i><i><span class="vazio"></span></i>
+      </div>
+      <p style="text-align:center;color:#8e8e8e;font-size:12px;margin:8px 0 0">2º: toque nas fotos na ordem. Aparece o número.</p>
+    </div>
+    <div class="abas-novo"><span class="on">POST</span><span>STORY</span><span>REEL</span></div>
+  </div></div>
+  <div class="aviso cuidado"><p><strong>A ordem importa:</strong> toque primeiro na foto 01, depois na 02… O número que aparece em cima de cada foto mostra a ordem.</p></div>
+</section>
+<section class="passo">
+  <div class="passo-cab"><span class="num">5</span><h3>Na tela dos filtros, toque em "Avançar" de novo. Não precisa mexer em nada</h3></div>
+</section>
+<section class="passo">
+  <div class="passo-cab"><span class="num">6</span><h3>Cole a legenda e toque em "Compartilhar"</h3></div>
+  <div class="tela-wrap"><div class="tela">
+    <div class="st"><span>9:41</span><span>●●● ▮</span></div>
+    <div class="miolo">
+      <div class="cab-m"><span class="esq">‹</span>Novo post</div>
+      <div class="previa" style="height:120px;width:96px;margin:0 auto;border-radius:6px;background-image:url(mini/car-01-feijao.jpg)"></div>
+      <div class="campo-leg alvo d-baixo" data-dica="1º: segure aqui e toque em Colar">Adicione uma legenda…</div>
+      <div class="lista-m" style="margin-top:34px"><div><span>Marcar pessoas</span><span>›</span></div><div><span>Adicionar localização</span><span>›</span></div></div>
+      <div class="botao-azul alvo d-cima" data-dica="2º: Compartilhar" style="margin-top:40px">Compartilhar</div>
+    </div>
+  </div></div>
+  <p>Pronto! Volte no calendário e toque em <strong>"Postei ✓"</strong> no dia.</p>
+</section>
+
+<!-- ═══ 4 ═══ -->
+<p class="parte-rot" id="p4">Parte 4</p>
+<h2>Postar uma foto só</h2>
+<section class="passo">
+  <div class="passo-cab"><span class="num">7</span><h3>É igual ao carrossel, mas sem tocar em "Selecionar"</h3></div>
+  <p>Toque no <strong>+</strong>, escolha <strong>a foto</strong>, toque em <strong>Avançar</strong> duas vezes, cole a legenda e toque em <strong>Compartilhar</strong>.</p>
+</section>
+
+<!-- ═══ 5 ═══ -->
+<p class="parte-rot" id="p5">Parte 5</p>
+<h2>Postar um vídeo (Reels)</h2>
+<section class="passo">
+  <div class="passo-cab"><span class="num">8</span><h3>Toque no +, depois em "REEL" lá embaixo, e escolha o vídeo</h3></div>
+  <div class="tela-wrap"><div class="tela">
+    <div class="st"><span>9:41</span><span>●●● ▮</span></div>
+    <div class="miolo">
+      <div class="cab-m"><span class="esq">✕</span>Novo reel</div>
+      <div class="galeria">
+        <i class="alvo d-baixo" data-dica="Toque no vídeo" style="background-image:url(mini/reel-06-entrega.jpg);aspect-ratio:9/16"></i><i style="aspect-ratio:9/16"></i><i style="aspect-ratio:9/16"></i>
+      </div>
+    </div>
+    <div class="abas-novo"><span>POST</span><span>STORY</span><span class="on alvo d-cima" data-dica="1º: REEL">REEL</span></div>
+  </div></div>
+  <p>Depois toque em <strong>Avançar</strong>, cole a legenda e toque em <strong>Compartilhar</strong>.</p>
+  <div class="aviso"><p>O vídeo já tem a música e a voz. <strong>Não precisa colocar música</strong> do Instagram.</p></div>
+</section>
+
+<!-- ═══ 6 ═══ -->
+<p class="parte-rot" id="p6">Parte 6</p>
+<h2>Stories do Instagram</h2>
+<section class="passo">
+  <div class="passo-cab"><span class="num">9</span><h3>Toque no +, depois em "STORY", escolha a arte e toque em "Seus stories"</h3></div>
+  <div class="tela-wrap"><div class="tela">
+    <div class="st"><span>9:41</span><span>●●● ▮</span></div>
+    <div class="miolo" style="padding-bottom:0">
+      <div class="story-m" style="background:#1b2915 url(mini/card-01-potes.jpg) center/cover">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:auto">
+          <span class="alvo d-cima" data-dica="Toque aqui" style="background:#fff;color:#111;border-radius:20px;padding:8px 12px;font-weight:700">Seus stories</span>
+          <span style="background:#fff;color:#111;border-radius:50%;width:34px;height:34px;display:inline-flex;align-items:center;justify-content:center">➜</span>
+        </div>
+      </div>
+    </div>
+    <div class="abas-novo"><span>POST</span><span class="on">STORY</span><span>REEL</span></div>
+  </div></div>
+  <p>As artes da pasta <strong>Stories</strong> servem pros stories e pro status do WhatsApp. Uma por dia já é ótimo. Os vídeos também podem ir pros stories.</p>
+</section>
+
+<!-- ═══ 7 ═══ -->
+<p class="parte-rot" id="p7">Parte 7</p>
+<h2>Status do WhatsApp</h2>
+<section class="passo">
+  <div class="passo-cab"><span class="num">10</span><h3>Abra "Atualizações" e toque no + do "Meu status"</h3></div>
+  <div class="tela-wrap"><div class="tela">
+    <div class="st"><span>9:41</span><span>●●● ▮</span></div>
+    <div class="wa-topo">Atualizações</div>
+    <div class="miolo" style="min-height:300px">
+      <div style="font-weight:700;font-size:15px;margin:6px 0">Status</div>
+      <div class="wa-status"><span class="bola alvo alvo-r d-dir" data-dica="Toque no +" style="background-image:url(../foto-perfil.png)"><span class="mais">+</span></span><span><b>Meu status</b><br><span style="color:#888;font-size:12px">Toque para adicionar</span></span></div>
+      <div class="wa-status"><span class="bola"></span><span>Maria<br><span style="color:#888;font-size:12px">Hoje, 18:02</span></span></div>
+    </div>
+    <div class="wa-abas"><span><b>💬</b>Conversas</span><span class="alvo d-cima" data-dica="1º: Atualizações"><b>◎</b>Atualizações</span><span><b>👥</b>Comunidades</span><span><b>📞</b>Ligações</span></div>
+  </div></div>
+  <p>Escolha a arte ou o vídeo, escreva um texto se quiser (tem sugestões no arquivo da pasta Stories) e toque na <strong>setinha verde</strong> pra enviar.</p>
+</section>
+
+<!-- ═══ calendário ═══ -->
+<p class="parte-rot" id="calendario">Calendário</p>
+<h2 style="margin-top:8px">O que postar em cada dia</h2>
+<p>Terça, quinta e sábado, no fim da tarde, quando a gente pensa na janta. Toque em <strong>"Postei ✓"</strong> depois de postar: o celular guarda.</p>
+<div class="progresso" aria-live="polite"><span id="prog-txt">0 de 24 postados</span><div class="trilho"><i id="prog-barra"></i></div></div>
+
+<h2>Novembro</h2>
+<section class="dia" data-dia="0">
+  <div class="dia-cab">
+    <img src="mini/card-09-time.jpg" alt="">
+    <div><div class="dia-data">Ter 03/11</div><div class="dia-nome">Você é do time que coloca alho em tudo?</div>
+    <div class="dia-tipo">Card · Post com 1 foto: veja a parte 4</div><div class="dia-onde">No Drive: Feed › card-09-time</div></div>
+  </div>
+  <div class="copiar"><pre id="leg-0">Aqui em casa, alho vai em quase tudo. E aí, você é do time? 🙋‍♀️
+
+Com carinho,
+Dri</pre><button data-copiar="leg-0">Copiar legenda</button></div>
+  <button class="feito-btn">Postei ✓</button>
+</section>
+<section class="dia" data-dia="1">
+  <div class="dia-cab">
+    <img src="mini/reel-06-entrega.jpg" alt="">
+    <div><div class="dia-data">Qui 05/11</div><div class="dia-nome">Do meu fogão até a sua porta</div>
+    <div class="dia-tipo">Reels · Vídeo no Reels: veja a parte 5</div><div class="dia-onde">No Drive: Reels › 06-entrega</div></div>
+  </div>
+  <div class="copiar"><pre id="leg-1">Você me chama no WhatsApp, eu preparo com carinho e o motoboy leva até você. 💚
+
+Encomendas pelo WhatsApp ou pelo link do perfil.
+
+Com carinho,
+Dri</pre><button data-copiar="leg-1">Copiar legenda</button></div>
+  <button class="feito-btn">Postei ✓</button>
+</section>
+<section class="dia" data-dia="2">
+  <div class="dia-cab">
+    <img src="mini/card-01-potes.jpg" alt="">
+    <div><div class="dia-data">Sáb 07/11</div><div class="dia-nome">O tempero pronto pra usar</div>
+    <div class="dia-tipo">Card · Post com 1 foto: veja a parte 4</div><div class="dia-onde">No Drive: Feed › card-01-potes</div></div>
+  </div>
+  <div class="copiar"><pre id="leg-2">Alho roxo, descascado e triturado, fresquinho no pote. É só abrir e temperar.
+
+Encomendas pelo WhatsApp ou pelo link do perfil.
+
+Com carinho,
+Dri</pre><button data-copiar="leg-2">Copiar legenda</button></div>
+  <button class="feito-btn">Postei ✓</button>
+</section>
+<section class="dia" data-dia="3">
+  <div class="dia-cab">
+    <img src="mini/car-01-feijao.jpg" alt="">
+    <div><div class="dia-data">Ter 10/11</div><div class="dia-nome">Feijão de casa</div>
+    <div class="dia-tipo">Carrossel · Post com várias fotos: veja a parte 3</div><div class="dia-onde">No Drive: Carrosséis › 01-feijao</div></div>
+  </div>
+  <div class="copiar"><pre id="leg-3">Feijão com gosto de casa começa no tempero. Fiz o passo a passo pra você salvar e fazer hoje. 💚
+
+Encomendas pelo WhatsApp ou pelo link do perfil.
+
+Com carinho,
+Dri</pre><button data-copiar="leg-3">Copiar legenda</button></div>
+  <button class="feito-btn">Postei ✓</button>
+</section>
+<section class="dia" data-dia="4">
+  <div class="dia-cab">
+    <img src="mini/reel-01-feijao.jpg" alt="">
+    <div><div class="dia-data">Qui 12/11</div><div class="dia-nome">Feijão</div>
+    <div class="dia-tipo">Reels · Vídeo no Reels: veja a parte 5</div><div class="dia-onde">No Drive: Reels › 01-feijao</div></div>
+  </div>
+  <div class="copiar"><pre id="leg-4">O segredo do feijão de casa é o tempero. E ele já chega prontinho.
+
+Encomendas pelo WhatsApp ou pelo link do perfil.
+
+Com carinho,
+Dri</pre><button data-copiar="leg-4">Copiar legenda</button></div>
+  <button class="feito-btn">Postei ✓</button>
+</section>
+<section class="dia" data-dia="5">
+  <div class="dia-cab">
+    <img src="mini/card-04-pergunta.jpg" alt="">
+    <div><div class="dia-data">Sáb 14/11</div><div class="dia-nome">Qual prato não vive sem alho?</div>
+    <div class="dia-tipo">Card · Post com 1 foto: veja a parte 4</div><div class="dia-onde">No Drive: Feed › card-04-pergunta</div></div>
+  </div>
+  <div class="copiar"><pre id="leg-5">Aqui em casa é o feijão, sem discussão. Me conta o da sua casa aqui embaixo. 👇
+
+Com carinho,
+Dri</pre><button data-copiar="leg-5">Copiar legenda</button></div>
+  <button class="feito-btn">Postei ✓</button>
+</section>
+<section class="dia" data-dia="6">
+  <div class="dia-cab">
+    <img src="mini/card-06-segunda.jpg" alt="">
+    <div><div class="dia-data">Seg 16/11</div><div class="dia-nome">Segunda-feira pede comida de casa</div>
+    <div class="dia-tipo">Card · Post com 1 foto: veja a parte 4</div><div class="dia-onde">No Drive: Feed › card-06-segunda</div></div>
+  </div>
+  <div class="copiar"><pre id="leg-6">Segunda é dia de voltar pro arroz e feijão. E tudo começa no tempero.
+
+Encomendas pelo WhatsApp ou pelo link do perfil.
+
+Com carinho,
+Dri</pre><button data-copiar="leg-6">Copiar legenda</button></div>
+  <button class="feito-btn">Postei ✓</button>
+</section>
+<section class="dia" data-dia="7">
+  <div class="dia-cab">
+    <img src="mini/reel-07-dia-inteiro.jpg" alt="">
+    <div><div class="dia-data">Qui 19/11</div><div class="dia-nome">Um pote, o dia inteiro</div>
+    <div class="dia-tipo">Reels · Vídeo no Reels: veja a parte 5</div><div class="dia-onde">No Drive: Reels › 07-dia-inteiro</div></div>
+  </div>
+  <div class="copiar"><pre id="leg-7">Do café da manhã ao jantar, um pote resolve o tempero do dia.
+
+Encomendas pelo WhatsApp ou pelo link do perfil.
+
+Com carinho,
+Dri</pre><button data-copiar="leg-7">Copiar legenda</button></div>
+  <button class="feito-btn">Postei ✓</button>
+</section>
+<section class="dia" data-dia="8">
+  <div class="dia-cab">
+    <img src="mini/car-03-a-conta.jpg" alt="">
+    <div><div class="dia-data">Sáb 21/11</div><div class="dia-nome">Faz a conta comigo</div>
+    <div class="dia-tipo">Carrossel · Post com várias fotos: veja a parte 3</div><div class="dia-onde">No Drive: Carrosséis › 03-a-conta</div></div>
+  </div>
+  <div class="copiar"><pre id="leg-8">Eu fiz a conta e levei um susto. Arrasta pro lado e faz comigo. 💚
+
+Encomendas pelo WhatsApp ou pelo link do perfil.
+
+Com carinho,
+Dri</pre><button data-copiar="leg-8">Copiar legenda</button></div>
+  <button class="feito-btn">Postei ✓</button>
+</section>
+<section class="dia" data-dia="9">
+  <div class="dia-cab">
+    <img src="mini/card-02-colherada.jpg" alt="">
+    <div><div class="dia-data">Ter 24/11</div><div class="dia-nome">O começo de toda comida boa</div>
+    <div class="dia-tipo">Card · Post com 1 foto: veja a parte 4</div><div class="dia-onde">No Drive: Feed › card-02-colherada</div></div>
+  </div>
+  <div class="copiar"><pre id="leg-9">Esse chiadinho na panela é o meu som preferido da cozinha. E o seu?
+
+Encomendas pelo WhatsApp ou pelo link do perfil.
+
+Com carinho,
+Dri</pre><button data-copiar="leg-9">Copiar legenda</button></div>
+  <button class="feito-btn">Postei ✓</button>
+</section>
+<section class="dia" data-dia="10">
+  <div class="dia-cab">
+    <img src="mini/reel-03-camarao.jpg" alt="">
+    <div><div class="dia-data">Qui 26/11</div><div class="dia-nome">Camarão</div>
+    <div class="dia-tipo">Reels · Vídeo no Reels: veja a parte 5</div><div class="dia-onde">No Drive: Reels › 03-camarao</div></div>
+  </div>
+  <div class="copiar"><pre id="leg-10">Camarão no alho e óleo numa terça qualquer? Pode. 🍤
+
+Encomendas pelo WhatsApp ou pelo link do perfil.
+
+Com carinho,
+Dri</pre><button data-copiar="leg-10">Copiar legenda</button></div>
+  <button class="feito-btn">Postei ✓</button>
+</section>
+<section class="dia" data-dia="11">
+  <div class="dia-cab">
+    <img src="mini/car-04-frango.jpg" alt="">
+    <div><div class="dia-data">Sáb 28/11</div><div class="dia-nome">Frango no alho e limão</div>
+    <div class="dia-tipo">Carrossel · Post com várias fotos: veja a parte 3</div><div class="dia-onde">No Drive: Carrosséis › 04-frango</div></div>
+  </div>
+  <div class="copiar"><pre id="leg-11">Frango no forno com alho e limão: aquele cheirinho que chama todo mundo pra cozinha. Salva pra fazer no fim de semana. 💚
+
+Encomendas pelo WhatsApp ou pelo link do perfil.
+
+Com carinho,
+Dri</pre><button data-copiar="leg-11">Copiar legenda</button></div>
+  <button class="feito-btn">Postei ✓</button>
+</section>
+<section class="dia" data-dia="12">
+  <div class="dia-cab">
+    <img src="mini/card-10-domingo.jpg" alt="">
+    <div><div class="dia-data">Dom 29/11</div><div class="dia-nome">Almoço de domingo</div>
+    <div class="dia-tipo">Card · Post com 1 foto: veja a parte 4</div><div class="dia-onde">No Drive: Feed › card-10-domingo</div></div>
+  </div>
+  <div class="copiar"><pre id="leg-12">Domingo é dia de mesa cheia e casa barulhenta. Que o seu seja assim. 💚
+
+Encomendas pelo WhatsApp ou pelo link do perfil.
+
+Com carinho,
+Dri</pre><button data-copiar="leg-12">Copiar legenda</button></div>
+  <button class="feito-btn">Postei ✓</button>
+</section>
+<h2>Dezembro</h2>
+<section class="dia" data-dia="13">
+  <div class="dia-cab">
+    <img src="mini/card-07-dica.jpg" alt="">
+    <div><div class="dia-data">Ter 01/12</div><div class="dia-nome">Alho entra no óleo morno</div>
+    <div class="dia-tipo">Card · Post com 1 foto: veja a parte 4</div><div class="dia-onde">No Drive: Feed › card-07-dica</div></div>
+  </div>
+  <div class="copiar"><pre id="leg-13">Uma dica que a cozinha me ensinou: alho entra no óleo morno. Assim ele doura bonito e não amarga.
+
+Encomendas pelo WhatsApp ou pelo link do perfil.
+
+Com carinho,
+Dri</pre><button data-copiar="leg-13">Copiar legenda</button></div>
+  <button class="feito-btn">Postei ✓</button>
+</section>
+<section class="dia" data-dia="14">
+  <div class="dia-cab">
+    <img src="mini/reel-08-cheiro.jpg" alt="">
+    <div><div class="dia-data">Qui 03/12</div><div class="dia-nome">O cheiro que chama pra mesa</div>
+    <div class="dia-tipo">Reels · Vídeo no Reels: veja a parte 5</div><div class="dia-onde">No Drive: Reels › 08-cheiro</div></div>
+  </div>
+  <div class="copiar"><pre id="leg-14">Sabe aquele cheiro que chama todo mundo pra mesa? Ele começa aqui. 💚
+
+Encomendas pelo WhatsApp ou pelo link do perfil.
+
+Com carinho,
+Dri</pre><button data-copiar="leg-14">Copiar legenda</button></div>
+  <button class="feito-btn">Postei ✓</button>
+</section>
+<section class="dia" data-dia="15">
+  <div class="dia-cab">
+    <img src="mini/car-02-camarao.jpg" alt="">
+    <div><div class="dia-data">Sáb 05/12</div><div class="dia-nome">Camarão no alho e óleo</div>
+    <div class="dia-tipo">Carrossel · Post com várias fotos: veja a parte 3</div><div class="dia-onde">No Drive: Carrosséis › 02-camarao</div></div>
+  </div>
+  <div class="copiar"><pre id="leg-15">Quinze minutinhos e um jantar de restaurante numa terça qualquer. Salva essa pra semana. 🍤
+
+Encomendas pelo WhatsApp ou pelo link do perfil.
+
+Com carinho,
+Dri</pre><button data-copiar="leg-15">Copiar legenda</button></div>
+  <button class="feito-btn">Postei ✓</button>
+</section>
+<section class="dia" data-dia="16">
+  <div class="dia-cab">
+    <img src="mini/card-03-unha.jpg" alt="">
+    <div><div class="dia-data">Ter 08/12</div><div class="dia-nome">Sua unha agradece</div>
+    <div class="dia-tipo">Card · Post com 1 foto: veja a parte 4</div><div class="dia-onde">No Drive: Feed › card-03-unha</div></div>
+  </div>
+  <div class="copiar"><pre id="leg-16">Fui manicure por muitos anos. Pode confiar: descascar alho é o pior inimigo da unha feita. 😅
+
+Encomendas pelo WhatsApp ou pelo link do perfil.
+
+Com carinho,
+Dri</pre><button data-copiar="leg-16">Copiar legenda</button></div>
+  <button class="feito-btn">Postei ✓</button>
+</section>
+<section class="dia" data-dia="17">
+  <div class="dia-cab">
+    <img src="mini/reel-02-arroz.jpg" alt="">
+    <div><div class="dia-data">Qui 10/12</div><div class="dia-nome">Arroz</div>
+    <div class="dia-tipo">Reels · Vídeo no Reels: veja a parte 5</div><div class="dia-onde">No Drive: Reels › 02-arroz</div></div>
+  </div>
+  <div class="copiar"><pre id="leg-17">Todo dia tem arroz na mesa. E todo arroz bom começa no alho.
+
+Encomendas pelo WhatsApp ou pelo link do perfil.
+
+Com carinho,
+Dri</pre><button data-copiar="leg-17">Copiar legenda</button></div>
+  <button class="feito-btn">Postei ✓</button>
+</section>
+<section class="dia" data-dia="18">
+  <div class="dia-cab">
+    <img src="mini/car-05-cinco-pratos.jpg" alt="">
+    <div><div class="dia-data">Sáb 12/12</div><div class="dia-nome">Uma colher, cinco pratos</div>
+    <div class="dia-tipo">Carrossel · Post com várias fotos: veja a parte 3</div><div class="dia-onde">No Drive: Carrosséis › 05-cinco-pratos</div></div>
+  </div>
+  <div class="copiar"><pre id="leg-18">Uma colher de alho e a semana inteira resolvida. Qual desses você faz primeiro?
+
+Encomendas pelo WhatsApp ou pelo link do perfil.
+
+Com carinho,
+Dri</pre><button data-copiar="leg-18">Copiar legenda</button></div>
+  <button class="feito-btn">Postei ✓</button>
+</section>
+<section class="dia" data-dia="19">
+  <div class="dia-cab">
+    <img src="mini/card-08-feito-a-mao.jpg" alt="">
+    <div><div class="dia-data">Ter 15/12</div><div class="dia-nome">Feito à mão, com afeto</div>
+    <div class="dia-tipo">Card · Post com 1 foto: veja a parte 4</div><div class="dia-onde">No Drive: Feed › card-08-feito-a-mao</div></div>
+  </div>
+  <div class="copiar"><pre id="leg-19">Cada pote passa pela minha mão antes de chegar na sua cozinha. É assim que eu gosto de fazer.
+
+Encomendas pelo WhatsApp ou pelo link do perfil.
+
+Com carinho,
+Dri</pre><button data-copiar="leg-19">Copiar legenda</button></div>
+  <button class="feito-btn">Postei ✓</button>
+</section>
+<section class="dia" data-dia="20">
+  <div class="dia-cab">
+    <img src="mini/reel-04-tempero.jpg" alt="">
+    <div><div class="dia-data">Qui 17/12</div><div class="dia-nome">O tempero pronto pra usar</div>
+    <div class="dia-tipo">Reels · Vídeo no Reels: veja a parte 5</div><div class="dia-onde">No Drive: Reels › 04-tempero</div></div>
+  </div>
+  <div class="copiar"><pre id="leg-20">Descascar alho todo dia? Deixa comigo.
+
+Encomendas pelo WhatsApp ou pelo link do perfil.
+
+Com carinho,
+Dri</pre><button data-copiar="leg-20">Copiar legenda</button></div>
+  <button class="feito-btn">Postei ✓</button>
+</section>
+<section class="dia" data-dia="21">
+  <div class="dia-cab">
+    <img src="mini/car-06-farofa.jpg" alt="">
+    <div><div class="dia-data">Sáb 19/12</div><div class="dia-nome">Farofa de alho</div>
+    <div class="dia-tipo">Carrossel · Post com várias fotos: veja a parte 3</div><div class="dia-onde">No Drive: Carrosséis › 06-farofa</div></div>
+  </div>
+  <div class="copiar"><pre id="leg-21">Farofa de alho douradinha em 10 minutos. Vai bem com tudo, né? Salva essa. 💚
+
+Encomendas pelo WhatsApp ou pelo link do perfil.
+
+Com carinho,
+Dri</pre><button data-copiar="leg-21">Copiar legenda</button></div>
+  <button class="feito-btn">Postei ✓</button>
+</section>
+<section class="dia" data-dia="22">
+  <div class="dia-cab">
+    <img src="mini/reel-05-dia-a-dia.jpg" alt="">
+    <div><div class="dia-data">Ter 22/12</div><div class="dia-nome">Seis da tarde</div>
+    <div class="dia-tipo">Reels · Vídeo no Reels: veja a parte 5</div><div class="dia-onde">No Drive: Reels › 05-dia-a-dia</div></div>
+  </div>
+  <div class="copiar"><pre id="leg-22">Seis da tarde, a janta por fazer. Uma colher e o tempero tá pronto.
+
+Encomendas pelo WhatsApp ou pelo link do perfil.
+
+Com carinho,
+Dri</pre><button data-copiar="leg-22">Copiar legenda</button></div>
+  <button class="feito-btn">Postei ✓</button>
+</section>
+<section class="dia" data-dia="23">
+  <div class="dia-cab">
+    <img src="mini/card-05-afeto.jpg" alt="">
+    <div><div class="dia-data">Qui 24/12</div><div class="dia-nome">Comida de casa é carinho</div>
+    <div class="dia-tipo">Card · Post com 1 foto: veja a parte 4</div><div class="dia-onde">No Drive: Feed › card-05-afeto</div></div>
+  </div>
+  <div class="copiar"><pre id="leg-23">Cada pote sai daqui com o mesmo cuidado que eu teria com a comida da minha família.
+
+Encomendas pelo WhatsApp ou pelo link do perfil.
+
+Com carinho,
+Dri</pre><button data-copiar="leg-23">Copiar legenda</button></div>
+  <button class="feito-btn">Postei ✓</button>
+</section>
+
+<div class="ajuda">Travou em algum passo? <strong>Tira um print e manda pro Pedro.</strong> 💚</div>
+</main>
+<script>
+(function () {
+  var total = document.querySelectorAll('.dia').length;
+  var chave = 'alho-e-afeto-postados';
+  var feitos = {};
+  try { feitos = JSON.parse(localStorage.getItem(chave) || '{}'); } catch (e) { feitos = {}; }
+  function salvar() { try { localStorage.setItem(chave, JSON.stringify(feitos)); } catch (e) {} }
+  function atualizar() {
+    var n = 0;
+    document.querySelectorAll('.dia').forEach(function (d) {
+      var on = !!feitos[d.dataset.dia];
+      d.classList.toggle('feito', on);
+      d.querySelector('.feito-btn').textContent = on ? 'Postado ✓ (toque pra desfazer)' : 'Postei ✓';
+      if (on) n++;
+    });
+    document.getElementById('prog-txt').textContent = n + ' de ' + total + ' postados';
+    document.getElementById('prog-barra').style.width = (100 * n / total) + '%';
+  }
+  document.querySelectorAll('.dia .feito-btn').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var id = b.closest('.dia').dataset.dia; feitos[id] = !feitos[id]; salvar(); atualizar();
+    });
+  });
+  document.querySelectorAll('[data-copiar]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var texto = document.getElementById(b.dataset.copiar).textContent;
+      var original = b.textContent;
+      function ok() { b.textContent = 'Copiado ✓ agora é só colar'; setTimeout(function () { b.textContent = original; }, 2500); }
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(texto).then(ok, function () { reserva(texto); ok(); });
+      } else { reserva(texto); ok(); }
+    });
+  });
+  function reserva(texto) {
+    var t = document.createElement('textarea'); t.value = texto; t.setAttribute('readonly', '');
+    t.style.position = 'fixed'; t.style.opacity = '0'; document.body.appendChild(t);
+    t.select(); t.setSelectionRange(0, 99999);
+    try { document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(t);
+  }
+  atualizar();
+})();
+</script>
+</body>
+</html>
