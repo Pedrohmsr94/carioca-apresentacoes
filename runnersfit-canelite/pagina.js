@@ -8,11 +8,11 @@
   var CONFIG = {
     checkout: { publico: '', lista: '' },
     listaWhatsApp: '',
-    // horário de Brasília, ex.: '2026-11-04T08:00:00-03:00' e '2026-11-06T23:59:00-03:00'
+    // horário de Brasília, pelo plano v2: '2026-11-23T08:00:00-03:00' e '2026-11-25T23:59:00-03:00'.
+    // Sem fimLista, o ?lista mostra o preço cheio: o preço do grupo só existe com prazo de verdade.
     agenda: { abertura: '', fimLista: '' },
-    // o que aparece escrito enquanto a agenda estiver vazia
-    textoAbertura: '04/11',
-    textoPrazo: '06/11, às 23h59'
+    textoAbertura: '23/11',
+    textoPrazo: '25/11, às 23h59'
   };
 
   var url = new URL(window.location.href);
@@ -22,8 +22,7 @@
 
   function formatar(ms, comHora) {
     var d = new Date(ms);
-    var opcoes = { timeZone: 'America/Sao_Paulo', day: '2-digit', month: '2-digit' };
-    var dia = d.toLocaleDateString('pt-BR', opcoes);
+    var dia = d.toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo', day: '2-digit', month: '2-digit' });
     if (!comHora) return dia;
     var h = d.toLocaleTimeString('pt-BR', { timeZone: 'America/Sao_Paulo', hour: '2-digit', minute: '2-digit' }).replace(':', 'h');
     return dia + ', às ' + h;
@@ -33,7 +32,7 @@
     var previa = url.searchParams.get('estado');
     if (previa === 'publico' || previa === 'lista' || previa === 'espera') return previa;
     if (abertura && agora < abertura) return 'espera';
-    if (url.searchParams.has('lista') && (!fimLista || agora <= fimLista)) return 'lista';
+    if (url.searchParams.has('lista') && fimLista && agora <= fimLista) return 'lista';
     return 'publico';
   }
   var estado = estadoAtual();
@@ -54,7 +53,7 @@
   } catch (e) { /* navegação privada */ }
   origem = origem || 'direto';
 
-  // Medição sem dado de saúde: o teste só registra que foi usado, nunca o que a pessoa marcou.
+  // Medição sem dado de saúde: dos sinais, só se registra que a lista foi usada.
   window.dataLayer = window.dataLayer || [];
   function rastrear(evento, dados) {
     var registro = { event: evento, estado: estado, origem: origem };
@@ -90,90 +89,74 @@
     botao.addEventListener('click', function (ev) {
       var local = botao.getAttribute('data-local');
       rastrear(estado === 'espera' ? 'clique_lista' : 'clique_comprar', { local: local });
+      ev.preventDefault();
       var link = destino(local);
-      if (link) {
-        ev.preventDefault();
-        window.location.href = link;
-      } else if (local === 'oferta') {
-        ev.preventDefault();
-        avisar(estado === 'espera'
-          ? 'O link da lista do WhatsApp entra aqui quando ela for criada.'
-          : 'O link de compra entra aqui quando a plataforma de vendas estiver configurada.');
-      }
-      // sem link ainda: os outros botões descem até o preço
+      if (link) { window.location.href = link; return; }
+      avisar(estado === 'espera'
+        ? 'O link do grupo do WhatsApp entra aqui quando ele for criado.'
+        : 'O link de compra entra aqui quando a plataforma de vendas estiver configurada.');
+    });
+  });
+  document.querySelectorAll('a[href^="#"][data-local]:not([data-comprar])').forEach(function (a) {
+    a.addEventListener('click', function () {
+      rastrear(a.getAttribute('href') === '#oferta' ? 'ir_oferta' : 'ir_alerta', { local: a.getAttribute('data-local') });
     });
   });
 
-  document.querySelectorAll('.pagina a').forEach(function (a) {
-    a.addEventListener('click', function () { rastrear('abriu_pagina', { local: a.getAttribute('data-local') }); });
-  });
-
-  // O teste: o veredito vem do CSS; aqui ele é lido em voz alta.
-  var quadro = document.querySelector('.quadro');
-  var falado = document.getElementById('veredito-falado');
+  // Sinais de alerta: o aviso vem do CSS; aqui ele é lido em voz alta.
+  var sinais = document.querySelector('.sinais');
+  var falado = document.getElementById('sinais-falado');
   var alertaAtivo = false;
-  var testeUsado = false;
-
-  function vereditoVisivel() {
-    var vs = quadro.querySelectorAll('.v');
-    for (var i = 0; i < vs.length; i++) {
-      if (!vs[i].classList.contains('v-vazio') && window.getComputedStyle(vs[i]).display !== 'none') return vs[i];
-    }
-    return null;
-  }
-
-  if (quadro) {
-    quadro.addEventListener('change', function () {
-      var marcado = quadro.querySelector('input[name="estagio"]:checked');
-      var sinais = quadro.querySelectorAll('input[name="sinal"]:checked').length;
-      alertaAtivo = sinais > 0 || (marcado && marcado.value === '4');
-      var v = vereditoVisivel();
+  var usado = false;
+  if (sinais) {
+    sinais.addEventListener('change', function () {
+      alertaAtivo = sinais.querySelectorAll('input:checked').length > 0;
       if (falado) {
-        var titulo = v && v.querySelector('.v-titulo');
-        var dito = v && v.querySelector('.dito');
-        falado.textContent = v ? ((titulo ? titulo.textContent + ' ' : '') + (dito ? dito.textContent : '')).trim() : '';
+        falado.textContent = alertaAtivo
+          ? 'Com esse sinal, procure avaliação antes de qualquer exercício. Pode ser fratura por estresse, que pede outro tratamento.'
+          : '';
       }
-      if (!testeUsado) { testeUsado = true; rastrear('teste', {}); }
-      // a resposta aparece onde a pessoa tocou: se ficou abaixo da tela, rola só o necessário
-      if (v) {
-        var r = v.getBoundingClientRect();
-        if (r.bottom > window.innerHeight - 16) {
-          var reduzir = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-          v.scrollIntoView({ block: 'nearest', behavior: reduzir ? 'auto' : 'smooth' });
-        }
-      }
+      if (!usado) { usado = true; rastrear('sinais', {}); }
       atualizarBarra();
     });
   }
 
-  // A barra fixa só aparece quando nenhum outro botão de compra está na tela (o teste tem o dele).
+  // O sublinhado do lema se risca quando aparece (só pra quem não pediu menos movimento).
+  var sublinhado = document.querySelector('.sublinhado');
+  if (sublinhado && 'IntersectionObserver' in window && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+    sublinhado.classList.add('espera');
+    var vigia = new IntersectionObserver(function (e) {
+      if (e[0].isIntersecting) { sublinhado.classList.add('visto-agora'); vigia.disconnect(); }
+    }, { threshold: 1 });
+    vigia.observe(sublinhado);
+  }
+
+  // A barra aparece depois da abertura e some na oferta e enquanto houver sinal marcado.
   var barra = document.getElementById('barra');
-  var vigiados = [document.getElementById('anexo'), document.querySelector('.valor'), quadro].filter(Boolean);
-  var naTela = new Map();
+  var abertura_ = document.querySelector('.abertura');
+  var oferta = document.getElementById('oferta');
+  var aberturaNaTela = true;
+  var ofertaNaTela = false;
 
   function atualizarBarra() {
     if (!barra) return;
-    var algumNaTela = false;
-    naTela.forEach(function (v) { if (v) algumNaTela = true; });
-    var mostrar = naTela.size === vigiados.length && !algumNaTela && !alertaAtivo;
+    var mostrar = !aberturaNaTela && !ofertaNaTela && !alertaAtivo;
     barra.classList.toggle('visivel', mostrar);
     barra.setAttribute('aria-hidden', mostrar ? 'false' : 'true');
     var link = barra.querySelector('a');
     if (link) link.tabIndex = mostrar ? 0 : -1;
   }
 
-  if ('IntersectionObserver' in window && barra && vigiados.length) {
+  if ('IntersectionObserver' in window && barra && abertura_ && oferta) {
     var ofertaVista = false;
-    var observador = new IntersectionObserver(function (entradas) {
-      entradas.forEach(function (e) {
-        naTela.set(e.target, e.isIntersecting);
-        if (e.isIntersecting && e.target.classList.contains('valor') && !ofertaVista) {
-          ofertaVista = true;
-          rastrear('viu_oferta', {});
-        }
-      });
+    new IntersectionObserver(function (e) {
+      aberturaNaTela = e[0].isIntersecting;
       atualizarBarra();
-    });
-    vigiados.forEach(function (el) { observador.observe(el); });
+    }).observe(abertura_);
+    new IntersectionObserver(function (e) {
+      ofertaNaTela = e[0].isIntersecting;
+      if (ofertaNaTela && !ofertaVista) { ofertaVista = true; rastrear('viu_oferta', {}); }
+      atualizarBarra();
+    }).observe(oferta);
   }
 })();
