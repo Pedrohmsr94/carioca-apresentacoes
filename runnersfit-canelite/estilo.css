@@ -64,7 +64,7 @@ a { color: inherit; text-underline-offset: .2em; text-decoration-thickness: 1px;
 }
 .pular {
   position: absolute; z-index: 40; left: var(--lado); top: -6rem;
-  padding: .7rem 1rem; border-radius: 6px; background: var(--botao); color: #fff;
+  padding: .7rem 1rem; border-radius: 4px; background: var(--botao); color: #fff;
   font: 600 .9375rem/1 var(--texto); text-decoration: none;
 }
 .pular:focus { top: 1rem; }
@@ -280,7 +280,7 @@ h2 { font-size: clamp(2rem, 1.3rem + 3vw, 3.25rem); line-height: 1.02; }
   padding: .8rem 0;
   border-bottom: 1px solid var(--linha);
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 1.0625rem;
   line-height: 1.4;
 }
 .sinais input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
@@ -401,7 +401,7 @@ h2 { font-size: clamp(2rem, 1.3rem + 3vw, 3.25rem); line-height: 1.02; }
   text-transform: uppercase;
   color: var(--tinta-2);
 }
-.ficha dd { font-size: 1rem; line-height: 1.35; }
+.ficha dd { font-size: 1.0625rem; line-height: 1.35; }
 .sublinhado { position: relative; white-space: nowrap; }
 .sublinhado svg {
   position: absolute; left: -.1em; right: -.1em; bottom: -.28em;
@@ -422,7 +422,7 @@ h2 { font-size: clamp(2rem, 1.3rem + 3vw, 3.25rem); line-height: 1.02; }
   padding: .8rem 1rem;
   border: 1.5px dashed var(--tinta-2);
   background: rgba(255, 255, 255, .5);
-  font-size: .875rem;
+  font-size: .8125rem;
   line-height: 1.45;
 }
 .relatos { display: grid; gap: 1.25rem; margin-top: 1.5rem; }
@@ -435,7 +435,7 @@ h2 { font-size: clamp(2rem, 1.3rem + 3vw, 3.25rem); line-height: 1.02; }
 .exemplo {
   margin-right: .4rem;
   padding: .1rem .4rem;
-  border: 1px dashed currentColor;
+  border: 1px dashed var(--tinta-2);
   font: 600 .6875rem/1 var(--titulo);
   letter-spacing: .06em;
   text-transform: uppercase;
@@ -479,7 +479,7 @@ h2 { font-size: clamp(2rem, 1.3rem + 3vw, 3.25rem); line-height: 1.02; }
 .valor-preco s {
   position: relative;
   margin-right: .15em;
-  font-size: clamp(1.5rem, 1.1rem + 1.6vw, 2.25rem);
+  font-size: clamp(1.375rem, 1.1rem + 1.6vw, 2rem);
   color: var(--tinta-2);
   text-decoration: none;
 }
@@ -487,11 +487,11 @@ h2 { font-size: clamp(2rem, 1.3rem + 3vw, 3.25rem); line-height: 1.02; }
   content: "";
   position: absolute; left: -6%; right: -6%; top: 52%;
   height: 3px;
-  border-radius: 2px;
-  background: var(--alerta);
+  border-radius: 1px;
+  background: var(--caneta);
   transform: rotate(-9deg);
 }
-.valor-espera { font-size: clamp(2.5rem, 2rem + 2.4vw, 3.5rem); }
+.valor-espera { font-size: clamp(2.875rem, 2.4rem + 2vw, 3.5rem); }
 .valor-nota { margin-top: .5rem; font-size: .9375rem; color: var(--tinta-2); }
 .valor-uma-vez { margin-top: .5rem; font-size: .9375rem; color: var(--tinta-2); }
 .volta-alerta a { color: var(--tinta-2); }
@@ -520,8 +520,8 @@ h2 { font-size: clamp(2rem, 1.3rem + 3vw, 3.25rem); line-height: 1.02; }
   transition: transform .4s var(--sai);
 }
 .oferta-corpo details[open] summary::after { transform: translateY(-30%) rotate(-135deg); }
-.oferta-corpo details p { padding-bottom: .9rem; font-size: 1rem; line-height: 1.5; max-width: 42ch; }
-.pendente { font-family: var(--titulo); border-bottom: 1.5px dashed currentColor; }
+.oferta-corpo details p { padding-bottom: .9rem; font-size: 1.0625rem; line-height: 1.5; max-width: 42ch; }
+.pendente { font-family: var(--titulo); border-bottom: 1.5px dashed var(--tinta-2); }
 
 /* ---------- rodapé, barra, aviso ---------- */
 
@@ -530,7 +530,7 @@ h2 { font-size: clamp(2rem, 1.3rem + 3vw, 3.25rem); line-height: 1.02; }
   max-width: 72rem;
   margin: 0 auto;
   padding: 3rem var(--lado) calc(6.5rem + env(safe-area-inset-bottom)) var(--margem-x);
-  font-size: .875rem;
+  font-size: .8125rem;
   color: var(--tinta-2);
 }
 .rodape::before {
