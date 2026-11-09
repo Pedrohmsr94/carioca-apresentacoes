@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1B2915">
+<title>Nome novo no Facebook · Alho e Afeto</title>
+<meta property="og:title" content="Nome novo no Facebook: Alho e Afeto">
+<meta property="og:description" content="Passo a passo no iPhone para a página do Facebook passar a se chamar Alho e Afeto.">
+<meta property="og:image" content="https://pedrohmsr94.github.io/carioca-apresentacoes/alho-e-afeto/foto-perfil.png">
+<link rel="icon" href="../foto-perfil.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --fundo: #FBF6EC;
+  --cartao: #FFFFFF;
+  --texto: #2A2118;
+  --suave: #6B5E50;
+  --verde: #23401C;
+  --verde-claro: #E6EEDC;
+  --trigo: #B8873E;
+  --alvo: #E0261B;
+  --linha: #E7DDCB;
+  --fb-azul: #0866FF;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --fundo: #17140F; --cartao: #221D16; --texto: #F3EBDD; --suave: #B9AC99;
+    --verde: #B9D4A5; --verde-claro: #26331F; --trigo: #E0B571; --linha: #3A3226;
+  }
+}
+:root[data-theme="dark"] {
+  --fundo: #17140F; --cartao: #221D16; --texto: #F3EBDD; --suave: #B9AC99;
+  --verde: #B9D4A5; --verde-claro: #26331F; --trigo: #E0B571; --linha: #3A3226;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--fundo); color: var(--texto); font: 400 19px/1.55 'DM Sans', system-ui, sans-serif; }
+main { max-width: 640px; margin: 0 auto; padding: 0 16px 80px; }
+h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; font-weight: 600; color: var(--verde); line-height: 1.15; margin: 0; }
+h1 { font-size: 34px; }
+h2 { font-size: 28px; margin: 48px 0 6px; }
+h3 { font-size: 22px; }
+p { margin: 10px 0; }
+strong { font-weight: 700; }
+.topo { text-align: center; padding: 36px 0 8px; }
+.topo img { width: 120px; height: 120px; border-radius: 50%; border: 1px solid var(--linha); }
+.topo p { color: var(--suave); font-size: 18px; }
+.aviso { background: var(--verde-claro); border-radius: 16px; padding: 16px 18px; margin: 18px 0; }
+.aviso.cuidado { background: #FDE8E6; color: #5C1610; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .aviso.cuidado { background: #3D1D19; color: #F6CFCA; } }
+:root[data-theme="dark"] .aviso.cuidado { background: #3D1D19; color: #F6CFCA; }
+.parte-rot { font: 700 14px/1 'DM Sans'; letter-spacing: .16em; text-transform: uppercase; color: var(--trigo); margin-top: 56px; }
+
+/* passo */
+.passo { background: var(--cartao); border: 1px solid var(--linha); border-radius: 20px; padding: 20px 18px 18px; margin: 18px 0; }
+.passo-cab { display: flex; gap: 14px; align-items: flex-start; }
+.num { flex: none; width: 44px; height: 44px; border-radius: 50%; background: var(--verde); color: #fff; font: 700 21px/44px 'DM Sans'; text-align: center; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .num { color: #17140F; } }
+:root[data-theme="dark"] .num { color: #17140F; }
+.passo-cab h3 { padding-top: 8px; }
+.passo.feito { opacity: .55; }
+.feito-btn { margin-top: 14px; width: 100%; min-height: 52px; border-radius: 14px; border: 2px solid var(--verde); background: transparent; color: var(--verde); font: 700 18px 'DM Sans'; cursor: pointer; }
+.passo.feito .feito-btn { background: var(--verde); color: var(--fundo); }
+
+/* texto para copiar */
+.copiar { margin: 12px 0; border: 2px dashed var(--trigo); border-radius: 14px; padding: 14px 16px; background: var(--fundo); }
+.copiar pre { margin: 0 0 12px; white-space: pre-wrap; overflow-wrap: anywhere; font: 700 24px/1.4 'DM Sans'; color: var(--texto); text-align: center; }
+.copiar button { display: block; width: 100%; min-height: 52px; border: 0; border-radius: 12px; background: #85601F; color: #fff; font: 700 18px 'DM Sans'; cursor: pointer; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .copiar button { background: var(--trigo); color: #17140F; } }
+:root[data-theme="dark"] .copiar button { background: var(--trigo); color: #17140F; }
+
+/* ── desenho do iPhone com o app do Facebook ─────────────── */
+.tela-wrap { display: flex; justify-content: center; margin: 16px 0 6px; }
+.tela { width: 100%; max-width: 300px; background: #fff; color: #050505; border: 10px solid #1d1d1f; border-radius: 38px; overflow: hidden; font: 400 13px/1.35 -apple-system, system-ui, 'Segoe UI', sans-serif; box-shadow: 0 10px 30px rgba(0,0,0,.15); position: relative; }
+.tela * { font-family: inherit; }
+.st { display: flex; justify-content: space-between; align-items: center; padding: 8px 18px 4px; font-size: 11px; font-weight: 600; }
+.st .ilha { width: 70px; height: 18px; background: #1d1d1f; border-radius: 10px; }
+.miolo { padding: 0 12px 12px; min-height: 360px; }
+.fb-top { display: flex; align-items: center; justify-content: space-between; padding: 6px 2px 10px; }
+.fb-top b { font-size: 22px; font-weight: 800; }
+.fb-top .icos { display: flex; gap: 10px; }
+.fb-top .icos span { width: 30px; height: 30px; border-radius: 50%; background: #E4E6EB; display: grid; place-items: center; font-size: 14px; }
+.fb-logo { color: var(--fb-azul); font-size: 22px; font-weight: 800; letter-spacing: -.5px; }
+.cartao-m { background: #fff; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,.18); padding: 10px; display: flex; align-items: center; gap: 10px; margin: 6px 0 10px; }
+.cartao-m .nome { flex: 1; font-weight: 700; font-size: 14px; }
+.cartao-m .nome small { display: block; font-weight: 400; color: #65676B; font-size: 11px; }
+.av { width: 40px; height: 40px; border-radius: 50%; background: #ccc center/cover; flex: none; border: 1px solid #ddd; }
+.av.dri { background: linear-gradient(135deg, #b98a6a, #6f4b36); }
+.av.pg { background-image: url(../foto-perfil.png); background-color: #FBF6EC; }
+.seta { width: 28px; height: 28px; border-radius: 50%; background: #E4E6EB; display: grid; place-items: center; font-size: 13px; font-weight: 700; }
+.atalhos { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 6px 0; }
+.atalhos div { background: #fff; border-radius: 10px; box-shadow: 0 1px 3px rgba(0,0,0,.15); padding: 10px; font-weight: 600; font-size: 12px; }
+.atalhos i { display: block; font-style: normal; font-size: 16px; margin-bottom: 4px; }
+.lista-m div { padding: 11px 4px; border-bottom: 1px solid #f0f0f0; display: flex; justify-content: space-between; align-items: center; font-size: 14px; gap: 8px; }
+.lista-m div span:last-child { color: #8a8d91; }
+.lista-m small { display: block; color: #65676B; font-size: 11px; }
+.lista-m .sub { padding-left: 26px; }
+.cab-m { text-align: center; font-weight: 700; font-size: 15px; padding: 6px 0 12px; position: relative; }
+.cab-m .esq { position: absolute; left: 0; font-size: 18px; line-height: 1; }
+.sec-m { color: #65676B; font-size: 12px; font-weight: 700; margin: 12px 0 2px; }
+.nav-fb { display: flex; justify-content: space-around; align-items: flex-end; border-top: 1px solid #e4e6eb; padding: 8px 2px 12px; color: #65676B; text-align: center; }
+.nav-fb div { display: flex; flex-direction: column; align-items: center; gap: 2px; min-width: 34px; }
+.nav-fb i { font-style: normal; font-size: 18px; line-height: 24px; }
+.nav-fb .rot { font-size: 11px; font-weight: 700; color: #050505; }
+.nav-fb .mini { width: 22px; height: 22px; border-radius: 50%; background: #ccc center/cover; border: 2px solid #fff; box-shadow: 0 0 0 1px #ccc; }
+.folha { margin: 14px -12px 0; background: #fff; border-radius: 16px 16px 0 0; box-shadow: 0 -4px 18px rgba(0,0,0,.18); padding: 10px 14px 18px; }
+.folha .pega { width: 36px; height: 4px; border-radius: 2px; background: #ccc; margin: 0 auto 10px; }
+.folha .linha-p { display: flex; align-items: center; gap: 10px; padding: 9px 4px; font-size: 14px; font-weight: 600; }
+.folha .linha-p .ok { margin-left: auto; color: var(--fb-azul); font-size: 18px; }
+.escurecido { background: #5c5c5c; }
+.escurecido .miolo > .fundo-cinza { opacity: .5; }
+.busca-m { background: #F0F2F5; border-radius: 18px; padding: 8px 12px; font-size: 14px; display: flex; gap: 8px; align-items: center; }
+.busca-m .cursor { border-right: 2px solid var(--fb-azul); padding-right: 1px; }
+.input-m { border: 1px solid #ccd0d5; border-radius: 10px; padding: 8px 10px; font-size: 14px; margin: 6px 0; }
+.input-m small { display: block; color: #65676B; font-size: 10px; }
+.input-m .pontos { letter-spacing: 3px; color: #999; }
+.seta svg { width: 14px; height: 14px; display: block; }
+.nav-fb .mini.dri { background: linear-gradient(135deg, #b98a6a, #6f4b36); }
+.fb-btn { background: var(--fb-azul); color: #fff; border-radius: 8px; text-align: center; padding: 10px 0; font-weight: 700; font-size: 14px; margin-top: 12px; }
+.fb-btn.cinza { background: #E4E6EB; color: #050505; }
+.caixa-m { background: #F0F2F5; border-radius: 10px; padding: 10px; font-size: 12px; margin: 8px 0; }
+.caixa-m b { font-size: 13px; }
+.caixa-m small { color: #65676B; display: block; }
+.teclado { margin: 12px -12px -12px; background: #D1D3D9; padding: 6px 4px 10px; }
+.teclado .sug { display: flex; justify-content: center; gap: 6px; font-size: 12px; padding: 4px 0 8px; color: #333; }
+.teclado .sug span { background: #EBEDF0; border-radius: 6px; padding: 5px 10px; }
+.teclado .riscado { text-decoration: line-through; text-decoration-color: var(--alvo); text-decoration-thickness: 2px; }
+.teclado .fila { display: flex; justify-content: center; gap: 3px; margin: 3px 0; }
+.teclado .fila i { width: 22px; height: 28px; background: #fff; border-radius: 4px; box-shadow: 0 1px 0 #888; }
+.feito-m { text-align: center; padding: 40px 6px 10px; }
+.feito-m .bola { width: 64px; height: 64px; border-radius: 50%; background: #E7F3E8; color: #2BB24C; font-size: 34px; display: grid; place-items: center; margin: 0 auto 12px; }
+.feito-m b { font-size: 16px; display: block; margin-bottom: 6px; }
+.feito-m p { font-size: 12px; color: #65676B; margin: 0; }
+.legenda-tela { text-align: center; color: var(--suave); font-size: 15px; margin: 6px 0 0; }
+
+/* o círculo vermelho que mostra onde tocar */
+.alvo { position: relative; outline: 3px solid var(--alvo); outline-offset: 3px; border-radius: 10px; animation: pulso 1.6s ease-in-out infinite; z-index: 2; }
+.alvo-r { border-radius: 50%; }
+.alvo::after { content: attr(data-dica); position: absolute; z-index: 3; white-space: nowrap; background: var(--alvo); color: #fff; font: 700 12px/1 system-ui, sans-serif; padding: 6px 8px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+.d-baixo::after { top: calc(100% + 10px); left: 50%; transform: translateX(-50%); }
+.d-cima::after { bottom: calc(100% + 10px); left: 50%; transform: translateX(-50%); }
+.d-cima-esq::after { bottom: calc(100% + 10px); right: -6px; }
+.d-baixo-esq::after { top: calc(100% + 10px); right: -6px; }
+.d-esq::after { right: calc(100% + 10px); top: 50%; transform: translateY(-50%); }
+@keyframes pulso { 0%, 100% { outline-color: var(--alvo); } 50% { outline-color: rgba(224, 38, 27, .35); } }
+@media (prefers-reduced-motion: reduce) { .alvo { animation: none; } }
+
+.fim { text-align: center; }
+.ajuda { margin-top: 32px; background: var(--verde); color: var(--fundo); border-radius: 16px; padding: 14px 16px; text-align: center; font-weight: 500; }
+.progresso { position: sticky; top: 0; z-index: 9; background: var(--fundo); padding: 10px 0; font-size: 15px; color: var(--suave); }
+.progresso .trilho { height: 8px; border-radius: 4px; background: var(--linha); overflow: hidden; margin-top: 6px; }
+.progresso .trilho i { display: block; height: 100%; width: 0; background: var(--verde); transition: width .3s; }
+</style>
+</head>
+<body>
+<main>
+
+<header class="topo">
+  <img src="../foto-perfil.png" alt="Logo da Alho e Afeto">
+  <h1>Nome novo no Facebook</h1>
+  <p>A sua página ainda se chama <strong>Studio Adriane Schlinke</strong>. Aqui ela passa a se chamar <strong>Alho e Afeto</strong>. Tudo pelo iPhone, uns 5 minutos.</p>
+</header>
+
+<div class="progresso" aria-live="polite"><span id="prog-txt">0 de 9 passos feitos</span><div class="trilho"><i id="prog-barra"></i></div></div>
+
+<div class="aviso">
+  <p><strong>Como usar esta página:</strong> faça um passo, toque em <strong>"Feito ✓"</strong> e desça para o próximo. Os desenhos mostram a tela do Facebook no iPhone. O <span style="color:var(--alvo);font-weight:700">contorno vermelho</span> é onde você toca.</p>
+  <p>A sua tela pode ser um pouco diferente do desenho. Procure pelo <strong>nome escrito</strong>.</p>
+  <p>Travou? <strong>Tira um print da tela e manda para o Pedro.</strong></p>
+</div>
+
+<div class="aviso">
+  <p><strong>Antes de começar, tenha a senha do Facebook</strong>. É a mesma senha que o Pedro usou para mudar o endereço da página. Se não souber, pergunte a ele antes.</p>
+</div>
+
+<!-- ═══════════ PARTE 1 ═══════════ -->
+<p class="parte-rot">Parte 1 · Entrar como a página</p>
+<h2>Primeiro, vire a página</h2>
+<p>No Facebook você tem duas "caras": a sua (<strong>Dri Martins</strong>) e a da loja. O nome só muda quando você está usando a cara da loja.</p>
+
+<section class="passo" data-passo="1">
+  <div class="passo-cab"><span class="num">1</span><h3>Abra o Facebook e toque em "Menu", lá embaixo à direita</h3></div>
+  <div class="tela-wrap"><div class="tela">
+    <div class="st"><span>9:41</span><span class="ilha"></span><span>●●● ▮</span></div>
+    <div class="miolo">
+      <div class="fb-top"><span class="fb-logo">facebook</span><span class="icos"><span>＋</span><span>🔍</span><span>💬</span></span></div>
+      <div class="cartao-m" style="box-shadow:none;border-bottom:1px solid #eee;border-radius:0"><div class="av dri"></div><div class="nome" style="font-weight:400;color:#65676B">No que você está pensando?</div></div>
+      <div style="height:240px;background:#F0F2F5;border-radius:8px"></div>
+    </div>
+    <div class="nav-fb">
+      <div><i>⌂</i></div><div><i>▶</i></div><div><i>👥</i></div><div><i>🏪</i></div><div><i>🔔</i></div>
+      <div class="alvo d-cima-esq" data-dica="Toque aqui"><span class="mini dri"></span><span class="rot">Menu</span></div>
+    </div>
+  </div></div>
+  <p>Em alguns iPhones o "Menu" aparece como <strong>três risquinhos ☰</strong> ou só com a sua foto pequenininha. É o último botão da direita.</p>
+  <button class="feito-btn">Feito ✓</button>
+</section>
+
+<section class="passo" data-passo="2">
+  <div class="passo-cab"><span class="num">2</span><h3>Lá em cima, toque na setinha ao lado do seu nome</h3></div>
+  <div class="tela-wrap"><div class="tela">
+    <div class="st"><span>9:41</span><span class="ilha"></span><span>●●● ▮</span></div>
+    <div class="miolo" style="background:#F0F2F5;margin:0;padding:0 12px 12px">
+      <div class="fb-top"><b>Menu</b><span class="icos"><span>⚙</span><span>🔍</span></span></div>
+      <div class="cartao-m"><div class="av dri"></div><div class="nome">Dri Martins</div><div class="seta alvo alvo-r d-baixo-esq" data-dica="Toque na setinha"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M3 5l4 4 4-4" fill="none" stroke="#050505" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+      <div class="atalhos" style="margin-top:34px"><div><i>📅</i>Memórias</div><div><i>🔖</i>Salvos</div><div><i>👥</i>Grupos</div><div><i>🎬</i>Reels</div><div><i>🏳</i>Páginas</div><div><i>🏪</i>Marketplace</div></div>
+    </div>
+  </div></div>
+  <p>É uma <strong>setinha virada para baixo</strong>, dentro de uma bolinha cinza, do lado direito do <strong>Dri Martins</strong>.</p>
+  <button class="feito-btn">Feito ✓</button>
+</section>
+
+<section class="passo" data-passo="3">
+  <div class="passo-cab"><span class="num">3</span><h3>Toque em "Studio Adriane Schlinke", a que tem a logo da Alho e Afeto</h3></div>
+  <div class="tela-wrap"><div class="tela escurecido">
+    <div class="st" style="color:#fff"><span>9:41</span><span class="ilha"></span><span>●●● ▮</span></div>
+    <div class="miolo" style="padding:0 12px 0;min-height:auto">
+      <div style="height:150px"></div>
+      <div class="folha">
+        <div class="pega"></div>
+        <div class="linha-p"><div class="av dri"></div>Dri Martins<span class="ok">●</span></div>
+        <div class="linha-p alvo d-baixo" data-dica="Toque aqui"><div class="av pg"></div>Studio Adriane Schlinke</div>
+        <div style="height:30px"></div>
+        <div class="linha-p" style="color:#65676B;font-weight:400">＋ Criar perfil ou Página</div>
+      </div>
+    </div>
+  </div></div>
+  <p>O Facebook mostra <strong>"Trocando para Studio Adriane Schlinke…"</strong> e volta. Pode demorar uns segundos.</p>
+  <button class="feito-btn">Feito ✓</button>
+</section>
+
+<section class="passo" data-passo="4">
+  <div class="passo-cab"><span class="num">4</span><h3>Confira: agora quem aparece é a loja</h3></div>
+  <div class="tela-wrap"><div class="tela">
+    <div class="st"><span>9:41</span><span class="ilha"></span><span>●●● ▮</span></div>
+    <div class="miolo" style="background:#F0F2F5;margin:0;padding:0 12px 12px">
+      <div class="fb-top"><b>Menu</b><span class="icos"><span>⚙</span><span>🔍</span></span></div>
+      <div class="cartao-m alvo d-baixo" data-dica="A logo da Alho e Afeto"><div class="av pg"></div><div class="nome">Studio Adriane Schlinke<small>Página</small></div><div class="seta"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M3 5l4 4 4-4" fill="none" stroke="#050505" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+      <div style="height:200px"></div>
+    </div>
+  </div></div>
+  <p>Se aparecer a <strong>logo da Alho e Afeto</strong> no lugar da sua foto, deu certo. Pode seguir.</p>
+  <button class="feito-btn">Feito ✓</button>
+</section>
+
+<!-- ═══════════ PARTE 2 ═══════════ -->
+<p class="parte-rot">Parte 2 · Trocar o nome</p>
+<h2>Agora o nome</h2>
+
+<section class="passo" data-passo="5">
+  <div class="passo-cab"><span class="num">5</span><h3>Toque na engrenagem ⚙, lá em cima</h3></div>
+  <div class="tela-wrap"><div class="tela">
+    <div class="st"><span>9:41</span><span class="ilha"></span><span>●●● ▮</span></div>
+    <div class="miolo" style="background:#F0F2F5;margin:0;padding:0 12px 12px">
+      <div class="fb-top"><b>Menu</b><span class="icos"><span class="alvo alvo-r d-baixo-esq" data-dica="Toque aqui">⚙</span><span>🔍</span></span></div>
+      <div class="cartao-m" style="margin-top:30px"><div class="av pg"></div><div class="nome">Studio Adriane Schlinke<small>Página</small></div><div class="seta"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M3 5l4 4 4-4" fill="none" stroke="#050505" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+      <div style="height:180px"></div>
+    </div>
+  </div></div>
+  <div class="aviso">
+    <p><strong>Não achou a engrenagem?</strong> Desça a tela do Menu até o fim, toque em <strong>"Configurações e privacidade"</strong> e depois em <strong>"Configurações"</strong>. Chega no mesmo lugar.</p>
+  </div>
+  <button class="feito-btn">Feito ✓</button>
+</section>
+
+<section class="passo" data-passo="6">
+  <div class="passo-cab"><span class="num">6</span><h3>Toque na lupa, escreva "nome" e toque em "Nome"</h3></div>
+  <div class="tela-wrap"><div class="tela">
+    <div class="st"><span>9:41</span><span class="ilha"></span><span>●●● ▮</span></div>
+    <div class="miolo">
+      <div class="cab-m"><span class="esq">‹</span>Configurações e privacidade</div>
+      <div class="busca-m alvo d-baixo" data-dica="1º toque aqui e escreva: nome">🔍 <span class="cursor">nome</span></div>
+      <div class="sec-m" style="margin-top:46px">Resultados da pesquisa</div>
+      <div class="lista-m">
+        <div class="alvo d-baixo" data-dica="2º toque aqui" style="margin-bottom:40px"><span><small>Configuração da Página</small><b>Nome</b><small>Studio Adriane Schlinke</small></span><span>›</span></div>
+        <div><span><small>Preferências de reação</small>Ocultar o número de reações</span><span>›</span></div>
+      </div>
+    </div>
+  </div></div>
+  <p>Toque no resultado que diz <strong>"Nome"</strong> com <strong>"Studio Adriane Schlinke"</strong> embaixo.</p>
+  <div class="aviso">
+    <p><strong>Não tem lupa?</strong> Desça a lista até <strong>"Configuração da Página"</strong> e toque em <strong>"Nome"</strong>.</p>
+  </div>
+  <button class="feito-btn">Feito ✓</button>
+</section>
+
+<section class="passo" data-passo="7">
+  <div class="passo-cab"><span class="num">7</span><h3>Apague o nome antigo e escreva "Alho e Afeto"</h3></div>
+  <p>Copie o nome aqui embaixo para não errar uma letra:</p>
+  <div class="copiar">
+    <pre id="t-nome">Alho e Afeto</pre>
+    <button data-copiar="t-nome">Copiar o nome</button>
+  </div>
+  <div class="tela-wrap"><div class="tela">
+    <div class="st"><span>9:41</span><span class="ilha"></span><span>●●● ▮</span></div>
+    <div class="miolo">
+      <div class="cab-m"><span class="esq">‹</span>Nome</div>
+      <div class="input-m alvo d-baixo" data-dica="Apague tudo e cole aqui"><small>Nome da Página</small>Alho e Afeto</div>
+      <div class="caixa-m" style="margin-top:36px"><small>Se você alterar o nome, não poderá alterá-lo novamente por 60 dias.</small></div>
+      <div class="fb-btn alvo d-cima" data-dica="Depois toque aqui" style="margin-top:44px">Revisar alteração</div>
+    </div>
+  </div></div>
+  <p>Toque no nome antigo, <strong>segure o dedo</strong> e escolha <strong>"Selecionar Tudo"</strong>. Apague. Depois segure o dedo no campo vazio e toque em <strong>"Colar"</strong>.</p>
+  <p>Confira: <strong>A</strong> maiúsculo em Alho, <strong>e</strong> pequeno no meio, <strong>A</strong> maiúsculo em Afeto. O botão pode se chamar <strong>"Revisar alteração"</strong> ou <strong>"Continuar"</strong>.</p>
+  <button class="feito-btn">Feito ✓</button>
+</section>
+
+<section class="passo" data-passo="8">
+  <div class="passo-cab"><span class="num">8</span><h3>Digite a senha com calma e toque em "Solicitar alteração"</h3></div>
+  <div class="tela-wrap"><div class="tela">
+    <div class="st"><span>9:41</span><span class="ilha"></span><span>●●● ▮</span></div>
+    <div class="miolo">
+      <div class="cab-m"><span class="esq">‹</span>Revisar alteração</div>
+      <div class="caixa-m"><small>Nome atual</small><b>Studio Adriane Schlinke</b><small style="margin-top:6px">Novo nome</small><b>Alho e Afeto</b></div>
+      <div class="input-m alvo d-baixo" data-dica="Campo vazio? Digite a senha"><small>Senha</small><span class="pontos">••••••••</span></div>
+      <div class="fb-btn alvo d-cima" data-dica="Depois toque aqui" style="margin-top:84px">Solicitar alteração</div>
+      <div class="teclado">
+        <div class="sug"><span class="riscado">🔑 Senha salva</span></div>
+        <div class="fila"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="fila"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="fila"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+    </div>
+  </div></div>
+  <div class="aviso cuidado">
+    <p><strong>Três cuidados com a senha:</strong></p>
+    <p>1. Se o campo já tiver <strong>bolinhas</strong> antes de você digitar, apague tudo primeiro.</p>
+    <p>2. Se o iPhone oferecer uma <strong>senha salva</strong> em cima do teclado (com uma chavinha 🔑), <strong>não toque</strong>. Digite você mesma, letra por letra.</p>
+    <p>3. Maiúscula e minúscula fazem diferença. Olhe se a tecla ⇧ está acesa.</p>
+  </div>
+  <div class="aviso cuidado">
+    <p><strong>Apareceu "Senha errada"?</strong> Tente <strong>só mais uma vez</strong>, com calma. Se der errado de novo, <strong>pare</strong>, tire um print e mande para o Pedro. Muitas tentativas seguidas fazem o Facebook travar a conta por algumas horas.</p>
+  </div>
+  <button class="feito-btn">Feito ✓</button>
+</section>
+
+<section class="passo" data-passo="9">
+  <div class="passo-cab"><span class="num">9</span><h3>Pronto, o pedido foi enviado</h3></div>
+  <div class="tela-wrap"><div class="tela">
+    <div class="st"><span>9:41</span><span class="ilha"></span><span>●●● ▮</span></div>
+    <div class="miolo">
+      <div class="feito-m">
+        <div class="bola">✓</div>
+        <b>Solicitação enviada</b>
+        <p>Analisaremos sua solicitação de alteração de nome. Isso pode levar até 3 dias.</p>
+      </div>
+      <div class="fb-btn cinza" style="margin-top:60px">OK</div>
+    </div>
+  </div></div>
+  <p>O Facebook confere o nome e troca sozinho, <strong>em até 3 dias</strong>. Você recebe uma notificação. Não precisa fazer mais nada.</p>
+  <p>Enquanto isso, a página continua aparecendo como Studio Adriane Schlinke. É normal.</p>
+  <button class="feito-btn">Feito ✓</button>
+</section>
+
+<!-- ═══════════ DEPOIS ═══════════ -->
+<p class="parte-rot">Depois</p>
+<h2>Volte para o seu perfil</h2>
+<p>Para curtir e comentar como você mesma, volte para a <strong>Dri Martins</strong>: <strong>Menu</strong> → setinha para baixo ao lado do nome → toque em <strong>Dri Martins</strong>. É o caminho dos passos 1 a 3, ao contrário.</p>
+
+<div class="aviso">
+  <p><strong>O que já mudou na página</strong> (o Pedro fez pelo computador):</p>
+  <p>Capa nova com os potes, texto de apresentação novo, categoria "Comida e bebida", Instagram @alhoeafeto.rj, botão de WhatsApp e endereço novo: <strong>facebook.com/alhoeafeto.rj</strong>. As fotos do salão foram guardadas no arquivo.</p>
+</div>
+
+<div class="ajuda">Travou em algum passo? <strong>Tira um print da tela</strong> e manda para o Pedro.</div>
+
+</main>
+<script>
+(function () {
+  var total = document.querySelectorAll('.passo').length;
+  var chave = 'alho-e-afeto-guia-facebook-feitos';
+  var feitos = {};
+  try { feitos = JSON.parse(localStorage.getItem(chave) || '{}'); } catch (e) { feitos = {}; }
+  function salvar() { try { localStorage.setItem(chave, JSON.stringify(feitos)); } catch (e) {} }
+  function atualizar() {
+    var n = 0;
+    document.querySelectorAll('.passo').forEach(function (p) {
+      var on = !!feitos[p.dataset.passo];
+      p.classList.toggle('feito', on);
+      p.querySelector('.feito-btn').textContent = on ? 'Feito ✓ (toque para desfazer)' : 'Feito ✓';
+      if (on) n++;
+    });
+    document.getElementById('prog-txt').textContent = n + ' de ' + total + ' passos feitos';
+    document.getElementById('prog-barra').style.width = (100 * n / total) + '%';
+  }
+  document.querySelectorAll('.feito-btn').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var p = b.closest('.passo'); var id = p.dataset.passo;
+      feitos[id] = !feitos[id]; salvar(); atualizar();
+      if (feitos[id]) { var prox = p.nextElementSibling; while (prox && !prox.classList.contains('passo')) prox = prox.nextElementSibling;
+        if (prox) prox.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+  document.querySelectorAll('[data-copiar]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var texto = document.getElementById(b.dataset.copiar).textContent;
+      var original = b.textContent;
+      function ok() { b.textContent = 'Copiado ✓ agora é só colar'; setTimeout(function () { b.textContent = original; }, 2500); }
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(texto).then(ok, function () { reserva(texto); ok(); });
+      } else { reserva(texto); ok(); }
+    });
+  });
+  function reserva(texto) {
+    var t = document.createElement('textarea'); t.value = texto; t.setAttribute('readonly', '');
+    t.style.position = 'fixed'; t.style.opacity = '0'; document.body.appendChild(t);
+    t.select(); t.setSelectionRange(0, 99999);
+    try { document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(t);
+  }
+  atualizar();
+})();
+</script>
+</body>
+</html>
